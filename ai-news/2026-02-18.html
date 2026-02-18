@@ -61,6 +61,13 @@
         }
         .source { color: var(--text-secondary); font-size: 0.9rem; }
         .back { display: inline-block; margin-bottom: 1rem; color: var(--accent-cyan); }
+        .insight { 
+            background: rgba(168, 85, 247, 0.1); 
+            border-left: 3px solid var(--accent-purple); 
+            padding: 0.8rem 1rem; 
+            margin: 1rem 0; 
+            font-style: italic;
+        }
     </style>
 </head>
 <body>
@@ -68,11 +75,12 @@
     <h1>🤖 AI新闻早报</h1>
     <p class="date">2026年2月18日</p>
 
-    <h2>🔥 AI大新闻</h2>
+    <h2>🔥 AI大新闻（The Rundown AI + Tavily）</h2>
     
     <div class="item">
         <h3>1. 17家AI公司融资超1亿美元</h3>
         <p class="summary">2026年已有17家美国AI公司完成1亿美元以上融资。Anthropic完成30亿美元G轮，估值3800亿美元；ElevenLabs完成5亿美元D轮；Fundamental完成2.55亿美元A轮。</p>
+        <div class="insight">💡 洞察: AI领域融资持续火热，资本正在快速向头部玩家集中。</div>
         <p class="link"><a href="https://techcrunch.com/2026/02/17/here-are-the-17-us-based-ai-companies-that-have-raised-100m-or-more-in-2026/" target="_blank">TechCrunch →</a></p>
     </div>
     
@@ -88,28 +96,49 @@
         <p class="link"><a href="https://apnews.com/article/india-modi-vaishnaw-ai-investments-4e170da0a3b883a9659569dd538e9019" target="_blank">AP News →</a></p>
     </div>
 
-    <h2>🚀 技术前沿</h2>
+    <div class="item">
+        <h3>4. Claude Sonnet 4.6 发布</h3>
+        <p class="summary">Anthropic发布Claude Sonnet 4.6，带来更强的推理和编程能力。（HackerNews 790 points）</p>
+        <p class="link"><a href="https://www.anthropic.com/news/claude-sonnet-4-6" target="_blank">Anthropic →</a></p>
+    </div>
+
+    <h2>🚀 GitHub星标飙升</h2>
     
     <div class="item">
-        <h3>1. 运行AI模型正在成为"内存游戏"</h3>
-        <p class="summary">当讨论AI基础设施成本时，焦点通常是Nvidia和GPU，但内存正成为越来越重要的部分。</p>
-        <p class="link"><a href="https://techcrunch.com/2026/02/17/running-ai-models-is-turning-into-a-memory-game/" target="_blank">TechCrunch →</a></p>
+        <h3>1. Ollama - 本地大模型运行</h3>
+        <p class="summary">本地运行LLM的标杆项目，支持多种模型。</p>
     </div>
     
     <div class="item">
-        <h3>2. Nvidia 2026年增长可期</h3>
-        <p class="summary">得益于AI支出增加，Nvidia将在2026年迎来爆发式增长。作为AI基础设施的核心供应商，Nvidia的地位依然稳固。</p>
-        <p class="link"><a href="https://www.fool.com/investing/2026/02/17/where-will-nvidia-be-in-1-year/" target="_blank">The Motley Fool →</a></p>
+        <h3>2. Devika AI - 开源AI软件工程师</h3>
+        <p class="summary">智能开源AI软件工程师，可以理解代码库、编写功能、修复bug。</p>
     </div>
     
     <div class="item">
-        <h3>3. Unity发布AI游戏生成技术</h3>
-        <p class="summary">Unity CEO表示其新AI技术将"让开发者仅用自然语言提示就能生成完整的休闲游戏"。</p>
-        <p class="link"><a href="https://www.pcgamer.com/software/ai/unity-boss-who-once-called-out-the-idiocy-of-the-metaverse-now-says-his-companys-new-ai-tech-will-enable-developers-to-prompt-full-casual-games-into-existence-with-natural-language-only/" target="_blank">PC Gamer →</a></p>
+        <h3>3. 500-AI-Agents-Projects</h3>
+        <p class="summary">收集了500个AI Agent相关项目，含金量高。</p>
+        <p class="link"><a href="https://github.com/ashishpatel26/500-AI-Agents-Projects" target="_blank">GitHub →</a></p>
+    </div>
+
+    <h2>💻 技术讨论（HackerNews 热帖）</h2>
+    
+    <div class="item">
+        <h3>1. GrapheneOS - 摆脱Google和Apple <span class="tag">1038 points</span></h3>
+        <p class="summary">开源移动操作系统，主打隐私和安全，引发热烈讨论。</p>
+    </div>
+    
+    <div class="item">
+        <h3>2. Go代码现代化工具 <span class="tag">259 points</span></h3>
+        <p class="summary">Google发布go fix工具，帮助现代化Go代码。</p>
+    </div>
+    
+    <div class="item">
+        <h3>3. 异步GPU编程 <span class="tag">142 points</span></h3>
+        <p class="summary">探讨在GPU上实现异步编程的技术讨论。</p>
     </div>
 
     <p class="source" style="margin-top: 2rem; text-align: center;">
-        来源：Tavily AI News | 
+        来源：The Rundown AI, HackerNews, GitHub Trending, Tavily | 
         <a href="index.html" style="color: var(--accent-cyan);">查看完整归档 →</a>
     </p>
 </body>
