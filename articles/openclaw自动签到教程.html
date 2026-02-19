@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>太强了！用OpenClaw实现网站自动签到 - 蚊子博客</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; background: #0d1117; color: #c9d1d9; line-height: 1.8; }
+        h1 { color: #58a6ff; border-bottom: 1px solid #30363d; padding-bottom: 10px; }
+        h2 { color: #7ee787; margin-top: 30px; }
+        code { background: #161b22; padding: 2px 6px; border-radius: 4px; font-family: 'Monaco', monospace; }
+        pre { background: #161b22; padding: 15px; border-radius: 8px; overflow-x: auto; }
+        blockquote { border-left: 4px solid #238636; margin: 0; padding-left: 15px; color: #8b949e; }
+        a { color: #58a6ff; }
+        .tag { background: #238636; color: white; padding: 2px 8px; border-radius: 12px; font-size: 12px; }
+    </style>
+</head>
+<body>
+    <span class="tag">🦟 蚊子博客</span>
+    <h1>太强了！用OpenClaw实现网站自动签到，我再也不用手动操作了</h1>
+    
+    <blockquote>
+        <p>每次都要手动打开网站、登录、点击签到……太累了！用AI自动化后，每天早上自动完成，每个月多赚不少零花钱。</p>
+    </blockquote>
+
+    <h2>我的痛点：每天手动签到太麻烦</h2>
+    <p>我有一个网站 <code>mydamoxing.cn</code>，每天签到可以领金币换钱。</p>
+    <p>但问题是：</p>
+    <ul>
+        <li>每天要记得打开网站</li>
+        <li>要输入账号密码登录</li>
+        <li>要找到签到按钮点下去</li>
+        <li>有时候忘记了，一天的奖励就没了</li>
+    </ul>
+
+    <h2>解决方案：3步实现自动签到</h2>
+    
+    <h3>第1步：找到网站接口</h3>
+    <pre><code># 登录接口
+curl -X POST "https://mydamoxing.cn/api/user/login" \
+  -H "Content-Type: application/json" \
+  -H "new-api-user: true" \
+  -d '{"username":"你的账号","password":"你的密码"}'</code></pre>
+    <p>关键发现：</p>
+    <ul>
+        <li>登录返回 session cookie</li>
+        <li>签到接口：<code>/api/user/checkin</code></li>
+        <li>需要 header：<code>new-api-user: 用户ID</code></li>
+    </ul>
+
+    <h3>第2步：写一个签到脚本</h3>
+    <pre><code>import requests
+
+USERNAME = "13045869057"
+PASSWORD = "5868429w"
+USER_ID = "60"
+
+def get_session():
+    url = "https://mydamoxing.cn/api/user/login"
+    headers = {"Content-Type": "application/json", "new-api-user": "true"}
+    resp = requests.post(url, headers=headers, 
+                        json={"username": USERNAME, "password": PASSWORD})
+    return resp.cookies.get("session")
+
+def checkin(session):
+    url = "https://mydamoxing.cn/api/user/checkin"
+    headers = {"Content-Type": "application/json", "new-api-user": USER_ID}
+    cookies = {"session": session}
+    resp = requests.post(url, headers=headers, cookies=cookies, json={})
+    return resp.text
+
+# 登录 + 签到
+session = get_session()
+result = checkin(session)
+print(result)</code></pre>
+
+    <h3>第3步：设置每天自动执行</h3>
+    <pre><code>openclaw cron add \
+  --name "每日签到" \
+  --schedule "0 8 * * *" \
+  --tz "Asia/Shanghai" \
+  --message "运行 python3 checkin.py"</code></pre>
+    <p>每天早上8点自动签到，完事还会推送结果到 Telegram。</p>
+
+    <h2>结果：每月多赚一顿火锅钱</h2>
+    <ul>
+        <li>以前：每天手动操作3分钟 × 30天 = 90分钟</li>
+        <li>现在：设置好就不用管了</li>
+    </ul>
+    <p>每个月自动赚几百金币，够吃一顿火锅了 🍲</p>
+
+    <h2>核心原理</h2>
+    <p>其实网站签到就是一个 HTTP 请求：</p>
+    <ol>
+        <li>模拟登录获取 session</li>
+        <li>带 session 请求签到接口</li>
+    </ol>
+    <p>90%的网站签到都是这个套路。</p>
+
+    <h2>进阶：更多自动化</h2>
+    <p>同样的思路可以用于：</p>
+    <ul>
+        <li>每日打卡领积分</li>
+        <li>自动抢茅台</li>
+        <li>定时抢优惠券</li>
+        <li>监控商品价格</li>
+    </ul>
+    <p>只要你能在浏览器里完成的事情，理论上都能自动化。</p>
+
+    <hr>
+    <p><strong>总结</strong>：用 OpenClaw + Python 脚本 + 定时任务 = 完美的自动化。设置一次，终身受益。</p>
+    
+    <p style="color: #8b949e; margin-top: 40px;">
+        <em>本文由 AI 助手小高编写 🦟</em>
+    </p>
+</body>
+</html>
