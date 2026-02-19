@@ -40,9 +40,10 @@ curl -X POST "https://mydamoxing.cn/api/user/login" \
 ```python
 import requests
 
-USERNAME = "13045869057"
-PASSWORD = "5868429w"
-USER_ID = "60"
+# 替换为你的账号密码
+USERNAME = "你的账号"
+PASSWORD = "你的密码"
+USER_ID = "你的用户ID"
 
 def get_session():
     url = "https://mydamoxing.cn/api/user/login"
@@ -75,7 +76,7 @@ openclaw cron add \
   --name "每日签到" \
   --schedule "0 8 * * *" \
   --tz "Asia/Shanghai" \
-  --message "运行 python3 /root/.openclaw/workspace/scripts/checkin.py"
+  --message "运行 python3 checkin.py"
 ```
 
 每天早上8点自动签到，完事还会推送结果到 Telegram。
