@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我是如何用AI实现"一人公司"自动化的 | 蚊子博客</title>
+    <meta name="description" content="分享用AI实现一人公司自动化的实战经验，包括签到脚本、Twitter发布、AI新闻日报等">
+    <meta name="keywords" content="AI自动化,一人公司,效率工具,OpenClaw">
+    <meta name="author" content="蚊子">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wgwght@400;500;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-card: #1a1a25;
+            --accent-cyan: #00f0ff;
+            --accent-purple: #a855f7;
+            --accent-green: #22d3ee;
+            --text-primary: #e4e4e7;
+            --text-secondary: #a1a1aa;
+            --border-color: #27272a;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.8;
+            padding: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            color: var(--accent-cyan);
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+        .date { text-align: center; color: var(--text-secondary); margin-bottom: 2rem; }
+        h2 {
+            color: var(--accent-purple);
+            font-size: 1.3rem;
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        h3 { color: var(--accent-green); font-size: 1.1rem; margin: 1.2rem 0 0.5rem; }
+        .item { background: var(--bg-card); padding: 1rem; margin: 1rem 0; border-radius: 8px; border: 1px solid var(--border-color); }
+        .summary { color: var(--text-secondary); margin: 0.5rem 0; }
+        table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        th, td { padding: 0.8rem; text-align: left; border-bottom: 1px solid var(--border-color); }
+        th { color: var(--accent-green); }
+        code { background: var(--bg-card); padding: 0.2rem 0.5rem; border-radius: 4px; color: var(--accent-cyan); }
+        pre { background: var(--bg-card); padding: 1rem; border-radius: 8px; overflow-x: auto; margin: 1rem 0; }
+        .back { display: inline-block; margin-bottom: 1rem; color: var(--accent-cyan); }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back">← 返回首页</a>
+    <h1>🦟 我是如何用AI实现"一人公司"自动化的</h1>
+    <p class="date">2026年2月20日</p>
+
+    <h2>背景</h2>
+    <div class="item">
+        <p>一个人的公司，怎么和团队竞争？答案是：让AI帮你打工。</p>
+        <p>过去一个月，我搭建了一套自动化系统，让AI帮我完成大部分重复工作。早上醒来，新闻已经整理好、推文已经发布、短视频已经生成。这就是"一人公司"的正确打开方式。</p>
+    </div>
+
+    <h2>我在用的自动化工具</h2>
+
+    <div class="item">
+        <h3>1. 定时签到脚本</h3>
+        <p>每天早上7点，自动运行签到脚本：访问目标网站 → 自动填写账号 → 完成签到 → 记录结果</p>
+    </div>
+
+    <div class="item">
+        <h3>2. Twitter自动发布</h3>
+        <p>每天两条推文，AI自动读取当天AI新闻和Reddit摘要，生成文案推送到我确认，确认后自动发布。</p>
+    </div>
+
+    <div class="item">
+        <h3>3. AI新闻日报</h3>
+        <p>每天9点自动抓取HackerNews、GitHub Trending、36氪资讯，整理成AI新闻日报推送到Telegram。</p>
+    </div>
+
+    <div class="item">
+        <h3>4. 短视频自动生成</h3>
+        <p>每天9:30自动选题、撰稿、生成配音、渲染视频，发送到Telegram。</p>
+    </div>
+
+    <h2>核心架构</h2>
+    <div class="item">
+        <pre>定时任务（Cron）
+    ↓
+Python脚本（执行具体任务）
+    ↓
+Telegram（推送结果给我确认）
+    ↓
+执行/反馈</pre>
+        <p>关键是：<strong>AI负责执行，我负责确认</strong>。</p>
+    </div>
+
+    <h2>用的技术栈</h2>
+    <div class="item">
+        <ul>
+            <li>定时任务：OpenClaw Cron</li>
+            <li>脚本语言：Python</li>
+            <li>AI工具：OpenClaw、edge-tts</li>
+            <li>发布平台：Telegram、Twitter</li>
+            <li>知识管理：Obsidian + GitHub Pages</li>
+        </ul>
+    </div>
+
+    <h2>什么样的事情值得自动化？</h2>
+    <div class="item">
+        <p><strong>判断标准：</strong></p>
+        <ul>
+            <li>这件事每天/每周都要做吗？</li>
+            <li>做这件事需要多少时间？</li>
+            <li>自动化后能省多少时间？</li>
+        </ul>
+    </div>
+
+    <h2>成本</h2>
+    <div class="item">
+        <p>目前成本：服务器约100元/月 + 域名免费（GitHub Pages）</p>
+        <p><strong>总计：约100元/月</strong></p>
+    </div>
+
+    <h2>总结</h2>
+    <div class="item">
+        <p>一人公司不是一个人做完所有事，而是让AI帮你做完所有事。</p>
+        <p>你只需要做两件事：</p>
+        <ol>
+            <li>想清楚做什么</li>
+            <li>确认AI做得好不好</li>
+        </ol>
+    </div>
+
+    <p style="margin-top: 2rem; text-align: center; color: var(--text-secondary);">
+        <a href="index.html" style="color: var(--accent-cyan);">← 返回首页</a>
+    </p>
+</body>
+</html>

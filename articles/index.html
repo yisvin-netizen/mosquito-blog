@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文章列表 | 蚊子 - 数字营销专家 & AI实践者</title>
+    <meta name="description" content="蚊子原创文章，涵盖AI工具、数字营销、短视频运营、效率提升等主题。">
+    <meta name="keywords" content="蚊子, 数字营销, AI工具, 短视频运营, 人工智能, ChatGPT, AI教程">
+    <meta name="author" content="蚊子">
+    <meta name="robots" content="index, follow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-card: #1a1a25;
+            --accent-cyan: #00f0ff;
+            --accent-purple: #a855f7;
+            --accent-green: #22d3ee;
+            --text-primary: #e4e4e7;
+            --text-secondary: #a1a1aa;
+            --border-color: #27272a;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .bg-grid {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 240, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 240, 255, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        nav {
+            background: rgba(10, 10, 15, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-cyan);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--accent-cyan);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .page-header h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .article-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: transform 0.3s, border-color 0.3s;
+            text-decoration: none;
+            display: block;
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-cyan);
+        }
+
+        .article-category {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: rgba(0, 240, 255, 0.1);
+            color: var(--accent-cyan);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .article-card h2 {
+            font-size: 1.3rem;
+            color: var(--text-primary);
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+        }
+
+        .article-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .article-meta {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            margin-top: 4rem;
+        }
+
+        @media (max-width: 768px) {
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-grid"></div>
+    
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">WENZI</a>
+            <ul class="nav-links">
+                <li><a href="index.html#about">关于</a></li>
+                <li><a href="index.html#skills">技能</a></li>
+                <li><a href="index.html#projects">项目</a></li>
+                <li><a href="ai-news/index.html">AI早报</a></li>
+                <li><a href="articles/index.html" class="active">文章</a></li>
+                <li><a href="index.html#contact">联系</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="page-header">
+            <h1>📚 文章</h1>
+            <p>分享AI工具、数字营销、效率提升等实战经验</p>
+        </div>
+
+        <div class="articles-grid">
+
+            <a href="一人公司自动化实践.html" class="article-card">
+                <span class="article-category">自动化</span>
+                <h2>我是如何用AI实现"一人公司"自动化的</h2>
+                <p>一个人的公司，怎么和团队竞争？答案是：让AI帮你打工。分享我的自动化实践经验。</p>
+                <div class="article-meta">
+                    <span>🕒 2026-02-20</span>
+                    <span>📖 阅读全文 →</span>
+                </div>
+            </a>
+            <a href="OpenClaw自动发推教程.html" class="article-card">
+                <span class="article-category">自动化</span>
+                <h2>太强了！用OpenClaw自动化发推文，我再也不用手动操作了</h2>
+                <p>每次都要打开Twitter、输入内容、点击发送……用AI自动化后，每天自动推送，流量稳定增长。</p>
+                <div class="article-meta">
+                    <span>🕒 2026-02-20</span>
+                    <span>📖 阅读全文 →</span>
+                </div>
+            </a>
+
+            <a href="openclaw自动签到教程.html" class="article-card">
+                <span class="article-category">自动化</span>
+                <h2>太强了！用OpenClaw实现网站自动签到，我再也不用手动操作了</h2>
+                <p>每次都要手动打开网站、登录、点击签到……太累了！用AI自动化后，每天早上自动完成。</p>
+                <div class="article-meta">
+                    <span>🕒 2026-02-19</span>
+                    <span>📖 阅读全文 →</span>
+                </div>
+            </a>
+
+            <a href="ai-sop-tutorial.html" class="article-card">
+                <span class="article-category">AI工具</span>
+                <h2>AI短视频生成SOP：从选题到发布的全流程实战教程</h2>
+                <p>如何用AI自动化生产高质量短视频？本文将揭秘完整的短视频创作SOP，包含选题评估、标准流程、底层原理分析。</p>
+                <div class="article-meta">
+                    <span>🕒 2026-02-17</span>
+                    <span>📖 阅读全文 →</span>
+                </div>
+            </a>
+
+            <a href="技能安装实战.html" class="article-card">
+                <span class="article-category">AI工具</span>
+                <h2>太强了！AI助手安装这12个技能，能力瞬间翻倍</h2>
+                <p>手把手教你安装12个实用技能，AI助手能力翻倍！搜索、开发、自动化、通讯全覆盖。</p>
+                <div class="article-meta">
+                    <span>🕒 2026-02-19</span>
+                    <span>📖 阅读全文 →</span>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 蚊子. All rights reserved.</p>
+    </footer>
+</body>
+</html>
