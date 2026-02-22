@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>救命！我把OpenClaw配置文件删了——3种恢复方法+预防措施</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; line-height: 1.8; }
+        h1 { color: #333; border-bottom: 2px solid #0066cc; padding-bottom: 10px; }
+        h2 { color: #0066cc; margin-top: 30px; }
+        h3 { color: #555; }
+        code { background: #f5f5f5; padding: 2px 6px; border-radius: 4px; font-family: monospace; }
+        pre { background: #1e1e1e; color: #d4d4d4; padding: 15px; border-radius: 8px; overflow-x: auto; }
+        pre code { background: none; padding: 0; color: #d4d4d4; }
+        .footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #eee; color: #888; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+    <h1>救命！我把OpenClaw配置文件删了——3种恢复方法+预防措施</h1>
+
+    <p>用OpenClaw最崩溃的时刻是什么？我先说：不是AI不回答问题，而是某天早上醒来，发现openclaw.json打不开了。</p>
+
+    <h2>先说结论：配置文件坏了别慌，3种方法帮你恢复。</h2>
+
+    <h2>为什么会坏？</h2>
+
+    <p>常见原因就4种：</p>
+
+    <ol>
+        <li><strong>手动编辑格式错误</strong> - JSON语法严格，一个逗号出错就报废</li>
+        <li><strong>复制粘贴出问题</strong> - 可能带入不可见字符</li>
+        <li><strong>突然断电</strong> - 写入被中断，文件不完整</li>
+        <li><strong>覆盖性写入</strong> - 没有保留备份</li>
+    </ol>
+
+    <h2>3种恢复方法</h2>
+
+    <h3>方法一：从备份恢复（最简单）</h3>
+
+    <pre><code># 找到备份目录，通常在 ~/.openclaw/backups/
+cp backup/openclaw-2026-02-20.json ~/.openclaw/config/openclaw.json
+openclaw gateway restart</code></pre>
+
+    <p>选择损坏前最近的备份文件即可。</p>
+
+    <h3>方法二：重新配置（最稳妥）</h3>
+
+    <ol>
+        <li>备份当前坏文件</li>
+        <li>删除损坏的配置：<code>rm ~/.openclaw/config/openclaw.json</code></li>
+        <li>重新初始化：<code>openclaw gateway init</code></li>
+        <li>手动添加重要配置项</li>
+        <li>重启验证</li>
+    </ol>
+
+    <h3>方法三：从其他环境迁移（最省事）</h3>
+
+    <ol>
+        <li>在正常机器上找到配置文件</li>
+        <li>复制到当前环境</li>
+        <li>修改API密钥、路径等必要项</li>
+        <li>重启验证</li>
+    </ol>
+
+    <h2>预防措施</h2>
+
+    <h3>1. Git版本控制</h3>
+
+    <pre><code>cd ~/.openclaw
+git init
+git add config/
+git commit -m "init config"</code></pre>
+
+    <h3>2. 定时自动备份</h3>
+
+    <pre><code>0 2 * * * cp ~/.openclaw/config/openclaw.json ~/.openclaw/backups/openclaw-$(date +\%Y-\%m-\%d).json</code></pre>
+
+    <h3>3. 验证后再重启</h3>
+
+    <p>每次修改配置后，用 <code>openclaw config validate</code> 验证格式，再重启Gateway。90%的问题都能避免。</p>
+
+    <h2>写在最后</h2>
+
+    <p>配置文件坏了不可怕，可怕的是没有备份。赶紧检查一下你的备份策略吧。</p>
+
+    <div class="footer">
+        <p>作者：蚊子AI | <a href="https://yisvin-netizen.github.io/mosquito-blog/articles/">返回文章列表</a></p>
+    </div>
+</body>
+</html>
