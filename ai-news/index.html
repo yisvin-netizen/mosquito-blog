@@ -36,150 +36,65 @@
             margin-bottom: 0.5rem;
             text-align: center;
         }
-        .subtitle { text-align: center; color: var(--text-secondary); margin-bottom: 2rem; }
-        
-        .back { display: inline-block; margin-bottom: 1rem; color: var(--accent-cyan); }
-        
-        .news-list {
-            display: grid;
-            gap: 1rem;
-        }
-        
-        .news-item {
+        .date { text-align: center; color: var(--text-secondary); margin-bottom: 2rem; }
+        .item {
             background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
             padding: 1.5rem;
-            transition: all 0.3s ease;
-            cursor: pointer;
+            margin: 1rem 0;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+        a {
+            color: var(--accent-cyan);
             text-decoration: none;
-            color: inherit;
-            display: block;
         }
-        
-        .news-item:hover {
-            border-color: var(--accent-cyan);
-            transform: translateX(10px);
-            box-shadow: 0 0 20px rgba(0, 240, 255, 0.1);
-        }
-        
-        .news-date {
-            font-family: 'Orbitron', sans-serif;
-            color: var(--accent-purple);
-            font-size: 1.2rem;
-            font-weight: 700;
-        }
-        
-        .news-preview {
-            color: var(--text-secondary);
-            margin-top: 0.5rem;
-            font-size: 0.95rem;
-        }
-        
-        .news-tags {
-            display: flex;
-            gap: 0.5rem;
-            margin-top: 1rem;
-            flex-wrap: wrap;
-        }
-        
-        .tag {
-            background: rgba(168, 85, 247, 0.2);
-            color: var(--accent-purple);
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-        }
-        
-        .empty-state {
-            text-align: center;
-            padding: 3rem;
-            color: var(--text-secondary);
-        }
+        a:hover { text-decoration: underline; }
+        .back { display: inline-block; margin-bottom: 1rem; color: var(--accent-cyan); }
     </style>
 </head>
 <body>
     <a href="../index.html" class="back">← 返回首页</a>
-    
-    <h1><span style="font-size:2rem;">🦟</span> AI新闻早报</h1>
-    <p class="subtitle">每日AI热点一览</p>
-    
-    <div class="news-list">
-        
-        <a href="2026-02-23.html" class="news-item">
-            <div class="news-date">2026年2月23日</div>
-            <p class="news-preview">Boss直聘开源模型登顶HuggingFace、奥尔特曼感叹中国技术进步"快得惊人"、Google限制OpenClaw用户...</p>
-            <div class="news-tags">
-                <span class="tag">🔥 AI大新闻</span>
-                <span class="tag">🚀 GitHub</span>
-                <span class="tag">💻 HackerNews</span>
-            </div>
-        </a>
-        
-        <a href="2026-02-22.html" class="news-item">
-            <div class="news-date">2026年2月22日</div>
-            <p class="news-preview">Ggml.ai加入HuggingFace推动本地AI发展、Karpathy提出Claws新概念、Claude为何是Electron App...</p>
-            <div class="news-tags">
-                <span class="tag">🔥 AI大新闻</span>
-                <span class="tag">🚀 GitHub</span>
-                <span class="tag">💻 HackerNews</span>
-            </div>
-        </a>
-        
-        <a href="2026-02-21.html" class="news-item">
-            <div class="news-date">2026年2月21日</div>
-            <p class="news-preview">Ggml.ai加入Hugging Face推动本地AI发展、通往普及AI之路17k tokens/sec、AI助手商业化趋势...</p>
-            <div class="news-tags">
-                <span class="tag">🔥 AI大新闻</span>
-                <span class="tag">🚀 GitHub</span>
-                <span class="tag">💻 HackerNews</span>
-            </div>
-        </a>
-        
-        <a href="2026-02-20.html" class="news-item">
-            <div class="news-date">2026年2月20日</div>
-            <p class="news-preview">蚂蚁百灵大模型企业版发布、我国科学家6G突破、Gemini 3.1 Pro登顶HN、Anthropic发布Agent自主性研究...</p>
-            <div class="news-tags">
-                <span class="tag">🔥 AI大新闻</span>
-                <span class="tag">🚀 HackerNews</span>
-                <span class="tag">📊 趋势观察</span>
-            </div>
-        </a>
-        
-        <a href="2026-02-19.html" class="news-item">
-            <div class="news-date">2026年2月19日</div>
-            <p class="news-preview">Anthropic禁止第三方订阅认证、Step 3.5 Flash发布、Chrome零日漏洞、Tailscale P2P组网新方案...</p>
-            <div class="news-tags">
-                <span class="tag">🔥 AI大新闻</span>
-                <span class="tag">🚀 GitHub</span>
-                <span class="tag">💻 HN讨论</span>
-            </div>
-        </a>
-        
-        <a href="2026-02-18.html" class="news-item">
-            <div class="news-date">2026年2月18日</div>
-            <p class="news-preview">17家AI公司融资超1亿美元、科技巨头1万亿美元AI债券、印度2000亿美元数据中心投资...</p>
-            <div class="news-tags">
-                <span class="tag">🔥 AI大新闻</span>
-                <span class="tag">🚀 GitHub</span>
-                <span class="tag">💻 HN讨论</span>
-            </div>
-        </a>
-        
-        <a href="2026-02-17.html" class="news-item">
-            <div class="news-date">2026年2月17日</div>
-            <p class="news-preview">Google升级打破推理障碍、xAI新阶段发布、ByteDance Seed 2.0视频模型、OpenAI vs Anthropic竞争...</p>
-            <div class="news-tags">
-                <span class="tag">🔥 AI大新闻</span>
-                <span class="tag">💡 产品创新</span>
-                <span class="tag">💻 技术讨论</span>
-            </div>
-        </a>
-        
+    <h1>🦟 AI新闻早报</h1>
+    <p class="date">每天9点更新</p>
+
+    <div class="item">
+        <p><strong>2026年2月24日</strong></p>
+        <p>年龄验证陷阱、美国销毁Flock监控摄像头、Ladybird采用Rust、Elsevier关闭金融期刊垄断...</p>
+        <p style="margin-top: 0.5rem;">
+            🔥 AI大新闻 | 🚀 GitHub | 📱 HackerNews
+        </p>
+        <p><a href="2026-02-24.html">查看详情 →</a></p>
     </div>
-    
-    <p class="empty-state" style="margin-top: 3rem;">
-        持续更新中...
+
+    <div class="item">
+        <p><strong>2026年2月23日</strong></p>
+        <p>Boss直聘开源模型登顶HuggingFace、奥尔特曼感叹中国技术进步"快得惊人"、Google限制OpenClaw用户...</p>
+        <p style="margin-top: 0.5rem;">
+            🔥 AI大新闻 | 🚀 GitHub | 💻 HackerNews
+        </p>
+        <p><a href="2026-02-23.html">查看详情 →</a></p>
+    </div>
+
+    <div class="item">
+        <p><strong>2026年2月22日</strong></p>
+        <p>Ggml.ai加入HuggingFace推动本地AI发展、Karpathy提出Claws新概念、Claude为何是Electron App...</p>
+        <p style="margin-top: 0.5rem;">
+            🔥 AI大新闻 | 🚀 GitHub | 💻 HackerNews
+        </p>
+        <p><a href="2026-02-22.html">查看详情 →</a></p>
+    </div>
+
+    <div class="item">
+        <p><strong>2026年2月21日</strong></p>
+        <p>Ggml.ai加入Hugging Face推动本地AI发展、通往普及AI之路17k tokens/sec、AI助手商业化趋势...</p>
+        <p style="margin-top: 0.5rem;">
+            🔥 AI大新闻 | 🚀 GitHub | 💻 HackerNews
+        </p>
+        <p><a href="2026-02-21.html">查看详情 →</a></p>
+    </div>
+
+    <p style="margin-top: 2rem; text-align: center; color: var(--text-secondary);">
+        <a href="../index.html" style="color: var(--accent-cyan);">← 返回首页</a>
     </p>
 </body>
 </html>
