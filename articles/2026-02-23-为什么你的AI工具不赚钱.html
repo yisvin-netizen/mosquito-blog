@@ -7,142 +7,127 @@
     <meta name="description" content="分析AI工具不赚钱的原因，探讨如何找到真正的用户需求">
     <meta name="keywords" content="AI工具,创业,产品经理">
     <meta name="author" content="蚊子">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-card: #1a1a25;
+            --accent-cyan: #00f0ff;
+            --accent-purple: #a855f7;
+            --accent-green: #22d3ee;
+            --text-primary: #e4e4e7;
+            --text-secondary: #a1a1aa;
+            --border-color: #27272a;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            font-family: 'Noto Sans SC', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
             line-height: 1.8;
-            max-width: 800px;
+            padding: 2rem;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 20px;
-            color: #333;
-            background: #f5f5f5;
-        }
-        .container {
-            background: white;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        .back-link {
-            color: #666;
-            text-decoration: none;
-            font-size: 14px;
-        }
-        .date {
-            color: #999;
-            font-size: 14px;
-            margin-top: 10px;
         }
         h1 {
-            color: #333;
-            font-size: 28px;
-            margin-top: 20px;
-        }
-        h2 {
-            color: #333;
-            font-size: 20px;
-            margin-top: 30px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #333;
-        }
-        h3 {
-            color: #555;
-            font-size: 16px;
-            margin-top: 20px;
-        }
-        p {
-            margin: 15px 0;
-            text-align: justify;
-        }
-        ul, ol {
-            padding-left: 25px;
-        }
-        li {
-            margin: 8px 0;
-        }
-        strong {
-            color: #333;
-        }
-        .footer {
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
-            color: #666;
-            font-size: 14px;
+            font-family: 'Orbitron', sans-serif;
+            color: var(--accent-cyan);
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
             text-align: center;
         }
-        a {
-            color: #0066cc;
+        .date { text-align: center; color: var(--text-secondary); margin-bottom: 2rem; }
+        h2 {
+            color: var(--accent-purple);
+            font-size: 1.3rem;
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border-color);
         }
+        h3 {
+            color: var(--accent-green);
+            font-size: 1.1rem;
+            margin: 1.2rem 0 0.5rem;
+        }
+        .item {
+            background: var(--bg-card);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+        p { margin: 0.8rem 0; }
+        ul, ol { padding-left: 1.5rem; }
+        li { margin: 0.5rem 0; }
+        strong { color: var(--accent-green); }
+        code {
+            background: var(--bg-card);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            color: var(--accent-cyan);
+        }
+        .back { display: inline-block; margin-bottom: 1rem; color: var(--accent-cyan); }
     </style>
 </head>
 <body>
-    <div class="container">
-        <a href="index.html" class="back-link">← 返回首页</a>
-        <p class="date">2026年2月23日</p>
-        
-<h1>为什么你的AI工具不赚钱？</h1>
+    <a href="index.html" class="back">← 返回首页</a>
+    <h1>为什么你的AI工具不赚钱？</h1>
+    <p class="date">2026年2月23日</p>
 
-<p>很多人觉得，只要做个AI工具，就能赚钱。现实往往很打脸。太多人沉迷于技术本身，却忽略了商业的本质。</p>
-
-<p>最近Reddit上有个案例：一个卖圣经学习用品的店铺，月入21.4万美元，而且还有6个竞争对手用同样的模式。这给了我很大启发。</p>
-
-<h2>你在做产品，还是在追热点？</h2>
-
-<p>我见过太多AI工具创业者，他们的逻辑是这样的：热点是什么？Agent？做！风口是什么？多模态？做！</p>
-
-<p>结果做了一堆"看起来有用"的东西，根本没人买单。</p>
-
-<p>圣经学习用品店为什么能月入21.4万？因为它解决了一个真问题：想买圣经相关产品的人，需要一个专业的购买渠道。</p>
-
-<h2>真正的护城河，是别人拿不走的</h2>
-
-<p>先问自己三个问题：</p>
-
-<p><strong>问题一：用户没有你的产品，会损失什么？</strong> 如果只是"看看而已"，说明不是必需品。</p>
-
-<p><strong>问题二：解决的是真问题还是伪需求？</strong> 伪需求就是"听起来有用，但没人用"。</p>
-
-<p><strong>问题三：用户愿意付费还是白嫖？</strong> 如果只是白嫖，那就别怪不付费。</p>
-
-<p>圣经店能赚钱，因为它解决了"不知道去哪买可信产品"的真问题。用户愿意付费，因为省时省力。</p>
-
-<h2>追热点不如解决真问题</h2>
-
-<p>AI圈很奇怪：人人追热点，热点过了，用户留下了吗？没有。</p>
-
-<p>真正的创业者，应该像那个圣经店一样，找到细分市场，解决真实需求。</p>
-
-<p>不要问"什么技术最火"，要问"什么问题是没人解决的"。这是每个创业者都应该思考的问题。</p>
-
-<h2>案例复盘</h2>
-
-<p>这个案例的成功，给我们很多启示：</p>
-
-<p><strong>成功的关键：</strong></p>
-
-<ol>
-<li>细分定位：只做圣经用品，不贪多</li>
-<li>解决信任：用户不知道去哪买可信产品</li>
-<li>持续经营：靠长期积累，不是爆款</li>
-</ol>
-
-<p>圣经店老板没有追逐AI热点，而是专注于自己擅长的领域。这种专注，让他成为了细分市场的专家。用户信任他，愿意在他这里购买产品。</p>
-
-<p>这告诉我们：不要试图讨好所有人，找到你的目标用户，解决他们的真问题，这就够了。</p>
-
-<h2>写在最后</h2>
-
-<p>AI是工具，不是答案。工具再厉害，如果解决的不是真问题，用户也不会买单。</p>
-
-<p>月入21.4万的店，不是因为用了什么高科技，而是解决了真问题。</p>
-
-<p>你最近在做什么AI产品？不妨先问问自己：没有它，用户会损失什么？</p>
-
-        <div class="footer">
-            <p>蚊子说AI · 让AI成为你的生产力</p>
-            <a href="index.html" class="back-link">返回首页 →</a>
-        </div>
+    <h2>背景</h2>
+    <div class="item">
+        <p>很多人觉得，只要做个AI工具，就能赚钱。现实往往很打脸。太多人沉迷于技术本身，却忽略了商业的本质。</p>
+        <p>最近Reddit上有个案例：一个卖圣经学习用品的店铺，月入21.4万美元，而且还有6个竞争对手用同样的模式。这给了我很大启发。</p>
     </div>
+
+    <h2>你在做产品，还是在追热点？</h2>
+    <div class="item">
+        <p>我见过太多AI工具创业者，他们的逻辑是这样的：热点是什么？Agent？做！风口是什么？多模态？做！</p>
+        <p>结果做了一堆"看起来有用"的东西，根本没人买单。</p>
+        <p>圣经学习用品店为什么能月入21.4万？因为它解决了一个真问题：想买圣经相关产品的人，需要一个专业的购买渠道。</p>
+    </div>
+
+    <h2>真正的护城河，是别人拿不走的</h2>
+    <div class="item">
+        <p>先问自己三个问题：</p>
+        <p><strong>问题一：用户没有你的产品，会损失什么？</strong> 如果只是"看看而已"，说明不是必需品。</p>
+        <p><strong>问题二：解决的是真问题还是伪需求？</strong> 伪需求就是"听起来有用，但没人用"。</p>
+        <p><strong>问题三：用户愿意付费还是白嫖？</strong> 如果只是白嫖，那就别怪不付费。</p>
+        <p>圣经店能赚钱，因为它解决了"不知道去哪买可信产品"的真问题。用户愿意付费，因为省时省力。</p>
+    </div>
+
+    <h2>追热点不如解决真问题</h2>
+    <div class="item">
+        <p>AI圈很奇怪：人人追热点，热点过了，用户留下了吗？没有。</p>
+        <p>真正的创业者，应该像那个圣经店一样，找到细分市场，解决真实需求。</p>
+        <p>不要问"什么技术最火"，要问"什么问题是没人解决的"。这是每个创业者都应该思考的问题。</p>
+    </div>
+
+    <h2>案例复盘</h2>
+    <div class="item">
+        <p>这个案例的成功，给我们很多启示：</p>
+        <p><strong>成功的关键：</strong></p>
+        <ol>
+            <li>细分定位：只做圣经用品，不贪多</li>
+            <li>解决信任：用户不知道去哪买可信产品</li>
+            <li>持续经营：靠长期积累，不是爆款</li>
+        </ol>
+        <p>圣经店老板没有追逐AI热点，而是专注于自己擅长的领域。这种专注，让他成为了细分市场的专家。用户信任他，愿意在他这里购买产品。</p>
+        <p>这告诉我们：不要试图讨好所有人，找到你的目标用户，解决他们的真问题，这就够了。</p>
+    </div>
+
+    <h2>写在最后</h2>
+    <div class="item">
+        <p>AI是工具，不是答案。工具再厉害，如果解决的不是真问题，用户也不会买单。</p>
+        <p>月入21.4万的店，不是因为用了什么高科技，而是解决了真问题。</p>
+        <p>你最近在做什么AI产品？不妨先问问自己：没有它，用户会损失什么？</p>
+    </div>
+
+    <p style="margin-top: 2rem; text-align: center; color: var(--text-secondary);">
+        <a href="index.html" style="color: var(--accent-cyan);">← 返回首页</a>
+    </p>
 </body>
 </html>
