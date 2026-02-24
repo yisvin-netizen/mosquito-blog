@@ -3,138 +3,228 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI新闻日报 - 2026-02-20</title>
+    <title>AI新闻早报 2026-02-24 | 蚊子博客</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-card: #1a1a25;
+            --accent-cyan: #00f0ff;
+            --accent-purple: #a855f7;
+            --accent-green: #22d3ee;
+            --text-primary: #e4e4e7;
+            --text-secondary: #a1a1aa;
+            --border-color: #27272a;
+        }
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        html { scroll-behavior: smooth; }
+        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            min-height: 100vh;
-            padding: 40px 20px;
+            font-family: 'Noto Sans SC', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
         }
-        .container { max-width: 800px; margin: 0 auto; }
+
+        /* Background Grid */
+        .bg-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(0, 240, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 240, 255, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(10, 10, 15, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-cyan);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--accent-cyan);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
         h1 {
-            color: #fff;
+            font-family: 'Orbitron', sans-serif;
+            color: var(--accent-cyan);
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
             text-align: center;
-            margin-bottom: 10px;
-            font-size: 2em;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-        .subtitle {
-            color: #888;
+
+        .date {
             text-align: center;
-            margin-bottom: 30px;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
         }
-        .section {
-            background: #fff;
-            border-radius: 16px;
-            padding: 24px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+
+        h2 {
+            color: var(--accent-purple);
+            font-size: 1.3rem;
+            margin: 2rem 0 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border-color);
         }
-        .section h2 {
-            color: #1a1a2e;
-            border-left: 4px solid #e94560;
-            padding-left: 12px;
-            margin-bottom: 16px;
-            font-size: 1.4em;
+
+        .item {
+            background: var(--bg-card);
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s, border-color 0.3s;
         }
-        .news-item {
-            padding: 12px 0;
-            border-bottom: 1px solid #eee;
+
+        .item:hover {
+            border-color: var(--accent-cyan);
         }
-        .news-item:last-child { border-bottom: none; }
-        .news-item h3 {
-            color: #333;
-            font-size: 1.1em;
-            margin-bottom: 6px;
-        }
-        .news-item p { color: #666; font-size: 0.95em; line-height: 1.6; }
-        .news-item a { color: #e94560; text-decoration: none; }
-        .news-item a:hover { text-decoration: underline; }
-        .tag {
-            display: inline-block;
-            background: #e94560;
-            color: #fff;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 0.8em;
-            margin-right: 8px;
-        }
-        table { width: 100%; border-collapse: collapse; margin: 16px 0; }
-        th, td { padding: 10px; text-align: left; border-bottom: 1px solid #eee; }
-        th { background: #f8f9fa; font-weight: 600; }
-        .footer {
-            text-align: center;
-            color: #666;
-            margin-top: 30px;
-            font-size: 0.9em;
-        }
+
+        ul { padding-left: 1.5rem; }
+        li { margin: 0.5rem 0; color: var(--text-secondary); }
+        strong { color: var(--accent-cyan); }
+
         .back-link {
             display: inline-block;
-            color: #e94560;
+            margin-bottom: 1.5rem;
+            color: var(--accent-cyan);
             text-decoration: none;
-            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
         }
     </style>
 </head>
 <body>
+    <div class="bg-grid"></div>
+    
+    <nav>
+        <div class="container">
+            <a href="../index.html" class="logo">MOSQUITO</a>
+            <ul class="nav-links">
+                <li><a href="../index.html#about">关于</a></li>
+                <li><a href="../index.html#skills">技能</a></li>
+                <li><a href="../index.html#projects">项目</a></li>
+                <li><a href="index.html" class="active">AI早报</a></li>
+                <li><a href="../articles/index.html">文章</a></li>
+                <li><a href="../index.html#contact">联系</a></li>
+            </ul>
+        </div>
+    </nav>
+
     <div class="container">
-        <a href="index.html" class="back-link">← 返回首页</a>
-        <h1>🤖 AI新闻日报</h1>
-        <p class="subtitle">2026年2月20日</p>
-        
-        <div class="section">
-            <h2>🔥 AI大新闻</h2>
-            <div class="news-item">
-                <h3>1. 蚂蚁数科将发布百灵大模型企业版</h3>
-                <p>更关注大模型<strong>幻觉抑制、指令遵循、Agentic Engineering</strong>以及安全合规能力，满足To B场景高标准需求。目前已在多家金融、能源客户投产应用。</p>
-            </div>
-            <div class="news-item">
-                <h3>2. 我国科学家在光通信及6G领域取得新进展</h3>
-                <p>国际率先实现<strong>光纤通信和无线通信系统间的跨网络融合</strong>，自主研发的"光纤—无线一体化融合通信系统"数据传输速率刷新纪录，成果发表于《自然》。</p>
-            </div>
-            <div class="news-item">
-                <h3>3. 太初元碁完成智谱GLM-5.0及阿里千问双开源模型深度适配</h3>
-                <p>在自研T100加速卡上完成适配，推出阶梯式开发工具链，帮助开发者快速构建高性能算子，降低CUDA生态迁移成本。</p>
-            </div>
-            <div class="news-item">
-                <h3>4. 富时罗素为SpaceX、OpenAI等巨型IPO铺路</h3>
-                <p>修订"快速纳入"规则，以应对2026年预期中的大型IPO。</p>
-            </div>
+        <a href="index.html" class="back-link">← 返回早报列表</a>
+        <h1>🦟 AI新闻早报 2026-02-24</h1>
+        <p class="date">每天9点更新</p>
+
+        <h2>🔥 AI大新闻</h2>
+        <div class="item">
+            <ul>
+                <li><strong>年龄验证陷阱</strong>：年龄验证会破坏每个人的数据保护，引发隐私热议（1095 points）</li>
+                <li><strong>美国人正在销毁Flock监控摄像头</strong>：监控摄像头隐私争议升温（489 points）</li>
+                <li><strong>Ladybird采用Rust</strong>：开源浏览器项目宣布采用Rust（1004 points）</li>
+                <li><strong>Elsevier关闭金融期刊引用垄断</strong>：学术出版巨头让步（507 points）</li>
+            </ul>
         </div>
-        
-        <div class="section">
-            <h2>🚀 HackerNews热榜</h2>
-            <table>
-                <tr><th>排名</th><th>项目</th><th>热度</th></tr>
-                <tr><td>1</td><td><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-pro/" target="_blank">Gemini 3.1 Pro</a></td><td>492 points</td></tr>
-                <tr><td>2</td><td><a href="https://micasa.dev" target="_blank">Micasa – track your house from the terminal</a></td><td>412 points</td></tr>
-                <tr><td>3</td><td><a href="https://blog.zgp.org/micropayments-as-a-reality-check-for-news-sites/" target="_blank">Micropayments as a reality check for news sites</a></td><td>106 points</td></tr>
-                <tr><td>4</td><td><a href="https://github.com/manaflow-ai/cmux" target="_blank">Ghostty-based terminal</a></td><td>81 points</td></tr>
-                <tr><td>5</td><td><a href="https://github.com/veirt/weathr" target="_blank">Terminal weather app</a></td><td>151 points</td></tr>
-                <tr><td>6</td><td><a href="https://www.kasava.dev/blog/ai-as-exoskeleton" target="_blank">AI is not a coworker, it's an exoskeleton</a></td><td>134 points</td></tr>
-                <tr><td>7</td><td><a href="https://www.anthropic.com/research/measuring-agent-autonomy" target="_blank">Measuring AI agent autonomy</a></td><td>75 points</td></tr>
-            </table>
-            <p><strong>🔥 热点聚焦：</strong>Gemini 3.1 Pro 成为本周最受关注AI项目；Anthropic 发布AI Agent自主性测量研究</p>
+
+        <h2>🚀 GitHub热门</h2>
+        <div class="item">
+            <ul>
+                <li><strong>PgDog</strong>：无需修改应用即可扩展Postgres（157 points）</li>
+                <li><strong>Babyshark</strong>：Wireshark简化版，PCAP终端UI</li>
+            </ul>
         </div>
-        
-        <div class="section">
-            <h2>📊 趋势观察</h2>
-            <div class="news-item">
-                <h3><span class="tag">大模型To B</span></h3>
-                <p>蚂蚁百灵大模型企业版发布，说明AI应用正在从C端转向B端企业场景</p>
-            </div>
-            <div class="news-item">
-                <h3><span class="tag">Agent爆发</span></h3>
-                <p>Anthropic关于Agent自主性的研究显示，AI Agent正在成为下一个热点</p>
-            </div>
-            <div class="news-item">
-                <h3><span class="tag">硬件国产化</span></h3>
-                <p>太初元碁完成国产大模型适配，国产AI芯片生态逐步完善</p>
-            </div>
+
+        <h2>📱 HackerNews热榜</h2>
+        <div class="item">
+            <ul>
+                <li>年龄验证陷阱（1095 points）</li>
+                <li>Ladybird采用Rust（1004 points）</li>
+                <li>Elsevier关闭金融期刊垄断（507 points）</li>
+                <li>美国人销毁Flock摄像头（489 points）</li>
+            </ul>
         </div>
-        
-        <p class="footer">来源：36氪、HackerNews、GitHub Trending | 生成时间：2026-02-20 01:00 UTC</p>
+
+        <h2>💡 今日观点</h2>
+        <div class="item">
+            <p>隐私vs安全话题持续发酵，开源浏览器采用Rust成新趋势，监控摄像头争议引发讨论。</p>
+        </div>
+
+        <a href="index.html" class="back-link">← 返回早报列表</a>
     </div>
+
+    <footer>
+        <p>&copy; 2026 蚊子. All rights reserved.</p>
+    </footer>
 </body>
 </html>
