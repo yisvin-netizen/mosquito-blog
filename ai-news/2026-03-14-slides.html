@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Agent 自动化 - 重构企业运营方式</title>
+  <style>
+    /* ===== Bold Signal 风格 - 深色背景，鲜艳卡片 ===== */
+    :root {
+      --bg-primary: #0a0a0f;
+      --bg-secondary: #12121a;
+      --bg-card: #1a1a2e;
+      --text-primary: #ffffff;
+      --text-secondary: #a0a0b0;
+      --accent-primary: #ff6b35;
+      --accent-secondary: #00d4ff;
+      --accent-gradient: linear-gradient(135deg, #ff6b35 0%, #ff8e53 100%);
+      --card-shadow: 0 8px 32px rgba(255, 107, 53, 0.15);
+      --glow: 0 0 40px rgba(255, 107, 53, 0.3);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      overflow: hidden;
+      height: 100vh;
+    }
+
+    /* 幻灯片容器 */
+    .slides-container {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 60px 80px;
+      opacity: 0;
+      transition: opacity 0.6s ease;
+    }
+
+    .slide.active {
+      display: flex;
+      opacity: 1;
+    }
+
+    /* 背景装饰 */
+    .bg-decoration {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .bg-circle {
+      position: absolute;
+      border-radius: 50%;
+      background: var(--accent-gradient);
+      opacity: 0.08;
+      filter: blur(60px);
+    }
+
+    .bg-circle-1 {
+      width: 600px;
+      height: 600px;
+      top: -200px;
+      right: -200px;
+    }
+
+    .bg-circle-2 {
+      width: 400px;
+      height: 400px;
+      bottom: -100px;
+      left: -100px;
+    }
+
+    /* 内容区域 */
+    .content {
+      position: relative;
+      z-index: 1;
+      max-width: 1200px;
+      width: 100%;
+    }
+
+    /* 标题样式 */
+    h1 {
+      font-size: 4rem;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 24px;
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    h2 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 32px;
+      color: var(--text-primary);
+    }
+
+    h3 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--accent-secondary);
+      margin-bottom: 16px;
+    }
+
+    p {
+      font-size: 1.4rem;
+      line-height: 1.6;
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+    }
+
+    /* 卡片样式 */
+    .card {
+      background: var(--bg-card);
+      border-radius: 20px;
+      padding: 40px;
+      margin: 20px 0;
+      box-shadow: var(--card-shadow);
+      border: 1px solid rgba(255, 107, 53, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--glow);
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-top: 32px;
+    }
+
+    .card-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 32px;
+    }
+
+    .card-icon {
+      font-size: 3rem;
+      margin-bottom: 16px;
+    }
+
+    .card-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+    }
+
+    .card-desc {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* 高亮数字 */
+    .highlight-number {
+      font-size: 5rem;
+      font-weight: 800;
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+    }
+
+    .highlight-label {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      margin-top: 8px;
+    }
+
+    /* 对比展示 */
+    .comparison {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-top: 40px;
+    }
+
+    .comparison-item {
+      padding: 40px;
+      border-radius: 20px;
+      text-align: center;
+    }
+
+    .comparison-before {
+      background: rgba(255, 107, 53, 0.1);
+      border: 2px solid rgba(255, 107, 53, 0.3);
+    }
+
+    .comparison-after {
+      background: rgba(0, 212, 255, 0.1);
+      border: 2px solid rgba(0, 212, 255, 0.3);
+    }
+
+    /* 列表样式 */
+    .checklist {
+      list-style: none;
+      margin-top: 24px;
+    }
+
+    .checklist li {
+      font-size: 1.4rem;
+      padding: 16px 0;
+      padding-left: 40px;
+      position: relative;
+      color: var(--text-primary);
+    }
+
+    .checklist li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--accent-secondary);
+      font-weight: 800;
+      font-size: 1.4rem;
+    }
+
+    /* 导航按钮 */
+    .nav-buttons {
+      position: fixed;
+      bottom: 40px;
+      right: 40px;
+      display: flex;
+      gap: 16px;
+      z-index: 100;
+    }
+
+    .nav-btn {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: var(--bg-card);
+      border: 2px solid rgba(255, 107, 53, 0.3);
+      color: var(--text-primary);
+      font-size: 1.5rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nav-btn:hover {
+      background: var(--accent-gradient);
+      border-color: transparent;
+      transform: scale(1.1);
+    }
+
+    /* 进度条 */
+    .progress-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      height: 4px;
+      background: var(--accent-gradient);
+      transition: width 0.3s ease;
+      z-index: 100;
+    }
+
+    /* 页码 */
+    .page-number {
+      position: fixed;
+      bottom: 40px;
+      left: 40px;
+      font-size: 1rem;
+      color: var(--text-secondary);
+      z-index: 100;
+    }
+
+    /* 强调文本 */
+    .highlight {
+      color: var(--accent-secondary);
+      font-weight: 700;
+    }
+
+    /* 动画 */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-in {
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.2s; }
+    .delay-3 { animation-delay: 0.3s; }
+    .delay-4 { animation-delay: 0.4s; }
+
+    /* 响应式 */
+    @media (max-width: 1024px) {
+      h1 { font-size: 2.5rem; }
+      h2 { font-size: 2rem; }
+      .card-grid, .card-grid-3 { grid-template-columns: 1fr; }
+      .comparison { grid-template-columns: 1fr; }
+      .slide { padding: 40px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="slides-container">
+    <!-- 背景装饰 -->
+    <div class="bg-decoration">
+      <div class="bg-circle bg-circle-1"></div>
+      <div class="bg-circle bg-circle-2"></div>
+    </div>
+
+    <!-- Slide 1: 封面 -->
+    <div class="slide active" data-slide="1">
+      <div class="content">
+        <h1 class="animate-in">AI Agent 自动化</h1>
+        <p class="animate-in delay-1" style="font-size: 1.8rem; color: var(--text-secondary);">正在重构企业运营方式</p>
+        <div style="margin-top: 60px; display: flex; align-items: center; gap: 16px;">
+          <div style="width: 60px; height: 4px; background: var(--accent-gradient);"></div>
+          <span style="color: var(--text-secondary);">企业智能化转型新范式</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 2: 传统痛点 -->
+    <div class="slide" data-slide="2">
+      <div class="content">
+        <h2>🔴 传统工作流的困境</h2>
+        <div class="comparison">
+          <div class="comparison-item comparison-before">
+            <div style="font-size: 3rem; margin-bottom: 20px;">😓</div>
+            <h3 style="color: #ff6b35;">人工串联</h3>
+            <p style="margin-top: 16px;">需要人工在多个工具之间切换</p>
+            <p>信息传递依赖手动复制粘贴</p>
+            <p>流程断裂，效率低下</p>
+          </div>
+          <div class="comparison-item" style="background: var(--bg-card); border: 2px solid rgba(255,255,255,0.1);">
+            <div style="font-size: 3rem; margin-bottom: 20px;">⏱️</div>
+            <h3 style="color: var(--text-secondary);">响应缓慢</h3>
+            <p style="margin-top: 16px;">一个任务需要数小时处理</p>
+            <p>跨部门协作等待时间长</p>
+            <p>客户体验差</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 3: 解决方案 -->
+    <div class="slide" data-slide="3">
+      <div class="content">
+        <h2>🟢 AI Agent 自动化方案</h2>
+        <div class="card" style="text-align: center; padding: 60px;">
+          <div style="font-size: 4rem; margin-bottom: 24px;">🤖</div>
+          <h3 style="font-size: 2rem; color: var(--text-primary);">一个任务触发，多个 Agent 协同完成</h3>
+          <p style="margin-top: 24px; font-size: 1.3rem;">无需人工干预，Agent 之间自动传递信息、协同工作</p>
+        </div>
+        <div class="card-grid">
+          <div class="card" style="text-align: center;">
+            <div class="card-icon">⚡</div>
+            <div class="card-title">自动触发</div>
+            <div class="card-desc">任务到达即启动</div>
+          </div>
+          <div class="card" style="text-align: center;">
+            <div class="card-icon">🔗</div>
+            <div class="card-title">无缝流转</div>
+            <div class="card-desc">Agent 间自动传递</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 4: 客服 Agent -->
+    <div class="slide" data-slide="4">
+      <div class="content">
+        <h2>✅ 客服 Agent 自动响应</h2>
+        <div class="card-grid">
+          <div class="card">
+            <div class="card-icon">💬</div>
+            <div class="card-title">7×24 小时在线</div>
+            <div class="card-desc">无需等待，即时响应客户咨询</div>
+          </div>
+          <div class="card">
+            <div class="card-icon">🎯</div>
+            <div class="card-title">精准理解</div>
+            <div class="card-desc">NLP 技术准确识别客户意图</div>
+          </div>
+          <div class="card">
+            <div class="card-icon">📝</div>
+            <div class="card-title">自动记录</div>
+            <div class="card-desc">对话内容自动归档至 CRM</div>
+          </div>
+          <div class="card">
+            <div class="card-icon">🔄</div>
+            <div class="card-title">智能转接</div>
+            <div class="card-desc">复杂问题自动转人工客服</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 5: 销售 Agent -->
+    <div class="slide" data-slide="5">
+      <div class="content">
+        <h2>✅ 销售 Agent 生成报价</h2>
+        <div class="card-grid">
+          <div class="card">
+            <div class="card-icon">📊</div>
+            <div class="card-title">实时定价</div>
+            <div class="card-desc">根据客户等级、采购量自动计算最优价格</div>
+          </div>
+          <div class="card">
+            <div class="card-icon">📄</div>
+            <div class="card-title">一键生成</div>
+            <div class="card-desc">自动生成专业报价单 PDF</div>
+          </div>
+          <div class="card">
+            <div class="card-icon">✉️</div>
+            <div class="card-title">自动发送</div>
+            <div class="card-desc">报价单通过邮件/微信自动送达客户</div>
+          </div>
+          <div class="card">
+            <div class="card-icon">📈</div>
+            <div class="card-title">跟进提醒</div>
+            <div class="card-desc">自动设置跟进任务，不错过任何商机</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 6: 财务 Agent -->
+    <div class="slide" data-slide="6">
+      <div class="content">
+        <h2>✅ 财务 Agent 自动审核</h2>
+        <div class="card-grid">
+          <div class="card">
+            <div class="card-icon">🔍</div>
+            <div class="card-title">智能核验</div>
+            <div class="card-desc">自动核对发票、合同、订单信息一致性</div>
+          </div>
+          <div class="card">
+            <div class="card-icon">⚖️</div>
+            <div class="card-title">合规检查</div>
+            <div class="card-desc">自动检测是否符合财务制度和税法要求</div>
+          </div>
+          <div class="card">
+            <div class="card-icon">✅</div>
+            <div class="card-title">自动审批</div>
+            <div class="card-desc">符合规则的交易自动通过审核</div>
+          </div>
+          <div class="card">
+            <div class="card-icon">🚩</div>
+            <div class="card-title">异常预警</div>
+            <div class="card-desc">发现异常自动标记并通知相关人员</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 7: 合同 Agent -->
+    <div class="slide" data-slide="7">
+      <div class="content">
+        <h2>✅ 合同 Agent 起草协议</h2>
+        <div class="card-grid">
+          <div class="card">
+            <div class="card-icon">📋</div>
+            <div class="card-title">模板匹配</div>
+            <div class="card-desc">根据业务类型自动选择合适合同模板</div>
+          </div>
+          <div class="card">
+            <div class="card-icon">✍️</div>
+            <div class="card-title">智能填充</div>
+            <div class="card-desc">自动填充客户信息、金额、条款等关键内容</div>
+          </div>
+          <div class="card">
+            <div class="card-icon">🔒</div>
+            <div class="card-title">风险检测</div>
+            <div class="card-desc">AI 审查合同条款，识别潜在法律风险</div>
+          </div>
+          <div class="card">
+            <div class="card-icon">📤</div>
+            <div class="card-title">流程推进</div>
+            <div class="card-desc">自动发送签署请求，跟踪签署进度</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 8: 效率提升 -->
+    <div class="slide" data-slide="8">
+      <div class="content">
+        <h2>📊 效率提升数据</h2>
+        <div class="card-grid-3">
+          <div class="card" style="text-align: center;">
+            <div class="highlight-number">3h</div>
+            <div class="highlight-label" style="text-decoration: line-through; opacity: 0.5;">传统响应时间</div>
+            <div style="font-size: 2rem; margin: 16px 0;">↓</div>
+            <div class="highlight-number" style="background: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%); -webkit-background-clip: text;">15min</div>
+            <div class="highlight-label">AI Agent 响应时间</div>
+          </div>
+          <div class="card" style="text-align: center;">
+            <div class="highlight-number" style="background: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%); -webkit-background-clip: text;">7</div>
+            <div class="highlight-label">Agent 协同工作</div>
+            <div style="margin-top: 24px; font-size: 3rem;">🤖🤖🤖🤖🤖🤖🤖</div>
+          </div>
+          <div class="card" style="text-align: center;">
+            <div class="highlight-number" style="background: linear-gradient(135deg, #00d4ff 0%, #00ff88 100%); -webkit-background-clip: text;">&lt;$15</div>
+            <div class="highlight-label">月成本（美元）</div>
+            <div style="margin-top: 24px; font-size: 1.2rem; color: var(--text-secondary);">相当于<br/>一个人力的 1/100</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 9: 呼吁行动 -->
+    <div class="slide" data-slide="9">
+      <div class="content" style="text-align: center;">
+        <div style="font-size: 5rem; margin-bottom: 24px;">🎯</div>
+        <h2>别再让人力浪费在重复工作上</h2>
+        <div class="card" style="margin-top: 40px; padding: 60px;">
+          <h3 style="font-size: 2.5rem; color: var(--text-primary); margin-bottom: 24px;">把流程交给 AI，让人做决策</h3>
+          <p style="font-size: 1.4rem;">释放团队创造力，聚焦高价值工作</p>
+        </div>
+        <div style="margin-top: 60px;">
+          <ul class="checklist" style="display: inline-block; text-align: left;">
+            <li>立即开始自动化转型</li>
+            <li>让 Agent 处理重复性工作</li>
+            <li>团队专注于战略和创新</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 导航 -->
+  <div class="nav-buttons">
+    <button class="nav-btn" onclick="prevSlide()">←</button>
+    <button class="nav-btn" onclick="nextSlide()">→</button>
+  </div>
+
+  <!-- 页码 -->
+  <div class="page-number">
+    <span id="current-slide">1</span> / <span id="total-slides">9</span>
+  </div>
+
+  <!-- 进度条 -->
+  <div class="progress-bar" id="progress-bar"></div>
+
+  <script>
+    let currentSlide = 1;
+    const totalSlides = 9;
+
+    function showSlide(n) {
+      const slides = document.querySelectorAll('.slide');
+      slides.forEach(slide => slide.classList.remove('active'));
+      
+      currentSlide = n;
+      if (currentSlide > totalSlides) currentSlide = 1;
+      if (currentSlide < 1) currentSlide = totalSlides;
+      
+      slides[currentSlide - 1].classList.add('active');
+      
+      // 更新页码
+      document.getElementById('current-slide').textContent = currentSlide;
+      
+      // 更新进度条
+      const progress = (currentSlide / totalSlides) * 100;
+      document.getElementById('progress-bar').style.width = progress + '%';
+      
+      // 重置动画
+      const animateElements = slides[currentSlide - 1].querySelectorAll('.animate-in, .delay-1, .delay-2, .delay-3, .delay-4');
+      animateElements.forEach(el => {
+        el.style.animation = 'none';
+        el.offsetHeight; // 触发重绘
+        el.style.animation = null;
+      });
+    }
+
+    function nextSlide() {
+      showSlide(currentSlide + 1);
+    }
+
+    function prevSlide() {
+      showSlide(currentSlide - 1);
+    }
+
+    // 键盘导航
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'Enter') {
+        nextSlide();
+      } else if (e.key === 'ArrowLeft') {
+        prevSlide();
+      }
+    });
+
+    // 触摸滑动支持
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    document.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    });
+
+    document.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      if (touchStartX - touchEndX > 50) {
+        nextSlide();
+      } else if (touchEndX - touchStartX > 50) {
+        prevSlide();
+      }
+    });
+
+    // 初始化
+    showSlide(1);
+  </script>
+</body>
+</html>
