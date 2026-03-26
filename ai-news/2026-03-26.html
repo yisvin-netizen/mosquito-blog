@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 新闻早报 2026-03-26 | 蚊子博客</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-card: #1a1a25;
+            --accent-cyan: #00f0ff;
+            --accent-purple: #a855f7;
+            --accent-green: #22d3ee;
+            --text-primary: #e4e4e7;
+            --text-secondary: #a1a1aa;
+            --border-color: #27272a;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Noto Sans SC', sans-serif; background-color: var(--bg-primary); color: var(--text-primary); line-height: 1.6; }
+        .bg-grid { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-image: linear-gradient(rgba(0, 240, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 240, 255, 0.03) 1px, transparent 1px); background-size: 50px 50px; pointer-events: none; z-index: -1; }
+        nav { background: rgba(10, 10, 15, 0.9); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border-color); position: sticky; top: 0; z-index: 100; }
+        nav .container { max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Orbitron', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--accent-cyan); text-decoration: none; }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { color: var(--text-secondary); text-decoration: none; font-weight: 500; transition: color 0.3s; }
+        .nav-links a:hover, .nav-links a.active { color: var(--accent-cyan); }
+        .container { max-width: 900px; margin: 0 auto; padding: 3rem 2rem; }
+        h1 { font-family: 'Orbitron', sans-serif; color: var(--accent-cyan); font-size: 2rem; margin-bottom: 0.5rem; text-align: center; background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .date { text-align: center; color: var(--text-secondary); margin-bottom: 2.5rem; font-size: 1rem; }
+        .section { background: var(--bg-card); padding: 1.5rem; margin: 1.5rem 0; border-radius: 12px; border: 1px solid var(--border-color); }
+        .section-title { font-family: 'Orbitron', sans-serif; color: var(--accent-cyan); font-size: 1.3rem; margin-bottom: 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border-color); }
+        .news-item { margin-bottom: 1.5rem; }
+        .news-item:last-child { margin-bottom: 0; }
+        .news-title { font-weight: 600; color: var(--text-primary); margin-bottom: 0.5rem; font-size: 1.05rem; }
+        .news-content { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
+        .news-meta { margin-top: 0.5rem; font-size: 0.85rem; color: var(--accent-green); }
+        .tag { display: inline-block; padding: 0.2rem 0.6rem; background: rgba(0, 240, 255, 0.1); color: var(--accent-cyan); border-radius: 4px; font-size: 0.8rem; margin-right: 0.5rem; }
+        .tag.purple { background: rgba(168, 85, 247, 0.1); color: var(--accent-purple); }
+        .tag.green { background: rgba(34, 211, 238, 0.1); color: var(--accent-green); }
+        .github-table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+        .github-table th, .github-table td { text-align: left; padding: 0.75rem; border-bottom: 1px solid var(--border-color); }
+        .github-table th { color: var(--accent-cyan); font-weight: 500; }
+        .github-table a { color: var(--accent-cyan); text-decoration: none; }
+        .github-table a:hover { text-decoration: underline; }
+        .hn-list { list-style: none; }
+        .hn-list li { padding: 0.75rem 0; border-bottom: 1px solid var(--border-color); }
+        .hn-list li:last-child { border-bottom: none; }
+        .hn-title { font-weight: 500; color: var(--text-primary); }
+        .hn-meta { color: var(--text-secondary); font-size: 0.85rem; margin-top: 0.25rem; }
+        .opinion { background: linear-gradient(135deg, rgba(0, 240, 255, 0.05), rgba(168, 85, 247, 0.05)); padding: 1.5rem; border-radius: 12px; border: 1px solid var(--border-color); margin: 1.5rem 0; }
+        .opinion-title { font-family: 'Orbitron', sans-serif; color: var(--accent-cyan); font-size: 1.1rem; margin-bottom: 0.75rem; }
+        .opinion-content { color: var(--text-primary); line-height: 1.8; }
+        .links-section { margin-top: 1.5rem; }
+        .links-section a { display: inline-block; margin-right: 1.5rem; color: var(--accent-cyan); text-decoration: none; }
+        .links-section a:hover { text-decoration: underline; }
+        footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border-color); color: var(--text-secondary); margin-top: 3rem; }
+        .back-link { display: inline-block; margin-bottom: 1.5rem; color: var(--accent-cyan); text-decoration: none; font-weight: 500; }
+        .back-link:hover { text-decoration: underline; }
+        @media (max-width: 768px) { .nav-links { display: none; } h1 { font-size: 1.5rem; } .container { padding: 2rem 1.5rem; } .github-table { font-size: 0.85rem; } }
+    </style>
+</head>
+<body>
+    <div class="bg-grid"></div>
+    <nav>
+        <div class="container">
+            <a href="../index.html" class="logo">MOSQUITO</a>
+            <ul class="nav-links">
+                <li><a href="../index.html#about">关于</a></li>
+                <li><a href="../index.html#skills">技能</a></li>
+                <li><a href="../index.html#projects">项目</a></li>
+                <li><a href="index.html" class="active">AI早报</a></li>
+                <li><a href="../articles/index.html">文章</a></li>
+                <li><a href="../index.html#contact">联系</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <a href="index.html" class="back-link">← 返回早报列表</a>
+        <h1>🦟 AI 新闻早报</h1>
+        <p class="date">2026-03-26 | 每天 9 点更新</p>
+
+        <div class="section">
+            <h2 class="section-title">🔥 AI 大新闻</h2>
+            
+            <div class="news-item">
+                <div class="news-title">1. OpenAI 官宣终止 Sora 项目</div>
+                <div class="news-content">曾获迪士尼 10 亿美元订单的视频生成 AI Sora 正式终止，OpenAI 战略重心转向 GPT-5 多模态融合。</div>
+                <div class="news-meta">📌 来源：AIbase | ⭐ 热度：★★★★★</div>
+            </div>
+            
+            <div class="news-item">
+                <div class="news-title">2. 闲鱼 AI 相机正式发布</div>
+                <div class="news-content">阿里巴巴旗下闲鱼推出 AI 相机，拍照即上架，5 秒完成商品发布，AI 自动定价。</div>
+                <div class="news-meta">📌 来源：AIbase | ⭐ 热度：★★★★★</div>
+            </div>
+            
+            <div class="news-item">
+                <div class="news-title">3. 腾讯元宝 PC 版正式上线</div>
+                <div class="news-content">支持一键创建 AI 智能体，多端自动同步，腾讯 AI 生态再下一城。</div>
+                <div class="news-meta">📌 来源：AIbase | ⭐ 热度：★★★★☆</div>
+            </div>
+            
+            <div class="news-item">
+                <div class="news-title">4. AI 开发者"神器"litellm 遭教科书级投毒</div>
+                <div class="news-content">Karpathy 发帖警告：开源库 litellm 被投毒，供应链安全再敲警钟。GitHub Trending 第一。</div>
+                <div class="news-meta">📌 来源：AIbase/HN | ⭐ 热度：★★★★★</div>
+            </div>
+            
+            <div class="news-item">
+                <div class="news-title">5. GitHub Copilot 更新数据使用政策</div>
+                <div class="news-content">GitHub 明确 Copilot 交互数据使用规则，隐私透明度提升。</div>
+                <div class="news-meta">📌 来源：GitHub Blog | ⭐ 热度：★★★★☆</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">🚀 GitHub 热门项目</h2>
+            <table class="github-table">
+                <thead>
+                    <tr>
+                        <th>项目</th>
+                        <th>今日星标</th>
+                        <th>简介</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="https://github.com/bytedance/deer-flow" target="_blank">deer-flow</a> (ByteDance)</td>
+                        <td>3,787 ⭐</td>
+                        <td>开源 SuperAgent 框架，支持研究/编码/创作</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://github.com/mvanhorn/last30days-skill" target="_blank">last30days-skill</a></td>
+                        <td>1,342 ⭐</td>
+                        <td>AI 研究 Agent，聚合 Reddit/X/HN/YouTube</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://github.com/FujiwaraChoki/MoneyPrinterV2" target="_blank">MoneyPrinterV2</a></td>
+                        <td>1,065 ⭐</td>
+                        <td>自动化网赚工具</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://github.com/Crosstalk-Solutions/project-nomad" target="_blank">Project-NOMAD</a></td>
+                        <td>1,717 ⭐</td>
+                        <td>离线生存 AI 电脑</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://github.com/supermemoryai/supermemory" target="_blank">supermemory</a></td>
+                        <td>809 ⭐</td>
+                        <td>AI 时代的记忆引擎</td>
+                    </tr>
+                    <tr>
+                        <td><a href="https://github.com/BerriAI/litellm" target="_blank">litellm</a></td>
+                        <td>Trending #1</td>
+                        <td>100+ LLM API 统一网关</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">📱 HackerNews 热榜</h2>
+            <ul class="hn-list">
+                <li>
+                    <div class="hn-title">1. EU 仍想扫描私人消息和照片</div>
+                    <div class="hn-meta">167 points - 隐私争议</div>
+                </li>
+                <li>
+                    <div class="hn-title">2. TurboQuant：Google 极端压缩重新定义 AI 效率</div>
+                    <div class="hn-meta">443 points - 量化新突破</div>
+                </li>
+                <li>
+                    <div class="hn-title">3. Meta 和 YouTube 在社交媒体成瘾案中败诉</div>
+                    <div class="hn-meta">296 points - 里程碑判决</div>
+                </li>
+                <li>
+                    <div class="hn-title">4. Antimatter 首次被运输</div>
+                    <div class="hn-meta">272 points - 物理突破</div>
+                </li>
+                <li>
+                    <div class="hn-title">5. ARC-AGI-3 基准测试发布</div>
+                    <div class="hn-meta">102 points - AI 推理新挑战</div>
+                </li>
+            </ul>
+        </div>
+
+        <div class="opinion">
+            <h2 class="opinion-title">💡 今日观点</h2>
+            <div class="opinion-content">
+                <strong>Sora 终止 + litellm 投毒 = AI 行业"清理门户"信号</strong><br>
+                开源生态安全成焦点，2026 年或迎来 AI 信任重建元年。
+            </div>
+        </div>
+
+        <div class="section links-section">
+            <h2 class="section-title">🔗 相关链接</h2>
+            <a href="https://aibase.com/zh/daily" target="_blank">AIbase 今日热点</a>
+            <a href="https://github.com/trending" target="_blank">GitHub Trending</a>
+            <a href="https://news.ycombinator.com" target="_blank">HN 新闻</a>
+        </div>
+    </div>
+    <footer>
+        <p>🦟 蚊子博客 AI 新闻早报 | 每天 9 点自动更新</p>
+    </footer>
+</body>
+</html>
