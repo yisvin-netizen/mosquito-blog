@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 新闻早报 2026-03-27 | 蚊子博客</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-card: #1a1a25;
+            --accent-cyan: #00f0ff;
+            --accent-purple: #a855f7;
+            --accent-green: #22d3ee;
+            --text-primary: #e4e4e7;
+            --text-secondary: #a1a1aa;
+            --border-color: #27272a;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Noto Sans SC', sans-serif; background-color: var(--bg-primary); color: var(--text-primary); line-height: 1.6; }
+        .bg-grid { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-image: linear-gradient(rgba(0, 240, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 240, 255, 0.03) 1px, transparent 1px); background-size: 50px 50px; pointer-events: none; z-index: -1; }
+        nav { background: rgba(10, 10, 15, 0.9); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border-color); position: sticky; top: 0; z-index: 100; }
+        nav .container { max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Orbitron', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--accent-cyan); text-decoration: none; }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { color: var(--text-secondary); text-decoration: none; font-weight: 500; transition: color 0.3s; }
+        .nav-links a:hover, .nav-links a.active { color: var(--accent-cyan); }
+        .container { max-width: 900px; margin: 0 auto; padding: 3rem 2rem; }
+        h1 { font-family: 'Orbitron', sans-serif; color: var(--accent-cyan); font-size: 2rem; margin-bottom: 0.5rem; text-align: center; background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .date { text-align: center; color: var(--text-secondary); margin-bottom: 2.5rem; font-size: 1rem; }
+        h2 { font-family: 'Orbitron', sans-serif; color: var(--accent-cyan); font-size: 1.3rem; margin: 2rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border-color); }
+        .item { background: var(--bg-card); padding: 1.5rem; margin: 1.5rem 0; border-radius: 12px; border: 1px solid var(--border-color); transition: transform 0.3s, border-color 0.3s; }
+        .item:hover { transform: translateY(-3px); border-color: var(--accent-cyan); }
+        h3 { color: var(--accent-purple); font-size: 1.1rem; margin-bottom: 0.5rem; }
+        h4 { color: var(--accent-green); font-size: 1rem; margin: 1rem 0 0.5rem; }
+        p { margin-bottom: 0.5rem; }
+        ul { margin: 0.5rem 0 1rem 1.5rem; }
+        li { margin-bottom: 0.3rem; }
+        a { color: var(--accent-cyan); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        th, td { padding: 0.75rem; text-align: left; border-bottom: 1px solid var(--border-color); }
+        th { color: var(--accent-cyan); font-weight: 600; }
+        .view-more { display: inline-block; margin-top: 0.5rem; font-weight: 500; }
+        footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border-color); color: var(--text-secondary); margin-top: 3rem; }
+        @media (max-width: 768px) { .nav-links { display: none; } h1 { font-size: 1.5rem; } .container { padding: 2rem 1.5rem; } }
+    </style>
+</head>
+<body>
+    <div class="bg-grid"></div>
+    <nav>
+        <div class="container">
+            <a href="../index.html" class="logo">MOSQUITO</a>
+            <ul class="nav-links">
+                <li><a href="../index.html#about">关于</a></li>
+                <li><a href="../index.html#skills">技能</a></li>
+                <li><a href="../index.html#projects">项目</a></li>
+                <li><a href="index.html" class="active">AI早报</a></li>
+                <li><a href="../articles/index.html">文章</a></li>
+                <li><a href="../index.html#contact">联系</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <a href="index.html" class="back-link" style="color: var(--accent-cyan); text-decoration: none; display: inline-block; margin-bottom: 1rem;">← 返回早报列表</a>
+        <h1>🦟 AI 新闻早报 2026-03-27</h1>
+        <p class="date">每天 9:00 更新 | 来源：AIbase、HackerNews、GitHub Trending</p>
+
+        <h2>🔥 AI 大新闻</h2>
+
+        <div class="item">
+            <h3>1. 字节跳动开源 DeerFlow2.0：打造"中国版"超级智能体编排框架</h3>
+            <p>字节跳动重磅发布 DeerFlow 2.0，这是一个开源的长程 SuperAgent 框架，支持研究、编码、创作等多种任务。通过沙箱、记忆、工具、技能、子代理和消息网关，实现从分钟到小时级别的复杂任务处理。</p>
+            <p>GitHub 已斩获 <strong>48,154</strong> ⭐，今日新增 <strong>2,388</strong> ⭐，引发开发者社区热议。</p>
+            <a href="https://github.com/bytedance/deer-flow" target="_blank">🔗 GitHub 仓库</a>
+        </div>
+
+        <div class="item">
+            <h3>2. OpenAI 内测新模型"Spud"：Sora 将被关停，整合算力转型桌面超级应用</h3>
+            <p>据 AIbase 报道，OpenAI 正在内测代号为"Spud"的新模型，并计划终止 Sora 项目以整合算力。战略重心转向桌面级"超级应用"，这是继 GPT-5 发布后又一次重大转型。</p>
+            <a href="https://news.aibase.com/news/26557" target="_blank">🔗 阅读更多</a>
+        </div>
+
+        <div class="item">
+            <h3>3. 蚂蚁集团发布 F2LLM-v2：横扫 11 项榜单冠军的全尺寸嵌入模型</h3>
+            <p>蚂蚁集团发布 F2LLM-v2，这是一个全尺寸、多语种的"六边形"嵌入模型，在 11 项基准测试中拿下冠军。该模型支持多语言处理，性能领先同类竞品。</p>
+            <a href="https://news.aibase.com/news/26586" target="_blank">🔗 阅读更多</a>
+        </div>
+
+        <div class="item">
+            <h3>4. 苹果发布 RubiCap 图像描述框架：性能反杀 10 倍体量对手</h3>
+            <p>苹果发布 RubiCap 图像描述框架，以更小参数量实现了对标大体量模型的性能表现，再次展示苹果在端侧 AI 的技术实力。</p>
+            <a href="https://news.aibase.com/news/26584" target="_blank">🔗 阅读更多</a>
+        </div>
+
+        <div class="item">
+            <h3>5. 谷歌 DeepMind 发布 Lyria 3 Pro：AI 已能独立编排完整长金曲</h3>
+            <p>谷歌 DeepMind 发布 Lyria 3 Pro，这是音乐生成领域的重大突破——AI 已能独立编排完整长金曲，意味着音乐人可能面临更大冲击。</p>
+            <a href="https://news.aibase.com/news/26569" target="_blank">🔗 阅读更多</a>
+        </div>
+
+        <div class="item">
+            <h3>6. 快手 Q4 财报亮眼：AIGC 营销素材单季消耗达 40 亿元</h3>
+            <p>快手发布财报，AI 彻底重塑商业链路，AIGC 营销素材单季消耗高达 <strong>40 亿元</strong>，AI 商业化路径愈发清晰。</p>
+            <a href="https://news.aibase.com/news/26550" target="_blank">🔗 阅读更多</a>
+        </div>
+
+        <div class="item">
+            <h3>7. 钉钉发布"悟空 AI"：企业级"数字员工"正式登场</h3>
+            <p>钉钉正式发布悟空 AI，这是一款双击即用的企业级"数字员工"解决方案，主打企业场景下的自动化办公。</p>
+            <a href="https://news.aibase.com/news/26581" target="_blank">🔗 阅读更多</a>
+        </div>
+
+        <div class="item">
+            <h3>8. CapCut 国际版上线画布式 AI 制片工作台 Video Studio</h3>
+            <p>字节旗下 CapCut 国际版发布两大 AI 功能：画布式 AI 制片工作台 Video Studio + 嵌入式 AI Video，进一步降低视频创作门槛。</p>
+            <a href="https://news.aibase.com/news/26577" target="_blank">🔗 阅读更多</a>
+        </div>
+
+        <h2>🚀 GitHub 热门项目</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>项目</th>
+                    <th>描述</th>
+                    <th>今日星标</th>
+                    <th>语言</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="https://github.com/bytedance/deer-flow" target="_blank">deer-flow</a></td>
+                    <td>字节跳动开源 SuperAgent 框架</td>
+                    <td>⭐ 2,388</td>
+                    <td>Python</td>
+                </tr>
+                <tr>
+                    <td><a href="https://github.com/Yeachan-Heo/oh-my-claudecode" target="_blank">oh-my-claudecode</a></td>
+                    <td>Teams 优先的多智能体编排</td>
+                    <td>⭐ 576</td>
+                    <td>TypeScript</td>
+                </tr>
+                <tr>
+                    <td><a href="https://github.com/virattt/dexter" target="_blank">dexter</a></td>
+                    <td>深度金融研究自主智能体</td>
+                    <td>⭐ 269</td>
+                    <td>TypeScript</td>
+                </tr>
+                <tr>
+                    <td><a href="https://github.com/Vaibhavs10/insanely-fast-whisper" target="_blank">insanely-fast-whisper</a></td>
+                    <td>超快 Whisper 语音识别</td>
+                    <td>⭐ 1,381</td>
+                    <td>Jupyter</td>
+                </tr>
+                <tr>
+                    <td><a href="https://github.com/datalab-to/chandra" target="_blank">chandra</a></td>
+                    <td>OCR 模型处理表格/表单/手写</td>
+                    <td>⭐ 546</td>
+                    <td>Python</td>
+                </tr>
+                <tr>
+                    <td><a href="https://github.com/mvanhorn/last30days-skill" target="_blank">last30days-skill</a></td>
+                    <td>AI Agent 研究 Reddit/X/HN 等平台</td>
+                    <td>⭐ 2,684</td>
+                    <td>Python</td>
+                </tr>
+                <tr>
+                    <td><a href="https://github.com/twentyhq/twenty" target="_blank">twenty</a></td>
+                    <td>开源 Salesforce 替代方案</td>
+                    <td>⭐ 198</td>
+                    <td>TypeScript</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>📱 HackerNews 热榜</h2>
+        <div class="item">
+            <h4>1. LiteLLM 遭遇"教科书级"恶意软件攻击</h4>
+            <p>214 points | <a href="https://futuresearch.ai/blog/litellm-attack-transcript/" target="_blank">阅读更多</a></p>
+        </div>
+        <div class="item">
+            <h4>2. Doom 游戏完全用 DNS 记录实现</h4>
+            <p>126 points | <a href="https://github.com/resumex/doom-over-dns" target="_blank">阅读更多</a></p>
+        </div>
+        <div class="item">
+            <h4>3. 运行特斯拉 Model 3 电脑：用报废零件在桌上跑</h4>
+            <p>825 points | <a href="https://bugs.xdavidhu.me/tesla/2026/03/23/running-tesla-model-3s-computer-on-my-desk-using-parts-from-crashed-cars/" target="_blank">阅读更多</a></p>
+        </div>
+        <div class="item">
+            <h4>4. HyperAgents：自参照自改进智能体框架</h4>
+            <p>74 points | <a href="https://github.com/facebookresearch/hyperagents" target="_blank">阅读更多</a></p>
+        </div>
+        <div class="item">
+            <h4>5. OpenTelemetry profiles 进入公开 alpha</h4>
+            <p>113 points | <a href="https://opentelemetry.io/blog/2026/profiles-alpha/" target="_blank">阅读更多</a></p>
+        </div>
+
+        <h2>💡 今日观点</h2>
+        <div class="item">
+            <p><strong>字节 DeerFlow 2.0 的开源标志着智能体框架竞争进入新阶段</strong>——不再是"谁参数更大"，而是"谁更实用、谁更好集成"。这对开发者来说是真正的红利期，但对企业来说，选型复杂度也在上升。</p>
+        </div>
+
+        <p class="date" style="margin-top: 2rem;">📅 更新于 2026-03-27 09:00（北京时间）| 🤖 自动生成 by 小明分析师</p>
+    </div>
+    <footer>
+        <p>&copy; 2026 蚊子. All rights reserved.</p>
+    </footer>
+</body>
+</html>
