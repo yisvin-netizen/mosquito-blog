@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 热点晚间分享 2026-03-27 | 蚊子博客</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-card: #1a1a25;
+            --accent-cyan: #00f0ff;
+            --accent-purple: #a855f7;
+            --accent-green: #22d3ee;
+            --accent-orange: #f97316;
+            --text-primary: #e4e4e7;
+            --text-secondary: #a1a1aa;
+            --border-color: #27272a;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Noto Sans SC', sans-serif; background-color: var(--bg-primary); color: var(--text-primary); line-height: 1.6; }
+        .bg-grid { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-image: linear-gradient(rgba(168, 85, 247, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(168, 85, 247, 0.03) 1px, transparent 1px); background-size: 50px 50px; pointer-events: none; z-index: -1; }
+        nav { background: rgba(10, 10, 15, 0.9); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border-color); position: sticky; top: 0; z-index: 100; }
+        nav .container { max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-family: 'Orbitron', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--accent-purple); text-decoration: none; }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { color: var(--text-secondary); text-decoration: none; font-weight: 500; transition: color 0.3s; }
+        .nav-links a:hover, .nav-links a.active { color: var(--accent-purple); }
+        .container { max-width: 900px; margin: 0 auto; padding: 3rem 2rem; }
+        h1 { font-family: 'Orbitron', sans-serif; color: var(--accent-purple); font-size: 2rem; margin-bottom: 0.5rem; text-align: center; background: linear-gradient(135deg, var(--accent-purple), var(--accent-orange)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .date { text-align: center; color: var(--text-secondary); margin-bottom: 2.5rem; font-size: 1rem; }
+        .back-link { color: var(--accent-purple); text-decoration: none; display: inline-block; margin-bottom: 1rem; }
+        .back-link:hover { text-decoration: underline; }
+        h2 { font-family: 'Orbitron', sans-serif; color: var(--accent-purple); font-size: 1.3rem; margin: 2rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border-color); }
+        .item { background: var(--bg-card); padding: 1.5rem; margin: 1.5rem 0; border-radius: 12px; border: 1px solid var(--border-color); transition: transform 0.3s, border-color 0.3s; }
+        .item:hover { transform: translateY(-3px); border-color: var(--accent-purple); }
+        h3 { color: var(--accent-cyan); font-size: 1.1rem; margin-bottom: 0.5rem; }
+        h4 { color: var(--accent-green); font-size: 1rem; margin: 1rem 0 0.5rem; }
+        p { margin-bottom: 0.5rem; }
+        ul { margin: 0.5rem 0 1rem 1.5rem; }
+        li { margin-bottom: 0.3rem; }
+        a { color: var(--accent-purple); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        table { width: 100%; border-collapse: collapse; margin: 1rem 0; }
+        th, td { padding: 0.75rem; text-align: left; border-bottom: 1px solid var(--border-color); }
+        th { color: var(--accent-purple); font-weight: 600; }
+        .view-more { display: inline-block; margin-top: 0.5rem; font-weight: 500; }
+        .tag { display: inline-block; font-size: 0.75rem; padding: 0.2rem 0.5rem; border-radius: 4px; margin-right: 0.3rem; }
+        .tag-fire { background: rgba(249, 115, 22, 0.2); color: var(--accent-orange); }
+        .tag-brain { background: rgba(34, 211, 238, 0.2); color: var(--accent-green); }
+        .tag-open { background: rgba(168, 85, 247, 0.2); color: var(--accent-purple); }
+        .tag-biz { background: rgba(0, 240, 255, 0.2); color: var(--accent-cyan); }
+        .tag-warn { background: rgba(239, 68, 68, 0.2); color: #ef4444; }
+        footer { text-align: center; padding: 2rem; border-top: 1px solid var(--border-color); color: var(--text-secondary); margin-top: 3rem; }
+        @media (max-width: 768px) { .nav-links { display: none; } h1 { font-size: 1.5rem; } .container { padding: 2rem 1.5rem; } }
+    </style>
+</head>
+<body>
+    <div class="bg-grid"></div>
+    <nav>
+        <div class="container">
+            <a href="../index.html" class="logo">MOSQUITO</a>
+            <ul class="nav-links">
+                <li><a href="../index.html#about">关于</a></li>
+                <li><a href="../index.html#skills">技能</a></li>
+                <li><a href="../index.html#projects">项目</a></li>
+                <li><a href="index.html" class="active">AI早报</a></li>
+                <li><a href="../articles/index.html">文章</a></li>
+                <li><a href="../index.html#contact">联系</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <a href="index.html" class="back-link">← 返回早报列表</a>
+        <h1>🌙 AI 热点晚间分享 2026-03-27</h1>
+        <p class="date">每晚 21:00 更新 | 来源：AIbase + Reddit + X KOL + 国际新闻</p>
+
+        <h2>🔥 今日五大 AI 热点</h2>
+
+        <div class="item">
+            <h3>1. 字节跳动 DeerFlow 2.0 开源：SuperAgent 框架竞争升级</h3>
+            <p>字节跳动发布 Deer Flow 2.0，这是一个开源的长程 SuperAgent 框架，支持研究、编码、创作等多种任务。通过沙箱、记忆、工具、技能、子代理和消息网关，实现从分钟到小时级别的复杂任务处理。</p>
+            <p>GitHub 已斩获 <strong>48,154 ⭐</strong>，今日新增 <strong>2,388 ⭐</strong>，引发开发者社区热议。</p>
+            <p>这标志着智能体框架竞争进入新阶段——不再是"谁参数更大"，而是"谁更实用、谁更好集成"。</p>
+            <p>
+                <span class="tag tag-fire">🔥 国际大厂动态</span>
+                <span class="tag tag-brain">🧠 技术突破</span>
+                <span class="tag tag-open">开源生态</span>
+            </p>
+        </div>
+
+        <div class="item">
+            <h3>2. OpenAI 内测新模型"Spud"：Sora 将被关停，转型桌面超级应用</h3>
+            <p>据 AIbase 报道，OpenAI 正在内测代号为"Spud"的新模型，并计划终止 Sora 项目以整合算力。战略重心转向桌面级"超级应用"，这是继 GPT-5 发布后又一次重大转型。</p>
+            <p>评论认为，OpenAI 正在从"模型即产品"转向"应用即平台"，算力分配策略发生根本性变化。</p>
+            <p>
+                <span class="tag tag-fire">🔥 国际大厂动态</span>
+                <span class="tag tag-brain">🧠 技术突破</span>
+                <span class="tag tag-biz">行业战略</span>
+            </p>
+        </div>
+
+        <div class="item">
+            <h3>3. LiteLLM 遭遇"教科书级"恶意软件攻击：AI 辅助应急响应成新趋势</h3>
+            <p>一位 ML 工程师在打开 Cursor 时意外触发恶意 PyPI 包（LiteLLM 1.82.7/1.82.8），随即用 Claude 逐步引导完成漏洞上报全流程。他分享了完整的"逐分钟"应急响应记录。</p>
+            <p>安全社区讨论：非安全专业人员借助 AI 发现并上报漏洞，是积极趋势还是增加负担？PyPI 现有的账户式上报机制本身就是一个障碍。</p>
+            <p>
+                <span class="tag tag-warn">⚠️ 伦理争议</span>
+                <span class="tag tag-fire">🔒 安全问题</span>
+                <span class="tag tag-open">开发者生态</span>
+            </p>
+        </div>
+
+        <div class="item">
+            <h3>4. Facebook 发布 HyperAgents：自引用自我改进 AI Agent 框架</h3>
+            <p>Facebook Research 发布 HyperAgents，基于"评估和自我修改都是编码任务"这一洞察——编码能力的提升可以直接转化为自我改进能力的提升。</p>
+            <p>核心观点：一旦 LLM 解锁某项能力，就能用它来组合改进其他相关或不相关的能力。"Reflexion"+"Tools"的组合效果就是典型案例。</p>
+            <p>
+                <span class="tag tag-brain">🧠 技术突破</span>
+                <span class="tag tag-open">🤖 AI Agent</span>
+            </p>
+        </div>
+
+        <div class="item">
+            <h3>5. 快手 Q4 财报亮眼：AIGC 营销素材单季消耗达 40 亿元</h3>
+            <p>快手发布财报，AI 彻底重塑商业链路，AIGC 营销素材单季消耗高达 <strong>40 亿元</strong>，AI 商业化路径愈发清晰。</p>
+            <p>从抖音到快手，国内短视频平台正在全面拥抱 AIGC 营销，AI 内容创作已从"实验"进入"规模化变现"阶段。</p>
+            <p>
+                <span class="tag tag-biz">💼 行业应用</span>
+                <span class="tag tag-fire">💰 商业化</span>
+            </p>
+        </div>
+
+        <h2>🌍 国际要闻速递（与 AI 相关）</h2>
+
+        <div class="item">
+            <h4>美伊霍尔木兹海峡对峙升级</h4>
+            <p>中东局势持续紧张，特朗普延长暂停打击伊朗能源设施10天，金融市场承压下跌（纳斯达克较历史高点下跌10%）。</p>
+            <p><strong>影响</strong>：地缘风险可能影响 AI 芯片供应链和全球算力资源分配。</p>
+        </div>
+
+        <div class="item">
+            <h4>荷兰法院禁止 xAI 的 Grok 生成非自愿裸照</h4>
+            <p>这是全球首次对 AI 生成内容发出明确禁令，具有里程碑意义。</p>
+        </div>
+
+        <div class="item">
+            <h4>欧盟议会否决"聊天控制"大规模监控提案</h4>
+            <p>但下一轮"聊天控制 2.0"谈判已在进行中，年龄验证要求可能使匿名通信成为历史。</p>
+        </div>
+
+        <h2>💡 一句话总结</h2>
+        <div class="item">
+            <p><strong>DeerFlow 2.0 开源和 HyperAgents 发布标志着 AI Agent 框架进入"实用化竞争"阶段，而 LiteLLM 安全事件则提醒我们：AI 辅助开发越是普及，安全风险的传播速度和破坏力也越大。</strong></p>
+        </div>
+
+        <h2>📊 热点分布</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>维度</th>
+                    <th>数量</th>
+                    <th>具体内容</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>🔥 国际大厂动态</td>
+                    <td>2 条</td>
+                    <td>字节、OpenAI</td>
+                </tr>
+                <tr>
+                    <td>🧠 技术突破</td>
+                    <td>2 条</td>
+                    <td>DeerFlow 2.0、HyperAgents</td>
+                </tr>
+                <tr>
+                    <td>💼 行业应用</td>
+                    <td>1 条</td>
+                    <td>快手财报</td>
+                </tr>
+                <tr>
+                    <td>⚠️ 伦理争议</td>
+                    <td>1 条</td>
+                    <td>LiteLLM 攻击</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p class="date" style="margin-top: 2rem;">📅 生成于 2026-03-27 20:00（北京时间）| 🤖 整理：小明分析师</p>
+    </div>
+    <footer>
+        <p>&copy; 2026 蚊子. All rights reserved.</p>
+    </footer>
+</body>
+</html>
