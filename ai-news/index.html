@@ -4,26 +4,83 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI 新闻早报列表 | 蚊子博客</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: sans-serif; background: #0a0a0f; color: #e4e4e7; padding: 20px; }
-        .container { max-width: 800px; margin: 0 auto; }
-        h1 { color: #00f0ff; }
-        .item { margin: 10px 0; padding: 10px; background: #1a1a25; border-radius: 8px; }
-        .item a { color: #22d3ee; text-decoration: none; }
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-card: #1a1a25;
+            --accent-cyan: #00f0ff;
+            --accent-purple: #a855f7;
+            --accent-green: #22d3ee;
+            --text-primary: #e4e4e7;
+            --text-secondary: #a1a1aa;
+            --border-color: #27272a;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+        nav {
+            background: var(--bg-secondary);
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        nav .container { display: flex; justify-content: space-between; align-items: center; }
+        nav h1 { font-family: 'Orbitron', sans-serif; color: var(--accent-cyan); font-size: 1.5em; }
+        .back-link { color: var(--accent-green); text-decoration: none; }
+        h1 { color: var(--accent-cyan); margin: 30px 0 10px; font-family: 'Orbitron', sans-serif; }
+        .date { color: var(--text-secondary); margin-bottom: 30px; }
+        .item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 10px;
+        }
+        .item a { color: var(--accent-green); text-decoration: none; font-weight: 500; }
         .item a:hover { text-decoration: underline; }
+        .tag { display: inline-block; background: var(--bg-secondary); padding: 2px 8px; border-radius: 4px; margin-left: 8px; font-size: 0.85em; color: var(--text-secondary); }
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: var(--text-secondary);
+            border-top: 1px solid var(--border-color);
+            margin-top: 40px;
+        }
+        footer a { color: var(--accent-cyan); }
     </style>
 </head>
 <body>
+    <nav>
+        <div class="container">
+            <h1>🦟 蚊子博客</h1>
+            <a href="https://yisvin-netizen.github.io/mosquito-blog/" style="color: var(--accent-green); text-decoration: none;">← 返回博客</a>
+        </div>
+    </nav>
     <div class="container">
         <h1>🦟 AI 新闻早报列表</h1>
-        <p>每天 5 点更新</p>
+        <p class="date">每天 9 点自动更新 | 晚报 20 点更新</p>
+
         <div class="items">
             <div class="item"><a href="2026-05-15.html">📰 AI 新闻早报 2026-05-15</a></div>
             <div class="item"><a href="2026-05-14.html">📰 AI 新闻早报 2026-05-14</a></div>
+            <div class="item"><a href="AI-2026-05-12.html">📰 AI 新闻早报 2026-05-12</a><span class="tag">NEW</span></div>
+            <div class="item"><a href="AI-2026-05-01-evening.html">🌙 AI 新闻晚报 2026-05-01</a><span class="tag">NEW</span></div>
             <div class="item"><a href="2026-03-13.html">📰 AI 新闻早报 2026-03-13</a></div>
             <div class="item"><a href="2026-05-13.html">📰 AI 新闻早报 2026-05-13</a></div>
             <div class="item"><a href="2026-05-12.html">📰 AI 新闻早报 2026-05-12</a></div>
         </div>
     </div>
+    <footer>
+        <p>🦟 <strong>蚊子博客</strong> | <a href="https://yisvin-netizen.github.io/mosquito-blog/ai-news/">https://yisvin-netizen.github.io/mosquito-blog/ai-news/</a></p>
+        <p>📅 更新于 2026-05-15</p>
+    </footer>
 </body>
 </html>
