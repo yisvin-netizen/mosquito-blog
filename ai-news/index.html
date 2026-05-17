@@ -5,24 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI 新闻早报列表 | 蚊子博客</title>
     <style>
-        body { font-family: sans-serif; background: #0a0a0f; color: #e4e4e7; padding: 20px; }
-        .container { max-width: 800px; margin: 0 auto; }
-        h1 { color: #00f0ff; }
-        .item { margin: 10px 0; padding: 10px; background: #1a1a25; border-radius: 8px; }
-        .item a { color: #22d3ee; text-decoration: none; }
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-card: #1a1a25;
+            --accent-cyan: #00f0ff;
+            --accent-purple: #a855f7;
+            --accent-green: #22d3ee;
+            --text-primary: #e4e4e7;
+            --text-secondary: #a1a1aa;
+            --border-color: #27272a;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Noto Sans SC', sans-serif; background: var(--bg-primary); color: var(--text-primary); min-height: 100vh; }
+        .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+        nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; padding: 20px; background: var(--bg-secondary); border-radius: 16px; border: 1px solid var(--border-color); }
+        nav .logo { font-family: 'Orbitron', sans-serif; font-size: 24px; font-weight: 700; color: var(--accent-cyan); text-decoration: none; }
+        nav .logo span { color: var(--accent-purple); }
+        h1 { font-family: 'Orbitron', sans-serif; font-size: 36px; font-weight: 900; margin-bottom: 10px; background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .subtitle { color: var(--text-secondary); margin-bottom: 30px; }
+        .item { margin: 12px 0; padding: 16px; background: var(--bg-card); border-radius: 12px; border: 1px solid var(--border-color); transition: all 0.3s; }
+        .item:hover { border-color: var(--accent-cyan); transform: translateY(-2px); }
+        .item a { color: var(--accent-cyan); text-decoration: none; font-size: 16px; font-weight: 500; display: block; }
         .item a:hover { text-decoration: underline; }
+        .item .meta { font-size: 12px; color: var(--text-secondary); margin-top: 6px; }
+        footer { text-align: center; padding: 40px 0; color: var(--text-secondary); font-size: 12px; }
+        @media (max-width: 600px) { h1 { font-size: 24px; } }
     </style>
 </head>
 <body>
     <div class="container">
+        <nav>
+            <a href="index.html" class="logo">🦟 <span>MOSQUITO</span></a>
+        </nav>
         <h1>🦟 AI 新闻早报列表</h1>
-        <p>每天 5 点更新</p>
+        <p class="subtitle">每天 5 点自动更新</p>
         <div class="items">
-            <div class="item"><a href="2026-05-17.html">📰 AI 新闻早报 2026-05-17</a></div>
-            <div class="item"><a href="2026-05-16.html">📰 AI 新闻早报 2026-05-16</a></div>
-            <div class="item"><a href="2026-05-15.html">📰 AI 新闻早报 2026-05-15</a></div>
-            <div class="item"><a href="2026-05-14.html">📰 AI 新闻早报 2026-05-14</a></div>
+            <div class="item"><a href="2026-05-17.html">📰 AI 新闻早报 2026-05-17</a><div class="meta">🔥 Anthropic ARR 突破 $44B | Google I/O 即将开幕</div></div>
+            <div class="item"><a href="2026-05-16.html">📰 AI 新闻早报 2026-05-16</a><div class="meta">🔥 GPT-5.5 / Gemini 3.1 Ultra 发布</div></div>
+            <div class="item"><a href="2026-05-15.html">📰 AI 新闻早报 2026-05-15</a><div class="meta">🔥 DeepSeek V4 / 中国模型发布潮</div></div>
+            <div class="item"><a href="2026-05-14.html">📰 AI 新闻早报 2026-05-14</a><div class="meta">🔥 四大中国模型密集发布</div></div>
+            <div class="item"><a href="2026-05-13.html">📰 AI 新闻早报 2026-05-13</a><div class="meta">🔥 Claude Agent SDK 开放</div></div>
+            <div class="item"><a href="2026-05-12.html">📰 AI 新闻早报 2026-05-12</a><div class="meta">🔥 Microsoft Agent 365 发布</div></div>
         </div>
+        <footer>
+            <p>🦟 蚊子博客 | <a href="https://yisvin-netizen.github.io/mosquito-blog/ai-news/" style="color: var(--accent-cyan);">访问网站</a></p>
+        </footer>
     </div>
 </body>
 </html>

@@ -20,84 +20,138 @@
             --border-color: #27272a;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Noto Sans SC', sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
-            line-height: 1.6;
-        }
-        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
-        nav {
-            background: var(--bg-secondary);
-            padding: 15px 0;
-            border-bottom: 1px solid var(--border-color);
-        }
-        nav .container { display: flex; justify-content: space-between; align-items: center; }
-        nav h1 { font-family: 'Orbitron', sans-serif; color: var(--accent-cyan); font-size: 1.5em; }
-        .back-link { color: var(--accent-green); text-decoration: none; }
-        h1 { color: var(--accent-cyan); margin: 30px 0 10px; font-family: 'Orbitron', sans-serif; }
-        h2 { color: var(--accent-purple); margin: 25px 0 15px; border-left: 3px solid var(--accent-purple); padding-left: 10px; }
-        .date { color: var(--text-secondary); margin-bottom: 30px; }
-        .item {
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 15px;
-            margin-bottom: 15px;
-        }
-        .item ul { margin-left: 20px; color: var(--text-secondary); }
-        .item li { margin-bottom: 8px; }
-        .item a { color: var(--accent-cyan); }
-        footer {
-            text-align: center;
-            padding: 30px;
-            color: var(--text-secondary);
-            border-top: 1px solid var(--border-color);
-            margin-top: 40px;
-        }
+        body { font-family: 'Noto Sans SC', sans-serif; background: var(--bg-primary); color: var(--text-primary); min-height: 100vh; }
+        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+        nav { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; padding: 20px; background: var(--bg-secondary); border-radius: 16px; border: 1px solid var(--border-color); }
+        nav .logo { font-family: 'Orbitron', sans-serif; font-size: 24px; font-weight: 700; color: var(--accent-cyan); text-decoration: none; }
+        nav .logo span { color: var(--accent-purple); }
+        nav .links { display: flex; gap: 20px; }
+        nav .links a { color: var(--text-secondary); text-decoration: none; font-size: 14px; transition: color 0.3s; }
+        nav .links a:hover { color: var(--accent-cyan); }
+        .back-link { display: inline-block; margin-bottom: 20px; color: var(--accent-cyan); text-decoration: none; font-size: 14px; }
+        .back-link:hover { text-decoration: underline; }
+        h1 { font-family: 'Orbitron', sans-serif; font-size: 36px; font-weight: 900; margin-bottom: 10px; background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .date { color: var(--text-secondary); font-size: 14px; margin-bottom: 30px; }
+        .section { background: var(--bg-card); border-radius: 16px; padding: 24px; margin-bottom: 24px; border: 1px solid var(--border-color); }
+        .section h2 { font-size: 18px; color: var(--accent-cyan); margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+        .item { padding: 16px 0; border-bottom: 1px solid var(--border-color); }
+        .item:last-child { border-bottom: none; }
+        .item h3 { font-size: 16px; color: var(--text-primary); margin-bottom: 8px; }
+        .item .source { font-size: 12px; color: var(--accent-purple); margin-bottom: 4px; }
+        .item .summary { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { padding: 12px; text-align: left; border-bottom: 1px solid var(--border-color); }
+        th { color: var(--accent-cyan); font-weight: 500; }
+        td { color: var(--text-secondary); }
+        tr:hover { background: var(--bg-secondary); }
+        .highlight-box { background: linear-gradient(135deg, rgba(0,240,255,0.1), rgba(168,85,247,0.1)); border-radius: 12px; padding: 20px; margin: 16px 0; border: 1px solid var(--accent-cyan); }
+        .highlight-box p { font-size: 16px; line-height: 1.8; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+        .stat-item { background: var(--bg-secondary); padding: 16px; border-radius: 12px; text-align: center; }
+        .stat-item .value { font-family: 'Orbitron', sans-serif; font-size: 24px; font-weight: 700; color: var(--accent-green); }
+        .stat-item .label { font-size: 12px; color: var(--text-secondary); margin-top: 4px; }
+        footer { text-align: center; padding: 40px 0; color: var(--text-secondary); font-size: 12px; }
+        @media (max-width: 600px) { h1 { font-size: 24px; } .stats-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
-    <nav>
-        <div class="container">
-            <h1>🦟 蚊子博客</h1>
-            <a href="../index.html" style="color: var(--accent-green); text-decoration: none;">← 返回首页</a>
-        </div>
-    </nav>
     <div class="container">
+        <nav>
+            <a href="index.html" class="logo">🦟 <span>MOSQUITO</span></a>
+            <div class="links">
+                <a href="index.html">早报列表</a>
+            </div>
+        </nav>
         <a href="index.html" class="back-link">← 返回早报列表</a>
-        <h1>🦟 AI 新闻早报 2026-05-17</h1>
-        <p class="date">每天 5 点更新</p>
-        <h2>🔥 AI 大新闻</h2>
-        <div class="item"><ul>
-<li><strong>5、QQ浏览器联手腾讯元宝上线高考AI Skill，推出首个高考咨询师Agent</strong></li>
-<li><strong>Anthropic员工承认这是「角色习惯」，但没人能解释它为什么这样做。</strong></li>
-<li><strong>突发：OpenAI大规模重组，总裁Brockman夺权挂帅</strong></li>
-<li><strong>3、百度成立“模型委员会”统筹大模型全局，年轻研究员掌舵，推动技术与应用一体化</strong></li>
-<li><strong>6、月之暗面发布 Kimi WebBridge，让 AI 代替你轻松操作浏览器！</strong></li>
-<li><strong>7、xAI 发布 Grok Build 早期测试版：针对复杂编程的“规划型”智能体</strong></li>
-<li><strong>1、Codex 登陆 ChatGPT 移动端：开发者“口袋里的编程助手”，免费策略背后的生态野心</strong></li>
-<li><strong>ChatGPT 能替你管钱了，你敢把银行账户交给它吗？</strong></li>
-
-        </ul></div>
-        <h2>🚀 GitHub 热门</h2>
-        <div class="item"><ul>
-<li><strong>Image 2 × Seedance 2.0王炸组合：4套刷屏外网的玩法，提示词全在这了</strong> - https://36kr.com/p/3811398798237187</li>
-<li><strong>AI已经开始伪造地方媒体了</strong> - https://36kr.com/p/3810669040295427</li>
-<li><strong>2、阿里云发布Qoder1.0:从AI IDE进化为智能体自主开发工作台</strong> - https://aibase.com/news/28030</li>
-<li><strong>4、微信宣布小程序成长计划正式接入Hy3 preview</strong> - https://aibase.com/news/28026</li>
-<li><strong>8、告别只会聊天的 AI：百灵大模型开源 Ring-2.6-1T，主打真实复杂任务闭环</strong> - https://aibase.com/news/28010</li>
-
-        </ul></div>
-        <h2>📱 HackerNews 热榜</h2>
-        <div class="item"><ul>
-
-        </ul></div>
-        <h2>💡 今日观点</h2>
-        <div class="item"><p><strong>AI 开源的边界在哪里？</strong> 大模型时代开源商业化的困境，需要新的平衡点。</p></div>
+        <h1>🦟 AI 新闻早报</h1>
+        <p class="date">2026-05-17 | 每天 5 点更新</p>
+        
+        <div class="section">
+            <h2>🔥 AI 大新闻</h2>
+            
+            <div class="item">
+                <h3>1. Anthropic 年化收入突破 440 亿美元，Q1 收入同比增长 80 倍</h3>
+                <p class="source">来源: aitoolsrecap / Kersai Research</p>
+                <p class="summary">Anthropic 披露 2026 年 Q1 收入同比增长 80 倍，年化收入（ARR）已突破 440 亿美元，成为 AI 行业收入增长最快的公司。同时与 SpaceX 签署协议，使用 Colossus 1 超算（22 万 + NVIDIA GPU，300MW 供电），Claude Code 速率限制全面提升。</p>
+            </div>
+            
+            <div class="item">
+                <h3>2. Google Gemini 3.1 Ultra 发布：200 万 Token 上下文，支持文本/图像/音频/视频原生多模态</h3>
+                <p class="source">来源: aitoolsrecap</p>
+                <p class="summary">Google 发布 Gemini 3.1 Ultra，具备 200 万 Token 超长上下文窗口，原生支持文本、图像、音频、视频多模态，集成沙盒化代码执行工具。结合 Android 布局，Gemini 正成为手机、Chrome、笔记本、汽车的 AI 底层。</p>
+            </div>
+            
+            <div class="item">
+                <h3>3. OpenAI GPT-5.5 持续迭代，Cyber 版本专注网络安全</h3>
+                <p class="source">来源: aitoolsrecap / CNET</p>
+                <p class="summary">GPT-5.5-Cyber 正在逐步推送，专攻网络安全、漏洞发现、网络攻防等高价值场景。GPT-5.5 在 Terminal-Bench 2.0 达到 82.7%、SWE-Bench Pro 达到 58.6%，为史上最强编程能力。</p>
+            </div>
+            
+            <div class="item">
+                <h3>4. 四大中国模型 12 天内密集发布：GLM-5.1、MiniMax M2.7、Kimi K2.6、DeepSeek V4</h3>
+                <p class="source">来源: aitoolsrecap / 知乎</p>
+                <p class="summary">智谱 GLM-5.1、MiniMax M2.7、月之暗面 Kimi K2.6、DeepSeek V4 在 12 天内相继发布，均为开源编程模型，能力接近西方前沿水平，成本仅为 Claude Opus 4.7 的三分之一。</p>
+            </div>
+            
+            <div class="item">
+                <h3>5. DeepSeek 洽谈 450 亿美元估值融资，SpaceX 宣布 550 亿美元芯片工厂计划</h3>
+                <p class="source">来源: aitoolsrecap</p>
+                <p class="summary">DeepSeek 正洽谈新一轮融资，估值达 450 亿美元。同时 SpaceX 向德克萨斯州提交 Terafab 芯片工厂建设计划，总耗资 550 亿美元，目标构建 AI 芯片垂直整合体系。</p>
+            </div>
+            
+            <div class="item">
+                <h3>6. 五角大楼 AI 合同排除 Anthropic，Google DeepMind 英国员工 98% 投票赞成组建工会</h3>
+                <p class="source">来源: aitoolsrecap</p>
+                <p class="summary">美国国防部与 SpaceX、OpenAI、Google、Microsoft、Nvidia、AWS、Oracle 签署 AI 合同，Anthropic 被排除在外。Google DeepMind 英国员工因抗议五角大楼机密合同，98% 投票赞成组建工会，成为首个头部 AI 实验室工会。</p>
+            </div>
+            
+            <div class="item">
+                <h3>7. Microsoft Agent 365 正式发布，企业 AI 代理再进一步</h3>
+                <p class="source">来源: aitoolsrecap / tldl</p>
+                <p class="summary">Microsoft Agent 365 于 5 月 2 日全面上市，为企业环境下的 AI 代理提供身份、安全与治理工具。同日 Claude Agent SDK 全面开放给外部开发者。</p>
+            </div>
+            
+            <div class="item">
+                <h3>8. Google I/O 2026（5 月 19-20 日）即将开幕，Android AI 整合成焦点</h3>
+                <p class="source">来源: CNBC / aitoolsrecap</p>
+                <p class="summary">Google I/O 大会将于 5 月 19-20 日举办，Android AI 整合、 Gemini 在移动端深度嵌入是核心议题，业界预期将发布多项 AI 平台级更新。</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🚀 GitHub 热门项目</h2>
+            <table>
+                <tr><th>#</th><th>项目</th><th>描述</th></tr>
+                <tr><td>1</td><td><strong>DeepSeek V4</strong></td><td>1.6 万亿参数，每百万 Token $0.145， cheapest frontier-class</td></tr>
+                <tr><td>2</td><td><strong>GPT-5.5</strong></td><td>OpenAI 最新编程旗舰，Terminal-Bench 82.7%</td></tr>
+                <tr><td>3</td><td><strong>Claude Agent SDK</strong></td><td>Anthropic 全面开放，支持企业级 Agent 部署</td></tr>
+                <tr><td>4</td><td><strong>Google Gemini 3.1 Ultra</strong></td><td>2M token 多模态，代码执行一体化</td></tr>
+                <tr><td>5</td><td><strong>xAI Grok Build</strong></td><td>早期测试版，专注复杂编程规划型 Agent</td></tr>
+            </table>
+        </div>
+        
+        <div class="section">
+            <h2>💡 今日观点</h2>
+            <div class="highlight-box">
+                <p><strong>AI 算力竞赛进入"重工业"阶段</strong>：Anthropic 收入 80 倍增长 + SpaceX 550 亿芯片工厂 + DeepSeek 450 亿估值，整个行业正在从"算法创新"转向"算力军备竞赛"。下一阶段的核心矛盾不是"模型有多强"，而是"谁能稳定供电、谁能建超算"。</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>📊 数据速览</h2>
+            <div class="stats-grid">
+                <div class="stat-item"><div class="value">$44B</div><div class="label">Anthropic ARR</div></div>
+                <div class="stat-item"><div class="value">$0.145</div><div class="label">DeepSeek V4 Token 价格 (每百万)</div></div>
+                <div class="stat-item"><div class="value">$550 亿</div><div class="label">SpaceX Terafab 投资</div></div>
+                <div class="stat-item"><div class="value">12 天 4 款</div><div class="label">中国模型发布窗口</div></div>
+                <div class="stat-item"><div class="value">05.19~20</div><div class="label">Google I/O 时间</div></div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>📝 编辑：小明内容官 | 📅 更新：2026-05-17 05:00</p>
+            <p>🦟 蚊子博客 | <a href="https://yisvin-netizen.github.io/mosquito-blog/ai-news/" style="color: var(--accent-cyan);">访问网站</a></p>
+        </footer>
     </div>
-    <footer>
-        <p>Generated by AI News Daily v2.1 | <a href="index.html" style="color: var(--accent-cyan);">返回早报列表</a></p>
-    </footer>
 </body>
 </html>
