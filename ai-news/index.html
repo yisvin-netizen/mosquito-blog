@@ -8,21 +8,34 @@
         body { font-family: sans-serif; background: #0a0a0f; color: #e4e4e7; padding: 20px; }
         .container { max-width: 800px; margin: 0 auto; }
         h1 { color: #00f0ff; }
-        .item { margin: 10px 0; padding: 10px; background: #1a1a25; border-radius: 8px; }
+        .section { margin: 20px 0; }
+        .section-title { color: #a855f7; font-size: 1.2em; margin-bottom: 10px; }
+        .item { margin: 8px 0; padding: 10px; background: #1a1a25; border-radius: 8px; }
         .item a { color: #22d3ee; text-decoration: none; }
         .item a:hover { text-decoration: underline; }
+        .evening { border-left: 3px solid #a855f7; padding-left: 10px; }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>🦟 AI 新闻早报列表</h1>
-        <p>每天 5 点更新</p>
-        <div class="items">
+        <p>每天 5 点更新 | 晚报 20 点更新</p>
+        
+        <div class="section">
+            <div class="section-title">📰 早报</div>
             <div class="item"><a href="2026-05-24.html">📰 AI 新闻早报 2026-05-24</a></div>
             <div class="item"><a href="2026-05-23.html">📰 AI 新闻早报 2026-05-23</a></div>
             <div class="item"><a href="2026-05-22.html">📰 AI 新闻早报 2026-05-22</a></div>
             <div class="item"><a href="2026-05-21.html">📰 AI 新闻早报 2026-05-21</a></div>
             <div class="item"><a href="2026-05-20.html">📰 AI 新闻早报 2026-05-20</a></div>
+        </div>
+        
+        <div class="section">
+            <div class="section-title">🌙 晚报</div>
+            <div class="item evening"><a href="AI-2026-05-23-evening.html">🌙 AI 新闻晚报 2026-05-23</a></div>
+            <div class="item evening"><a href="AI-2026-05-22-evening.html">🌙 AI 新闻晚报 2026-05-22</a></div>
+            <div class="item evening"><a href="AI-2026-05-21-evening.html">🌙 AI 新闻晚报 2026-05-21</a></div>
+            <div class="item evening"><a href="AI-2026-05-20-evening.html">🌙 AI 新闻晚报 2026-05-20</a></div>
         </div>
     </div>
 </body>
