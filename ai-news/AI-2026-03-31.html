@@ -3,201 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🦟 AI 新闻早报 2026-03-31 | 蚊子博客</title>
+    <title>AI 新闻早报 2026-03-31 | 蚊子博客</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
-
     <style>
-        :root {
-            --bg-primary: #0a0a0f;
-            --bg-secondary: #12121a;
-            --bg-card: #1a1a25;
-            --accent-cyan: #00f0ff;
-            --accent-purple: #a855f7;
-            --accent-green: #22d3ee;
-            --text-primary: #e4e4e7;
-            --text-secondary: #a1a1aa;
-            --border-color: #27272a;
-        }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Noto Sans SC', sans-serif; background: var(--bg-primary); color: var(--text-primary); line-height: 1.6; }
-        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
-        nav { background: var(--bg-secondary); padding: 15px 0; border-bottom: 1px solid var(--border-color); margin-bottom: 30px; }
-        nav .container { display: flex; justify-content: space-between; align-items: center; }
-        nav h1 { font-family: 'Orbitron', sans-serif; color: var(--accent-cyan); font-size: 1.5em; }
-        nav a { color: var(--accent-green); text-decoration: none; }
-        h1 { color: var(--accent-cyan); margin: 20px 0 15px; font-family: 'Orbitron', sans-serif; font-size: 1.8em; }
-        h2 { color: var(--accent-purple); margin: 25px 0 15px; border-left: 3px solid var(--accent-purple); padding-left: 10px; font-size: 1.3em; }
-        h3 { color: var(--accent-green); margin: 20px 0 10px; }
-        h4 { color: var(--text-primary); margin: 15px 0 8px; }
-        .date { color: var(--text-secondary); margin-bottom: 20px; font-size: 0.9em; }
-        .item { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 8px; padding: 15px; margin-bottom: 15px; }
-        .item ul.item-list { margin-left: 20px; color: var(--text-secondary); }
-        .item li { margin-bottom: 8px; }
-        .item a { color: var(--accent-cyan); }
-        a { color: var(--accent-cyan); }
-        p { margin-bottom: 10px; }
-        blockquote { background: var(--bg-card); border-left: 3px solid var(--accent-purple); padding: 15px; margin: 15px 0; border-radius: 0 8px 8px 0; color: var(--text-secondary); }
-        strong { color: var(--accent-cyan); }
-        em { color: var(--accent-green); }
-        code { background: var(--bg-secondary); padding: 2px 6px; border-radius: 4px; color: var(--accent-green); }
-        hr { border: none; border-top: 1px solid var(--border-color); margin: 20px 0; }
-        table.news-table { width: 100%; border-collapse: collapse; margin: 15px 0; }
-        table.news-table th { background: var(--bg-secondary); color: var(--accent-cyan); padding: 10px; text-align: left; border: 1px solid var(--border-color); }
-        table.news-table td { padding: 10px; border: 1px solid var(--border-color); color: var(--text-secondary); }
-        footer { text-align: center; padding: 20px 0; color: var(--text-secondary); font-size: 0.85em; margin-top: 40px; border-top: 1px solid var(--border-color); }
-        ul.item-list { list-style: none; padding: 0; }
-        ul.item-list li { padding: 8px 0; border-bottom: 1px solid var(--border-color); }
-        ul.item-list li:last-child { border-bottom: none; }
+        :root{--bg-primary:#0a0a0f;--bg-secondary:#12121a;--bg-card:#1a1a25;--accent-cyan:#00f0ff;--accent-purple:#a855f7;--accent-green:#22d3ee;--text-primary:#e4e4e7;--text-secondary:#a1a1aa;--border-color:#27272a;}
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Noto Sans SC',sans-serif;background:var(--bg-primary);color:var(--text-primary);min-height:100vh}
+        nav{background:var(--bg-secondary);border-bottom:1px solid var(--border-color);padding:16px 24px;display:flex;justify-content:space-between;align-items:center}
+        .logo{font-family:'Orbitron',monospace;font-weight:900;font-size:1.4rem;color:var(--accent-cyan);text-decoration:none}
+        .nav-links{display:flex;gap:20px}
+        .nav-links a{color:var(--text-secondary);text-decoration:none;font-size:.9rem;transition:color .2s}
+        .nav-links a:hover{color:var(--accent-cyan)}
+        .container{max-width:900px;margin:0 auto;padding:32px 24px}
+        .back-link{color:var(--accent-cyan);text-decoration:none;font-size:.9rem;margin-bottom:24px;display:inline-block}
+        .back-link:hover{text-decoration:underline}
+        h1{font-family:'Orbitron',monospace;font-size:2rem;font-weight:700;color:var(--accent-cyan);margin-bottom:8px}
+        .date{color:var(--text-secondary);font-size:.9rem;margin-bottom:32px}
+        .section{margin-bottom:40px}
+        h2{font-size:1.3rem;color:var(--accent-purple);margin-bottom:16px;padding-bottom:8px;border-bottom:2px solid var(--accent-purple)}
+        .item{background:var(--bg-card);border-radius:12px;padding:20px;margin-bottom:16px;border:1px solid var(--border-color);transition:border-color .2s}
+        .item:hover{border-color:var(--accent-cyan)}
+        .item h3{color:var(--text-primary);font-size:1.05rem;margin-bottom:8px;line-height:1.5}
+        .item ul{list-style:none;margin-top:8px}
+        .item li{color:var(--text-secondary);font-size:.9rem;line-height:1.6;padding:4px 0}
+        .item a{color:var(--accent-green);text-decoration:none}
+        .item a:hover{text-decoration:underline}
+        .opinion{background:linear-gradient(135deg,var(--bg-card),#1a1528);border:1px solid var(--accent-purple)}
+        .opinion h3{color:var(--accent-purple);font-size:1.1rem}
+        .github-table{width:100%;border-collapse:collapse}
+        .github-table th,.github-table td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--border-color);color:var(--text-secondary);font-size:.9rem}
+        .github-table th{color:var(--accent-purple)}
+        .github-table a{color:var(--accent-green);text-decoration:none}
+        .github-table a:hover{text-decoration:underline}
+        footer{text-align:center;padding:24px;color:var(--text-secondary);font-size:.85rem;border-top:1px solid var(--border-color);margin-top:40px}
+        .footer-link{color:var(--accent-cyan);text-decoration:none}
     </style>
 </head>
 <body>
     <nav>
-        <div class="container">
-            <h1>🦟 蚊子博客</h1>
-            <a href="index.html">← 返回早报列表</a>
+        <a href="https://yisvin-netizen.github.io/mosquito-blog/" class="logo">🦟 蚊子博客</a>
+        <div class="nav-links">
+            <a href="https://yisvin-netizen.github.io/mosquito-blog/ai-news/">早报列表</a>
+            <a href="https://github.com/yisvin-netizen/mosquito-blog" target="_blank">GitHub</a>
         </div>
     </nav>
     <div class="container">
+        <a href="index.html" class="back-link">← 返回早报列表</a>
         <h1>🦟 AI 新闻早报 2026-03-31</h1>
-        <p class="date">每天 5 点更新</p>
-        <h1>🦟 AI 新闻早报 2026-03-31</h1>
-<br>
-<blockquote><strong>更新时间</strong>：2026-03-31 05:00（北京时间）</blockquote>
-<blockquote><strong>覆盖范围</strong>：AI 大新闻 · GitHub 热门 · 技术观点</blockquote>
-<blockquote><strong>数据来源</strong>：AIbase · GitHub Trending · HackerNews</blockquote>
-<br>
-<hr>
-<br>
-<h2>🔥 AI 大新闻</h2>
-<br>
-<h3>1. 【头条】企业微信正式开源 CLI — AI 办公"最后 100 米"被打通</h3>
-<p>企业微信正式开源 CLI 项目，Claude、Codex 等主流 AI Agent 框架可一键接管企业微信 7 大核心能力（审批、考勤、汇报、邮件、日程、文档、客户）。AI 助手首次拥有"数字手脚"，从"意图理解"直达"任务执行"。</p>
-<br>
-<blockquote><strong>看点</strong>：企业协作 + AI Agent 深度融合，办公效率革命来袭，生态护城河已成。</blockquote>
-<br>
-<hr>
-<br>
-<h3>2. 微软开源前沿语音 AI 家族 VibeVoice — GitHub 狂揽 27K ⭐</h3>
-<p>微软开源 VibeVoice 语音 AI 家族，包含三大模型：</p>
-<ul class="item-list">
-<li><strong>VibeVoice-ASR-7B</strong>：单次处理 60 分钟音频，输出结构化转录</li>
-<li><strong>VibeVoice-TTS-1.5B</strong>：支持多说话人对话生成，可输出 90 分钟连续音频</li>
-<li><strong>VibeVoice-Realtime-0.5B</strong>：实时 TTS 生成，延迟仅约 300ms</li>
-</ul>
-<br>
-<blockquote><strong>看点</strong>：微软全面入局语音 AI，GitHub 24 小时内狂揽 27K Star，已居 Trending 第一。</blockquote>
-<br>
-<hr>
-<br>
-<h3>3. DeepSeek 突发大规模服务中断：修复时长超 12 小时</h3>
-<p>3 月 29 日晚 9:35 起，DeepSeek 遭遇重大服务中断，初次恢复后再度波动，部分端功能尚未完全恢复。此次事件暴露了在大模型厂商在用户爆发式增长下，算力调度与后端架构稳定性的严峻挑战。</p>
-<br>
-<blockquote><strong>看点</strong>：大模型厂商的稳定性大考，基础设施成为核心竞争力。</blockquote>
-<br>
-<hr>
-<br>
-<h3>4. 国产模型爆发！豆包跻身全球第一梯队</h3>
-<ul class="item-list">
-<li><strong>豆包</strong>：与 GPT-5.4 差距缩小至 0.95 分，正式跻身全球第一梯队</li>
-<li><strong>小米 MiMo-V2-Pro</strong>：数学推理任务得分 84.03，表现亮眼</li>
-<li><strong>国产开源模型</strong>：霸榜开源榜单前三，优势显著</li>
-</ul>
-<br>
-<blockquote><strong>看点</strong>：国产大模型从"跟随者"跃升为"并跑者"，2026 年迎来真正"爆发年"。</blockquote>
-<br>
-<hr>
-<br>
-<h3>5. 智元机器人第 10000 台远征 A3 量产下线</h3>
-<p>智元机器人宣布第 10000 台远征 A3 正式量产下线，15 个月内产能从 1000 台增长至 10000 台，实现十倍跨越。人形机器人商业化进程加速。</p>
-<br>
-<blockquote><strong>看点</strong>：人形机器人从"样机"到"量产"的里程碑，具身智能进入快车道。</blockquote>
-<br>
-<hr>
-<br>
-<h3>6. Runway 发布 Multi-Shot App — AI 视频"一键成片"跨越</h3>
-<p>Runway 发布 Multi-Shot App，实现 AI 视频"多镜头一键成片"功能突破，创作门槛大幅降低。</p>
-<br>
-<blockquote><strong>看点</strong>：AI 视频工具持续进化，AIGC 创作进入大众化阶段。</blockquote>
-<br>
-<hr>
-<br>
-<h3>7. 上海已发布超 150 款备案大模型，集聚 30 万 AI 人才</h3>
-<p>上海成为全球 AI 人才高地：150+ 备案大模型、30 万 AI 人才，人形机器人出货量全球领先。</p>
-<br>
-<blockquote><strong>看点</strong>：城市级 AI 产业生态竞争加剧，上海领跑全国。</blockquote>
-<br>
-<hr>
-<br>
-<h3>8. 万象有声开启公测：懒人听书原班人马杀回，用 AIGC 再造"有声工厂"</h3>
-<p>"懒人听书"原班团队推出万象有声，用 AIGC 双轨引擎（专业品质 + 海量 IP）解决有声内容制作成本高、效率低、质量难控的问题。</p>
-<br>
-<blockquote><strong>看点</strong>：AIGC 渗透内容产业腹地，音频赛道迎来大洗牌。</blockquote>
-<br>
-<hr>
-<br>
-<h2>🚀 GitHub 热门项目</h2>
-<br>
-<table class="news-table"><thead>
-<th>项目</th>
-<th>描述</th>
-<th>今日 ⭐</th>
-</thead><tbody>
-<tr>
-<td>------</td>
-<td>------</td>
-<td>---------</td>
-</tr>
-<tr>
-<td>[microsoft/VibeVoice](https://github.com/microsoft/VibeVoice)</td>
-<td>微软开源前沿语音 AI 家族（ASR/TTS/Realtime）</td>
-<td>2,509</td>
-</tr>
-<tr>
-<td>[luongnv89/claude-howto](https://github.com/luongnv89/claude-howto)</td>
-<td>Claude Code 视觉化指南与模板</td>
-<td>4,150</td>
-</tr>
-<tr>
-<td>[Yeachan-Heo/oh-my-claudecode](https://github.com/Yeachan-Heo/oh-my-claudecode)</td>
-<td>面向团队的 Claude Code 多智能体编排框架</td>
-<td>1,785</td>
-</tr>
-<tr>
-<td>[NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent)</td>
-<td>陪伴式成长的 AI Agent</td>
-<td>1,859</td>
-</tr>
-<tr>
-<td>[hacksider/Deep-Live-Cam](https://github.com/hacksider/Deep-Live-Cam)</td>
-<td>单图实时换脸 / AI 视频深伪工具</td>
-<td>trending</td>
-</tr>
-</tbody></table>
-<br>
-<blockquote><strong>本周趋势</strong>：语音 AI（VibeVoice）+ Claude Code 生态工具链 + AI Agent 成为最热方向。</blockquote>
-<br>
-<hr>
-<br>
-<h2>💡 技术观点</h2>
-<br>
-<p><strong>今日核心洞察</strong>：AI 正在从"对话助手"向"任务执行者"深度渗透——</p>
-<ul class="item-list">
-<li>企业微信开源 CLI = AI 获得企业办公"数字手脚"</li>
-<li>VibeVoice = AI 获得"超级听力与嗓子"</li>
-<li>智元万台量产 = AI 获得"物理身体"</li>
-</ul>
-<br>
-<p><strong>大趋势</strong>：多模态 Agent（语音+视觉+动作+企业系统）正在成为 2026 年主战场。</p>
-<br>
-<hr>
-<br>
-<p><em>📅 明日早报将于 06:00 更新 · 蚊子博客 AI 新闻早报</em></p>
-<br>
+        <p class="date">更新时间：2026-03-31 05:00（北京时间）| 数据来源：AIbase · GitHub Trending · HackerNews</p>
+        <div class="section"><h2>🔥 AI 大新闻</h2>
+<div class="item"><h3>【头条】企业微信正式开源 CLI — AI 办公"最后 100 米"被打通</h3><ul><li>企业微信正式开源 CLI 项目，Claude、Codex 等主流 AI Agent 框架可一键接管企业微信 7 大核心能力。AI 助手首次拥有"数字手脚"，从"意图理解"直达"任务执行"。</li><li>看点：企业协作 + AI Agent 深度融合，办公效率革命来袭，生态护城河已成。</li></ul></div>
+<div class="item"><h3>微软开源前沿语音 AI 家族 VibeVoice — GitHub 狂揽 27K ⭐</h3><ul><li>VibeVoice-ASR-7B（60 分钟音频处理）、VibeVoice-TTS-1.5B（90 分钟连续音频）、VibeVoice-Realtime-0.5B（实时 TTS，延迟 300ms）。24 小时登顶 GitHub Trending 第一。</li></ul></div>
+<div class="item"><h3>DeepSeek 突发大规模服务中断：修复时长超 12 小时</h3><ul><li>3 月 29 日晚起 DeepSeek 遭遇重大服务中断，暴露大模型厂商在用户爆发式增长下算力调度与后端架构稳定性的严峻挑战。</li></ul></div>
+<div class="item"><h3>国产模型爆发！豆包跻身全球第一梯队</h3><ul><li>字节豆包与 GPT-5.4 差距缩小至 0.95 分；小米 MiMo-V2-Pro 数学推理 84.03 分；国产开源模型霸榜开源榜单前三。</li></ul></div>
+<div class="item"><h3>智元机器人第 10000 台远征 A3 量产下线</h3><ul><li>15 个月产能从 1000 台增至 10000 台，十倍跨越。人形机器人从"样机"到"量产"的里程碑。</li></ul></div>
+<div class="item"><h3>Runway 发布 Multi-Shot App — AI 视频"一键成片"</h3><ul><li>AI 视频"多镜头一键成片"功能突破，创作门槛大幅降低，AIGC 创作进入大众化阶段。</li></ul></div>
+<div class="item"><h3>上海已发布超 150 款备案大模型，集聚 30 万 AI 人才</h3><ul><li>上海成为全球 AI 人才高地，人形机器人出货量全球领先。</li></ul></div>
+<div class="item"><h3>万象有声开启公测：AIGC 再造"有声工厂"</h3><ul><li>懒人听书原班团队推出万象有声，用 AIGC 双轨引擎解决有声内容制作成本高、效率低问题，音频赛道迎来大洗牌。</li></ul></div>
+        </div>
+        <div class="section"><h2>🚀 GitHub 热门项目</h2><div class="item"><table class="github-table"><tr><th>项目</th><th>描述</th><th>今日 ⭐</th></tr><tr><td><a href="https://github.com/microsoft/VibeVoice" target="_blank">microsoft/VibeVoice</a></td><td>微软开源前沿语音 AI 家族（ASR/TTS/Realtime）</td><td>2,509</td></tr><tr><td><a href="https://github.com/luongnv89/claude-howto" target="_blank">luongnv89/claude-howto</a></td><td>Claude Code 视觉化指南与模板</td><td>4,150</td></tr><tr><td><a href="https://github.com/Yeachan-Heo/oh-my-claudecode" target="_blank">Yeachan-Heo/oh-my-claudecode</a></td><td>面向团队的 Claude Code 多智能体编排框架</td><td>1,785</td></tr><tr><td><a href="https://github.com/NousResearch/hermes-agent" target="_blank">NousResearch/hermes-agent</a></td><td>陪伴式成长的 AI Agent</td><td>1,859</td></tr><tr><td><a href="https://github.com/hacksider/Deep-Live-Cam" target="_blank">hacksider/Deep-Live-Cam</a></td><td>单图实时换脸 / AI 视频深伪工具</td><td>trending</td></tr></table><p style="color:var(--text-secondary);font-size:.85rem;margin-top:12px">本周趋势：语音 AI（VibeVoice）+ Claude Code 生态工具链 + AI Agent 成为最热方向。</p></div></div>
+        <div class="section"><h2>💡 技术观点</h2><div class="item opinion"><h3>今日核心洞察：AI 正在从"对话助手"向"任务执行者"深度渗透——企业微信开源 CLI = AI 获得企业办公"数字手脚"；VibeVoice = AI 获得"超级听力与嗓子"；智元万台量产 = AI 获得"物理身体"。大趋势：多模态 Agent（语音+视觉+动作+企业系统）正在成为 2026 年主战场。</h3></div></div>
     </div>
-    <footer>
-        <p>🦟 蚊子博客 | AI 新闻早报</p>
-    </footer>
+    <footer><p>🦟 蚊子博客 | AI 新闻早报 2026-03-31 | <a href="https://yisvin-netizen.github.io/mosquito-blog/ai-news/" class="footer-link">查看更多</a></p></footer>
 </body>
 </html>
