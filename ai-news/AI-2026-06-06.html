@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 新闻早报 2026-06-06 | 蚊子博客</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-card: #1a1a25;
+            --accent-cyan: #00f0ff;
+            --accent-purple: #a855f7;
+            --accent-green: #22d3ee;
+            --text-primary: #e4e4e7;
+            --text-secondary: #a1a1aa;
+            --border-color: #27272a;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+        nav {
+            background: var(--bg-secondary);
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        nav .container { display: flex; justify-content: space-between; align-items: center; }
+        nav h1 { font-family: 'Orbitron', sans-serif; color: var(--accent-cyan); font-size: 1.5em; }
+        .back-link { color: var(--accent-green); text-decoration: none; }
+        h1 { color: var(--accent-cyan); margin: 30px 0 10px; font-family: 'Orbitron', sans-serif; }
+        h2 { color: var(--accent-purple); margin: 25px 0 15px; border-left: 3px solid var(--accent-purple); padding-left: 10px; }
+        .date { color: var(--text-secondary); margin-bottom: 30px; }
+        .item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        .item ul { margin-left: 20px; color: var(--text-secondary); }
+        .item li { margin-bottom: 8px; }
+        .item a { color: var(--accent-cyan); }
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        th, td { padding: 10px; border: 1px solid var(--border-color); text-align: left; }
+        th { background: var(--bg-secondary); color: var(--accent-cyan); }
+        .topic-table td:nth-child(3) { color: var(--accent-green); }
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: var(--text-secondary);
+            border-top: 1px solid var(--border-color);
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <h1>🦟 蚊子博客</h1>
+            <a href="../index.html" style="color: var(--accent-green); text-decoration: none;">← 返回首页</a>
+        </div>
+    </nav>
+    <div class="container">
+        <a href="index.html" class="back-link">← 返回早报列表</a>
+        <h1>🦟 AI 新闻早报 2026-06-06</h1>
+        <p class="date">每天 5 点更新</p>
+        <h2>🔥 AI 大新闻</h2>
+        <div class="item"><ul>
+<li><strong>1. Google 发布 Gemma 4 QAT 量化模型 — 手机端侧 AI 重大突破</strong><br>Google 发布了 Gemma 4 QAT（Quantization-Aware Training）模型，通过量化感知训练技术，在保持模型质量的同时显著压缩模型体积，使 Gemma 4 可以在手机和笔记本电脑上高效运行。相比传统后训练量化，QAT 在压缩率 60-95% 的情况下仍能保持接近原始模型的精度。<br><em>来源：Google Blog | Hacker News (181 points)</em></li>
+<li><strong>2. Microsoft 开源 pg_durable — 数据库内持久化执行引擎</strong><br>Microsoft 开源了 pg_durable 项目，这是一个 PostgreSQL 扩展，提供了数据库内持久化执行能力，让 AI Agent 可以直接在数据库中执行复杂的多步骤操作，无需在应用层和数据库之间频繁往返。<br><em>来源：GitHub/microsoft/pg_durable | Hacker News (221 points)</em></li>
+<li><strong>3. AI 编程争议：Claude 是否增加 rsync 的 Bug？</strong><br>有开发者分析了 rsync 代码库，发现在引入 Claude 辅助编程后，rsync 的 Bug 数量有所增加。这一发现引发社区热烈讨论：AI 辅助编程究竟是降低了代码质量，还是暴露了更多隐藏问题？<br><em>来源：alexispurslane.github.io | Hacker News (185 points, 183 comments)</em></li>
+<li><strong>4. NVIDIA 开源 Cosmos — 物理 AI 世界模型平台</strong><br>NVIDIA 发布了 Cosmos 开放平台，包含世界模型、数据集和工具链，旨在帮助开发者构建物理 AI（Physical AI）应用。Cosmos 已有 9,371 stars，本周获 494 stars。<br><em>来源：GitHub/NVIDIA/cosmos</em></li>
+<li><strong>5. CopilotKit 获得 350 stars — 前端 Agent 框架持续火热</strong><br>CopilotKit 是一个用于构建 AI Agent 和生成式 UI 的 React/Angular 框架，发布了 AG-UI Protocol，今日获 350 stars，累计 32,597 stars。<br><em>来源：GitHub/CopilotKit</em></li>
+<li><strong>6. NousResearch 发布 Hermes-Agent — 成长型 AI Agent 框架</strong><br>Hermes-Agent 是一个新型 AI Agent 框架，主打"与用户共同成长"的理念，引起了开发者社区的关注。<br><em>来源：GitHub NousResearch/hermes-agent</em></li>
+<li><strong>7. Open-Notebook 开源：NotebookLM 的开源替代品</strong><br>lfnovo/open-notebook 获得了 1,142 stars（累计 25,899 stars），这是 Notebook LM 的开源实现，提供了更多灵活性和功能。<br><em>来源：GitHub lfnovo/open-notebook</em></li>
+<li><strong>8. Headroom 开源 — 压缩 LLM 上下文 60-95%</strong><br>Headroom 是一个新工具，可以压缩工具输出、日志、文件和 RAG chunks，在减少 60-95% token 的同时保持答案质量。今日获得 2,503 stars。<br><em>来源：GitHub chopratejas/headroom</em></li>
+        </ul></div>
+        <h2>🚀 GitHub 热门</h2>
+        <div class="item"><ul>
+<li><strong>NousResearch/hermes-agent</strong> — 成长型 AI Agent 框架 | 今日 14k+</li>
+<li><strong>chopratejas/headroom</strong> — LLM 上下文压缩工具 | +2,503</li>
+<li><strong>CopilotKit/CopilotKit</strong> — 前端 Agent + AG-UI 协议 | +350, 共 32.6k</li>
+<li><strong>lfnovo/open-notebook</strong> — NotebookLM 开源替代 | +1,142, 共 25.9k</li>
+<li><strong>NVIDIA/cosmos</strong> — 物理 AI 世界模型平台 | +494, 共 9.4k</li>
+<li><strong>PaddlePaddle/PaddleOCR</strong> — OCR 工具包 | 100+ 语言支持</li>
+<li><strong>openclaw/openclaw-windows-node</strong> — OpenClaw Windows 套件 | +329, 共 1.6k</li>
+        </ul></div>
+        <h2>📱 HackerNews 热榜</h2>
+        <div class="item"><ul>
+<li><strong>Astronauts told to return to ISS after sheltering over air leak repairs</strong> (BBC) — 306 points</li>
+<li><strong>Mouseless – keyboard-driven control of macOS/Linux/Windows</strong> — 376 points</li>
+<li><strong>pg_durable: Microsoft open sources in-database durable execution</strong> — 221 points</li>
+<li><strong>Conventional Commits encourages focus on the wrong things</strong> — 209 points</li>
+<li><strong>Gov.uk has replaced Stripe with Dutch provider Adyen</strong> — 198 points</li>
+        </ul></div>
+        <h2>💡 今日观点</h2>
+        <div class="item"><p><strong>AI 编程工具的双刃剑效应正在显现</strong>：从 rsync 案例到 TDD Agent 的探索，核心问题不是 AI 能不能写代码，而是如何在 AI 辅助下保持代码质量和人类判断力。随着 AI Agent 从简单任务向复杂系统渗透，如何建立有效的审查机制将成为关键课题。</p></div>
+    </div>
+    <footer>
+        <p>Generated by AI News Daily v2.1 | <a href="index.html" style="color: var(--accent-cyan);">返回早报列表</a></p>
+    </footer>
+</body>
+</html>
