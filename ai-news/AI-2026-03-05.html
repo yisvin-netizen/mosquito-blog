@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026-03-05 | 蚊子博客</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-card: #1a1a25;
+            --accent-cyan: #00f0ff;
+            --accent-purple: #a855f7;
+            --accent-green: #22d3ee;
+            --text-primary: #e4e4e7;
+            --text-secondary: #a1a1aa;
+            --border-color: #27272a;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Noto Sans SC', sans-serif; background: var(--bg-primary); color: var(--text-primary); line-height: 1.6; }
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+        nav { background: var(--bg-secondary); padding: 15px 0; border-bottom: 1px solid var(--border-color); }
+        nav .container { display: flex; justify-content: space-between; align-items: center; }
+        nav h1 { font-family: 'Orbitron', sans-serif; color: var(--accent-cyan); font-size: 1.5em; }
+        .back-link { color: var(--accent-green); text-decoration: none; }
+        h1 { color: var(--accent-cyan); margin: 30px 0 10px; font-family: 'Orbitron', sans-serif; }
+        h2 { color: var(--accent-purple); margin: 25px 0 15px; border-left: 3px solid var(--accent-purple); padding-left: 10px; }
+        .date { color: var(--text-secondary); margin-bottom: 30px; }
+        .item { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 8px; padding: 15px; margin-bottom: 15px; }
+        .item ul { margin-left: 20px; color: var(--text-secondary); }
+        .item li { margin-bottom: 8px; }
+        .item a { color: var(--accent-cyan); }
+        .item p { color: var(--text-secondary); }
+        footer { text-align: center; padding: 30px; color: var(--text-secondary); border-top: 1px solid var(--border-color); margin-top: 40px; }
+        strong { color: var(--accent-green); }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <h1>🦟 蚊子博客</h1>
+            <a href="../index.html" style="color: var(--accent-green); text-decoration: none;">← 返回首页</a>
+        </div>
+    </nav>
+    <div class="container">
+        <a href="index.html" class="back-link">← 返回早报列表</a>
+        <h1>🦟 2026-03-05</h1>
+        <p class="date">每天 9 点更新</p>
+
+        <h2>🔥 AI 大新闻</h2>
+        <div class="item">
+            <p>*来源：AIbase 3 月 4 日日报*</p>
+            <ul>
+            <li>OpenAI 上线 GPT-5.3 Instant - 拒尽"爹味"说教，GPT-5.4 已在路上</li>
+            <li>谷歌发布 Gemini 3.1 Flash-Lite - 首字提速 2.5 倍，算力成本再创新低</li>
+            <li>阿里通义千问负责人林俊旸宣布离职 - 曾主导 Qwen 开源生态</li>
+            <li>阶跃星辰 Step3.5Flash 全链路开源 - 1960 亿参数 MoE 架构，调用量跃升 OpenClaw 前二</li>
+            <li>讯飞 AI 眼镜 MWC 2026 全球首秀 - 40 克轻如蝉翼，首创"看唇语"降噪</li>
+            <li>OpenClaw 能"边用边训"了 - 智能体强化学习训练框架 AReaL v1.0 稳定版发布</li>
+            <li>Anthropic 发布 Claude Code 语音模式 - 动动嘴就能写代码</li>
+            <li>马云重返云谷学校 - 阿里蚂蚁核心层罕见齐聚，AI 冲击超乎想象</li>
+            </ul>
+        </div>
+
+        <h2>🚀 GitHub 热门</h2>
+        <div class="item">
+            <p>*来源：GitHub Trending 今日榜单*</p>
+            <ul>
+            <li>shannon (30,273⭐ | +1,854 today) - Fully autonomous AI hacker to find actual exploits in your web apps</li>
+            <li>agency-agents (5,414⭐ | +2,209 today) - A complete AI agency at your fingertips</li>
+            <li>OpenSandbox (5,959⭐ | +788 today) - Alibaba's general-purpose sandbox platform for AI applications</li>
+            <li>airi (24,632⭐ | +1,454 today) - Self hosted Grok Companion with realtime voice chat</li>
+            <li>Perplexica (30,826⭐ | +1,090 today) - AI-powered answering engine</li>
+            </ul>
+        </div>
+
+        <h2>📱 HackerNews 热榜</h2>
+        <div class="item">
+            <p>*来源：HackerNews 热榜*</p>
+            <ul>
+            <li>MacBook Neo (1,438 points) - Apple 发布新款 MacBook Neo</li>
+            <li>Something is afoot in the land of Qwen (470 points) - Simon Willison 分析 Qwen 动态</li>
+            <li>An interactive map of Flock Cams (475 points) - Flock 摄像头交互地图</li>
+            <li>Qwen3.5 Fine-Tuning Guide (251 points) - Unsloth 文档</li>
+            <li>Glaze by Raycast (185 points) - Raycast 新应用</li>
+            </ul>
+        </div>
+
+        <h2>💡 今日观点</h2>
+        <div class="item">
+            <ul>
+            <li>AI 正在从"工具"转向"伙伴" - 从 autonomous AI hacker 到 Grok Companion，GitHub 热门项目显示 AI 代理正从单一功能向全方位助手演进，具备人格化特征和持续记忆能力。</li>
+            <li>整理：小明分析师</li>
+            <li>同步：知识库 + GitHub 博客</li>
+            </ul>
+        </div>
+
+    </div>
+    <footer>
+        <p>Generated by AI News Daily | <a href="index.html" style="color: var(--accent-cyan);">返回早报列表</a></p>
+    </footer>
+</body>
+</html>
