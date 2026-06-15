@@ -4,26 +4,340 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI 新闻早报列表 | 蚊子博客</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: sans-serif; background: #0a0a0f; color: #e4e4e7; padding: 20px; }
-        .container { max-width: 800px; margin: 0 auto; }
-        h1 { color: #00f0ff; }
-        .item { margin: 10px 0; padding: 10px; background: #1a1a25; border-radius: 8px; }
-        .item a { color: #22d3ee; text-decoration: none; }
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-card: #1a1a25;
+            --accent-cyan: #00f0ff;
+            --accent-purple: #a855f7;
+            --accent-green: #22d3ee;
+            --text-primary: #e4e4e7;
+            --text-secondary: #a1a1aa;
+            --border-color: #27272a;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Noto Sans SC', sans-serif; background: var(--bg-primary); color: var(--text-primary); line-height: 1.6; }
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+        nav { background: var(--bg-secondary); padding: 15px 0; border-bottom: 1px solid var(--border-color); }
+        nav .container { display: flex; justify-content: space-between; align-items: center; }
+        nav h1 { font-family: 'Orbitron', sans-serif; color: var(--accent-cyan); font-size: 1.5em; }
+        h1 { color: var(--accent-cyan); margin: 30px 0 10px; font-family: 'Orbitron', sans-serif; }
+        .subtitle { color: var(--text-secondary); margin-bottom: 30px; }
+        .month-group { margin-bottom: 30px; }
+        .month-header { color: var(--accent-purple); font-size: 1.2em; margin: 20px 0 10px; border-left: 3px solid var(--accent-purple); padding-left: 10px; }
+        .item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 12px 15px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .item:hover { border-color: var(--accent-cyan); }
+        .item a { color: var(--accent-cyan); text-decoration: none; flex: 1; }
         .item a:hover { text-decoration: underline; }
+        .item .date { color: var(--text-secondary); font-size: 0.9em; }
+        .tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 0.75em; margin-left: 10px; }
+        .tag-morning { background: rgba(0, 240, 255, 0.15); color: var(--accent-cyan); }
+        .tag-evening { background: rgba(168, 85, 247, 0.15); color: var(--accent-purple); }
+        footer { text-align: center; padding: 30px; color: var(--text-secondary); border-top: 1px solid var(--border-color); margin-top: 40px; }
+        .stats { color: var(--text-secondary); margin-top: 20px; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>🦟 AI 新闻早报列表</h1>
-        <p>每天 5 点更新</p>
-        <div class="items">
-            <div class="item"><a href="2026-06-15.html">📰 AI 新闻早报 2026-06-15</a></div>
-            <div class="item"><a href="2026-06-13.html">📰 AI 新闻早报 2026-06-13</a></div>
-            <div class="item"><a href="2026-03-13.html">📰 AI 新闻早报 2026-03-13</a></div>
-            <div class="item"><a href="2026-06-12.html">📰 AI 新闻早报 2026-06-12</a></div>
-            <div class="item"><a href="2026-06-11.html">📰 AI 新闻早报 2026-06-11</a></div>
+    <nav>
+        <div class="container">
+            <h1>🦟 蚊子博客</h1>
+            <a href="https://yisvin-netizen.github.io/mosquito-blog/" style="color: var(--accent-green); text-decoration: none;">← 返回博客</a>
         </div>
+    </nav>
+    <div class="container">
+        <h1>📰 AI 新闻早报列表</h1>
+        <p class="subtitle">每天 5:00 / 20:00 双更 | 数据来源：AIbase + HackerNews + GitHub Trending</p>
+        <div class="stats">共 66 期早报</div>
+        <div class="month-group">
+            <div class="month-header">2026-06</div>
+            <div class="item">
+                <a href="2026-06-15.html">AI 新闻早报 2026-06-15 <span class="tag tag-morning">早报</span></a>
+                <span class="date">2026-06-15</span>
+            </div>
+            <div class="item">
+                <a href="AI-2026-06-15.html">🦟 AI 新闻早报 | 2026-06-15 <span class="tag tag-morning">早报</span></a>
+                <span class="date">2026-06-15</span>
+            </div>
+            <div class="item">
+                <a href="AI-2026-06-14.html">🦟 AI 新闻早报 - 2026-06-14 <span class="tag tag-morning">早报</span></a>
+                <span class="date">2026-06-14</span>
+            </div>
+            <div class="item">
+                <a href="AI-2026-06-14-evening.html">AI 新闻晚播 - 2026年6月14日 <span class="tag tag-evening">晚报</span></a>
+                <span class="date">2026-06-14</span>
+            </div>
+            <div class="item">
+                <a href="2026-06-13.html">AI 新闻早报 2026-06-13 <span class="tag tag-morning">早报</span></a>
+                <span class="date">2026-06-13</span>
+            </div>
+            <div class="item">
+                <a href="AI-2026-06-13.html">🦟 AI 新闻早报 2026-06-13 <span class="tag tag-morning">早报</span></a>
+                <span class="date">2026-06-13</span>
+            </div>
+            <div class="item">
+                <a href="AI-2026-06-13-evening.html">🦟 AI 新闻晚报 - 2026-06-13 <span class="tag tag-evening">晚报</span></a>
+                <span class="date">2026-06-13</span>
+            </div>
+            <div class="item">
+                <a href="2026-06-12.html">AI 新闻早报 2026-06-12 <span class="tag tag-morning">早报</span></a>
+                <span class="date">2026-06-12</span>
+            </div>
+            <div class="item">
+                <a href="AI-2026-06-12.html">🗞️ AI 新闻早报 | 2026-06-12 <span class="tag tag-morning">早报</span></a>
+                <span class="date">2026-06-12</span>
+            </div>
+            <div class="item">
+                <a href="AI-2026-06-12-evening.html">🗞️ AI 热点晚报 | 2026-06-12 <span class="tag tag-evening">晚报</span></a>
+                <span class="date">2026-06-12</span>
+            </div>
+            <div class="item">
+                <a href="2026-06-11.html">AI 新闻早报 2026-06-11 <span class="tag tag-morning">早报</span></a>
+                <span class="date">2026-06-11</span>
+            </div>
+            <div class="item">
+                <a href="AI-2026-06-11.html">🦟 AI 新闻早报 | 2026-06-11 <span class="tag tag-morning">早报</span></a>
+                <span class="date">2026-06-11</span>
+            </div>
+            <div class="item">
+                <a href="AI-2026-06-11-evening.html">🦟 AI 新闻晚报 | 2026-06-11 <span class="tag tag-evening">晚报</span></a>
+                <span class="date">2026-06-11</span>
+            </div>
+            <div class="item">
+                <a href="2026-06-10.html">AI 新闻早报 2026-06-10 <span class="tag tag-morning">早报</span></a>
+                <span class="date">2026-06-10</span>
+            </div>
+            <div class="item">
+                <a href="AI-2026-06-10.html">🦟 AI 新闻早报 - 2026-06-10 <span class="tag tag-morning">早报</span></a>
+                <span class="date">2026-06-10</span>
+            </div>
+            <div class="item">
+                <a href="AI-2026-06-10-evening.html">🦟 AI 新闻晚报 - 2026-06-10 <span class="tag tag-evening">晚报</span></a>
+                <span class="date">2026-06-10</span>
+            </div>
+            <div class="item">
+                <a href="2026-06-09.html">AI 新闻早报 2026-06-09 <span class="tag tag-morning">早报</span></a>
+                <span class="date">2026-06-09</span>
+            </div>
+            <div class="item">
+                <a href="AI-2026-06-09-evening.html">AI 新闻晚报 2026-06-09 <span class="tag tag-evening">晚报</span></a>
+                <span class="date">2026-06-09</span>
+            </div>
+            <div class="item">
+                <a href="AI-2026-06-09.html">🦟 AI 新闻早报 - 2026-06-09 <span class="tag tag-morning">早报</span></a>
+                <span class="date">2026-06-09</span>
+            </div>
+            <div class="item">
+                <a href="2026-06-08.html">AI 新闻早报 2026-06-08 <span class="tag tag-morning">早报</span></a>
+                <span class="date">2026-06-08</span>
+            </div>
+            <div class="item">
+                <a href="AI-2026-06-08.html">AI 新闻早报 2026-06-08 <span class="tag tag-morning">早报</span></a>
+                <span class="date">2026-06-08</span>
+            </div>
+            <div class="item">
+                <a href="2026-06-07.html">AI 新闻早报 2026-06-07 <span class="tag tag-morning">早报</span></a>
+                <span class="date">2026-06-07</span>
+            </div>
+            <div class="item">
+                <a href="AI-2026-06-07-evening.html">AI 新闻晚报 2026-06-07 <span class="tag tag-evening">晚报</span></a>
+                <span class="date">2026-06-07</span>
+            </div>
+            <div class="item">
+                <a href="AI-2026-06-07.html">AI 新闻早报 2026-06-07 <span class="tag tag-morning">早报</span></a>
+                <span class="date">2026-06-07</span>
+            </div>
+            <div class="item">
+                <a href="2026-06-06.html">AI 新闻早报 2026-06-06 <span class="tag tag-morning">早报</span></a>
+                <span class="date">2026-06-06</span>
+            </div>
+            <div class="item">
+                <a href="AI-2026-06-06-evening.html">AI 新闻晚报 2026-06-06 <span class="tag tag-evening">晚报</span></a>
+                <span class="date">2026-06-06</span>
+            </div>
+            <div class="item">
+                <a href="AI-2026-06-06.html">AI 新闻早报 2026-06-06 <span class="tag tag-morning">早报</span></a>
+                <span class="date">2026-06-06</span>
+            </div>
+            <div class="item">
+                <a href="2026-06-05.html">AI 新闻早报 2026-06-05 <span class="tag tag-morning">早报</span></a>
+                <span class="date">2026-06-05</span>
+            </div>
+            <div class="item">
+                <a href="AI-2026-06-05-evening.html">AI 热点晚播报 2026-06-05 <span class="tag tag-evening">晚报</span></a>
+                <span class="date">2026-06-05</span>
+            </div>
+            <div class="item">
+                <a href="AI-2026-06-05.html">AI 新闻早报 2026-06-05 <span class="tag tag-morning">早报</span></a>
+                <span class="date">2026-06-05</span>
+            </div>
+            <div class="item">
+                <a href="2026-06-04.html">AI 新闻早报 2026-06-04 <span class="tag tag-morning">早报</span></a>
+                <span class="date">2026-06-04</span>
+            </div>
+            <div class="item">
+                <a href="AI-2026-06-04-evening.html">AI 新闻晚报 2026-06-04 <span class="tag tag-evening">晚报</span></a>
+                <span class="date">2026-06-04</span>
+            </div>
+            <div class="item">
+                <a href="AI-2026-06-04.html">AI 新闻早报 2026-06-04 <span class="tag tag-morning">早报</span></a>
+                <span class="date">2026-06-04</span>
+            </div>
+            <div class="item">
+                <a href="2026-06-03.html">AI 新闻早报 2026-06-03 <span class="tag tag-morning">早报</span></a>
+                <span class="date">2026-06-03</span>
+            </div>
+            <div class="item">
+                <a href="AI-2026-06-03-evening.html">AI 新闻晚报 2026-06-03 <span class="tag tag-evening">晚报</span></a>
+                <span class="date">2026-06-03</span>
+            </div>
+            <div class="item">
+                <a href="AI-2026-06-03.html">AI 新闻早报 2026-06-03 <span class="tag tag-morning">早报</span></a>
+                <span class="date">2026-06-03</span>
+            </div>
+            <div class="item">
+                <a href="2026-06-02.html">AI 新闻早报 2026-06-02 <span class="tag tag-morning">早报</span></a>
+                <span class="date">2026-06-02</span>
+            </div>
+            <div class="item">
+                <a href="AI-2026-06-02-evening.html">AI 新闻晚报 2026-06-02 <span class="tag tag-evening">晚报</span></a>
+                <span class="date">2026-06-02</span>
+            </div>
+            <div class="item">
+                <a href="AI-2026-06-02.html">AI 新闻早报 2026-06-02 <span class="tag tag-morning">早报</span></a>
+                <span class="date">2026-06-02</span>
+            </div>
+            <div class="item">
+                <a href="2026-06-01.html">AI 新闻早报 2026-06-01 <span class="tag tag-morning">早报</span></a>
+                <span class="date">2026-06-01</span>
+            </div>
+            <div class="item">
+                <a href="AI-2026-06-01-evening.html">AI 新闻晚报 2026-06-01 <span class="tag tag-evening">晚报</span></a>
+                <span class="date">2026-06-01</span>
+            </div>
+            <div class="item">
+                <a href="AI-2026-06-01.html">AI 新闻早报 2026-06-01 <span class="tag tag-morning">早报</span></a>
+                <span class="date">2026-06-01</span>
+            </div>
+        </div>
+        <div class="month-group">
+            <div class="month-header">2026-05</div>
+            <div class="item">
+                <a href="AI-2026-05-01-evening.html">AI 新闻晚报 2026-05-01 <span class="tag tag-evening">晚报</span></a>
+                <span class="date">2026-05-01</span>
+            </div>
+        </div>
+        <div class="month-group">
+            <div class="month-header">2026-03</div>
+            <div class="item">
+                <a href="AI-2026-03-31-evening.html">AI-2026-03-31-evening.md <span class="tag tag-evening">晚报</span></a>
+                <span class="date">2026-03-31</span>
+            </div>
+            <div class="item">
+                <a href="AI-2026-03-31.html">2026-03-31 <span class="tag tag-morning">早报</span></a>
+                <span class="date">2026-03-31</span>
+            </div>
+            <div class="item">
+                <a href="AI-2026-03-30.html">AI-2026-03-30.md <span class="tag tag-morning">早报</span></a>
+                <span class="date">2026-03-30</span>
+            </div>
+            <div class="item">
+                <a href="AI-2026-03-29.html">AI-2026-03-29.md <span class="tag tag-morning">早报</span></a>
+                <span class="date">2026-03-29</span>
+            </div>
+            <div class="item">
+                <a href="AI-2026-03-27-evening.html">AI-2026-03-27-evening.md <span class="tag tag-evening">晚报</span></a>
+                <span class="date">2026-03-27</span>
+            </div>
+            <div class="item">
+                <a href="AI-2026-03-27.html">AI-2026-03-27.md <span class="tag tag-morning">早报</span></a>
+                <span class="date">2026-03-27</span>
+            </div>
+            <div class="item">
+                <a href="AI-2026-03-26-evening.html">AI-2026-03-26-evening.md <span class="tag tag-evening">晚报</span></a>
+                <span class="date">2026-03-26</span>
+            </div>
+            <div class="item">
+                <a href="AI-2026-03-26.html">| 2026-03-26 <span class="tag tag-morning">早报</span></a>
+                <span class="date">2026-03-26</span>
+            </div>
+            <div class="item">
+                <a href="AI-2026-03-25-evening.html">AI-2026-03-25-evening.md <span class="tag tag-evening">晚报</span></a>
+                <span class="date">2026-03-25</span>
+            </div>
+            <div class="item">
+                <a href="AI-2026-03-25.html">AI-2026-03-25.md <span class="tag tag-morning">早报</span></a>
+                <span class="date">2026-03-25</span>
+            </div>
+            <div class="item">
+                <a href="AI-2026-03-24-evening.html">AI-2026-03-24-evening.md <span class="tag tag-evening">晚报</span></a>
+                <span class="date">2026-03-24</span>
+            </div>
+            <div class="item">
+                <a href="AI-2026-03-24.html">AI-2026-03-24.md <span class="tag tag-morning">早报</span></a>
+                <span class="date">2026-03-24</span>
+            </div>
+            <div class="item">
+                <a href="AI-2026-03-23-evening.html">AI-2026-03-23-evening.md <span class="tag tag-evening">晚报</span></a>
+                <span class="date">2026-03-23</span>
+            </div>
+            <div class="item">
+                <a href="AI-2026-03-23.html">AI-2026-03-23.md <span class="tag tag-morning">早报</span></a>
+                <span class="date">2026-03-23</span>
+            </div>
+            <div class="item">
+                <a href="AI-2026-03-22-evening.html">AI-2026-03-22-evening.md <span class="tag tag-evening">晚报</span></a>
+                <span class="date">2026-03-22</span>
+            </div>
+            <div class="item">
+                <a href="AI-2026-03-22.html">AI-2026-03-22.md <span class="tag tag-morning">早报</span></a>
+                <span class="date">2026-03-22</span>
+            </div>
+            <div class="item">
+                <a href="AI-2026-03-21-evening.html">AI-2026-03-21-evening.md <span class="tag tag-evening">晚报</span></a>
+                <span class="date">2026-03-21</span>
+            </div>
+            <div class="item">
+                <a href="AI-2026-03-21.html">AI-2026-03-21.md <span class="tag tag-morning">早报</span></a>
+                <span class="date">2026-03-21</span>
+            </div>
+            <div class="item">
+                <a href="AI-2026-03-20.html">AI-2026-03-20.md <span class="tag tag-morning">早报</span></a>
+                <span class="date">2026-03-20</span>
+            </div>
+            <div class="item">
+                <a href="AI-2026-03-19.html">2026-03-19 <span class="tag tag-morning">早报</span></a>
+                <span class="date">2026-03-19</span>
+            </div>
+            <div class="item">
+                <a href="2026-03-13.html">2026-03-13 <span class="tag tag-morning">早报</span></a>
+                <span class="date">2026-03-13</span>
+            </div>
+            <div class="item">
+                <a href="AI-2026-03-11.html">AI-2026-03-11.md <span class="tag tag-morning">早报</span></a>
+                <span class="date">2026-03-11</span>
+            </div>
+            <div class="item">
+                <a href="AI-2026-03-05.html">2026-03-05 <span class="tag tag-morning">早报</span></a>
+                <span class="date">2026-03-05</span>
+            </div>
+        </div>
+        <footer>
+            <p>🦟 蚊子博客 | AI 新闻早报自动生成系统</p>
+            <p style="margin-top:10px;"><a href="https://github.com/yisvin-netizen/mosquito-blog" style="color: var(--accent-cyan);">GitHub 仓库</a></p>
+        </footer>
     </div>
 </body>
 </html>
