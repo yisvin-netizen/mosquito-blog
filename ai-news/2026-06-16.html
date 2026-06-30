@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 新闻早报 2026-06-16 | 蚊子博客</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-card: #1a1a25;
+            --accent-cyan: #00f0ff;
+            --accent-purple: #a855f7;
+            --accent-green: #22d3ee;
+            --text-primary: #e4e4e7;
+            --text-secondary: #a1a1aa;
+            --border-color: #27272a;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
+        nav {
+            background: var(--bg-secondary);
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+        nav .container { display: flex; justify-content: space-between; align-items: center; }
+        nav h1 { font-family: 'Orbitron', sans-serif; color: var(--accent-cyan); font-size: 1.5em; }
+        .back-link { color: var(--accent-green); text-decoration: none; }
+        h1 { color: var(--accent-cyan); margin: 30px 0 10px; font-family: 'Orbitron', sans-serif; }
+        h2 { color: var(--accent-purple); margin: 25px 0 15px; border-left: 3px solid var(--accent-purple); padding-left: 10px; }
+        .date { color: var(--text-secondary); margin-bottom: 30px; }
+        .item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        .item ul { margin-left: 20px; color: var(--text-secondary); }
+        .item li { margin-bottom: 8px; }
+        .item a { color: var(--accent-cyan); }
+        .highlight { color: var(--accent-cyan); font-weight: 500; }
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: var(--text-secondary);
+            border-top: 1px solid var(--border-color);
+            margin-top: 40px;
+        }
+        .opinion { background: var(--bg-card); border: 1px solid var(--border-color); border-radius: 8px; padding: 20px; margin: 20px 0; }
+        .opinion p { color: var(--text-primary); line-height: 1.8; }
+        .table-wrap { overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; margin: 10px 0; }
+        th, td { padding: 10px; border: 1px solid var(--border-color); text-align: left; }
+        th { background: var(--bg-secondary); color: var(--accent-cyan); }
+        tr:nth-child(even) { background: var(--bg-card); }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <h1>🦟 蚊子博客</h1>
+            <a href="../index.html" style="color: var(--accent-green); text-decoration: none;">← 返回首页</a>
+        </div>
+    </nav>
+    <div class="container">
+        <a href="index.html" class="back-link">← 返回早报列表</a>
+        <h1>🦟 AI 新闻早报 2026-06-16</h1>
+        <p class="date">每天 9 点自动更新 | 数据来源：HackerNews、GitHub、AIbase、科技媒体</p>
+
+        <h2>🔥 AI 大新闻</h2>
+        <div class="item">
+            <ul>
+                <li><span class="highlight">Iroh 1.0 正式发布：下一代 Rust 网络库</span> — 用 Rust 编写的点对点网络库，1.0 版本支持 QUIC 协议和 NAT 穿透，HackerNews 765👍，跨平台轻量级适合边缘计算</li>
+                <li><span class="highlight">Apple Foundation Models 文档曝光：苹果AI模型能力揭秘</span> — 泄露文档显示多模态理解、代码生成等能力，苹果在AI领域持续加码，HackerNews 446👍</li>
+                <li><span class="highlight">CrankGPT 发布：本地代码助手新选择</span> — 面向开发者的本地 AI 编程助手，支持多种主流模型，主打隐私保护和离线使用，HackerNews 513👍</li>
+                <li><span class="highlight">Fata 发布：AI 编程后的技能遗忘对抗工具</span> — 基于间隔重复原理，帮助开发者对抗 AI 辅助编程带来的技能遗忘问题</li>
+                <li><span class="highlight">My Homelab AI Dev Platform：开源在家跑AI开发平台</span> — 开源项目，教你如何用消费级硬件搭建私有 AI 开发环境，HackerNews 172👍</li>
+            </ul>
+        </div>
+
+        <h2>🚀 GitHub 热门项目</h2>
+        <div class="item">
+            <div class="table-wrap">
+                <table>
+                    <tr><th>项目</th><th>语言</th><th>描述</th><th>⭐</th></tr>
+                    <tr><td>Hello 算法</td><td>Java</td><td>动画图解数据结构与算法教程，支持多语言</td><td>🔥</td></tr>
+                    <tr><td>Agent Reach</td><td>Python</td><td>给 AI Agent 接入互联网的眼睛，支持 Twitter/Reddit/YouTube 等</td><td>🆕</td></tr>
+                    <tr><td>IPTV</td><td>TypeScript</td><td>收录全球公开 IPTV 频道列表</td><td>27k+</td></tr>
+                    <tr><td>Tesla 数据记录器</td><td>Elixir</td><td>开源自托管 Tesla 数据日志工具</td><td>🆕</td></tr>
+                    <tr><td>freeCodeCamp</td><td>TypeScript</td><td>开源编程学习平台课程代码库</td><td>39k+</td></tr>
+                </table>
+            </div>
+        </div>
+
+        <h2>📱 HackerNews 热榜要点</h2>
+        <div class="item">
+            <ul>
+                <li><strong>🔐 LinkedIn 求职的后门漏洞</strong> (141👍) — 安全研究员披露招聘场景中的隐蔽安全风险</li>
+                <li><strong>💻 Ask HN: 本地模型能否替代 Claude/GPT？</strong> (429👍) — 社区热议本地模型在日常编程中的可行性</li>
+                <li><strong>🧠 铜转运药物恢复记忆、清除阿尔茨海默毒素</strong> (194👍) — 莫纳什大学研究发现或为痴呆症治疗带来新方向</li>
+                <li><strong>🦀 Rust vs C/C++ 内存安全 CVE 对比</strong> (75👍) — 深度技术分析，Rust 在内存安全上的实际收益</li>
+                <li><strong>📝 Typst 0.15.0 发布</strong> (203👍) — 新型排版系统，LaTeX 的现代替代品</li>
+            </ul>
+        </div>
+
+        <h2>💡 今日观点</h2>
+        <div class="opinion">
+            <p><strong>本地 AI 模型正在改变开发者工作流</strong>——从 CrankGPT 到本地代码助手，"隐私优先+离线可用"成为新趋势。但社区讨论显示，大多数开发者仍依赖云端模型，本地模型在能力和便利性上还有差距。AI 编程辅助带来的"技能遗忘"问题值得关注。</p>
+        </div>
+    </div>
+    <footer>
+        <p>Generated by AI News Daily v2.1 | <a href="index.html" style="color: var(--accent-cyan);">返回早报列表</a></p>
+    </footer>
+</body>
+</html>
