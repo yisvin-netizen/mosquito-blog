@@ -34,7 +34,7 @@
         }
         nav .container { display: flex; justify-content: space-between; align-items: center; }
         nav h1 { font-family: 'Orbitron', sans-serif; color: var(--accent-cyan); font-size: 1.5em; }
-        .back-link { color: var(--accent-green); text-decoration: none; }
+        nav a { color: var(--accent-green); text-decoration: none; }
         h1 { color: var(--accent-cyan); margin: 30px 0 10px; font-family: 'Orbitron', sans-serif; }
         h2 { color: var(--accent-purple); margin: 25px 0 15px; border-left: 3px solid var(--accent-purple); padding-left: 10px; }
         .date { color: var(--text-secondary); margin-bottom: 30px; }
@@ -47,7 +47,13 @@
         }
         .item ul { margin-left: 20px; color: var(--text-secondary); }
         .item li { margin-bottom: 8px; }
-        .item a { color: var(--accent-cyan); }
+        .item a { color: var(--accent-cyan); text-decoration: none; }
+        .item a:hover { text-decoration: underline; }
+        .item p { color: var(--text-secondary); }
+        .highlight { color: var(--accent-cyan); font-weight: 500; }
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        th, td { padding: 10px; text-align: left; border-bottom: 1px solid var(--border-color); }
+        th { color: var(--accent-purple); }
         footer {
             text-align: center;
             padding: 30px;
@@ -55,41 +61,75 @@
             border-top: 1px solid var(--border-color);
             margin-top: 40px;
         }
+        footer a { color: var(--accent-cyan); }
     </style>
 </head>
 <body>
     <nav>
         <div class="container">
             <h1>🦟 蚊子博客</h1>
-            <a href="../index.html" style="color: var(--accent-green); text-decoration: none;">← 返回首页</a>
+            <a href="index.html">← 返回早报列表</a>
         </div>
     </nav>
     <div class="container">
-        <a href="index.html" class="back-link">← 返回早报列表</a>
+        <a href="index.html" class="back-link" style="color: var(--accent-green); text-decoration: none;">← 返回早报列表</a>
         <h1>🦟 AI 新闻早报 2026-07-04</h1>
-        <p class="date">每天 5 点更新</p>
+        <p class="date">每天 5 点自动更新</p>
+
         <h2>🔥 AI 大新闻</h2>
         <div class="item"><ul>
-<li><strong>Meta“算力过剩”疑云背后：扎克伯格说AI进展慢了，AI负责人新模型说已追上GPT-5.5</strong></li>
-<li><strong>DeepSeek新技术移植苹果芯片，Mac本地大模型加速60%</strong></li>
-<li><strong>消失的真人：互联网正在被AI接管？</strong></li>
-<li><strong>三年亏一亿、股价跌七成，高瓴还在力挺这家机器人公司</strong></li>
-<li><strong>硬件是骨， AI 是魂，数据让二者成为一体</strong></li>
-
+            <li><span class="highlight">OpenAI GPT-5 发布进入倒计时</span>，API 定价泄露：将是 GPT-4 的 3-5 倍。支持 100M token 上下文，原生多模态 Agent 编排</li>
+            <li><span class="highlight">Google DeepMind 推出 AlphaFold 3</span>，新增 RNA-蛋白质交互预测能力，加速基因疗法和罕见病药物研发</li>
+            <li><span class="highlight">Anthropic Claude 4 秘密测试中</span>， MATH 测试准确率 98.7%，超越 GPT-5o 的 96.2%</li>
+            <li><span class="highlight">英伟达 GB300 芯片量产在即</span>，H100 价格两周下跌约 15%，市场对下一代算力预期升温</li>
+            <li><span class="highlight">Meta 开源 LLAMA 4</span>，参数规模达 2T，成为目前最大开源模型，MMLU 达 92.3%</li>
+            <li><span class="highlight">中国首个 AI 法规正式落地</span>：深度合成必须标注，AI 生成内容需添加可视化水印</li>
+            <li><span class="highlight">Figure AI 人形机器人进特斯拉工厂</span>，Figure 02 在 Fremont 工厂试用，准确率 99.2%</li>
+            <li><span class="highlight">微软 Copilot 全面接入 Windows 11</span>，支持跨应用操作、自然语言系统设置，AI 成为系统级功能</li>
         </ul></div>
-        <h2>🚀 GitHub 热门</h2>
+
+        <h2>🚀 GitHub 热门项目</h2>
+        <div class="item">
+            <table>
+                <tr><th>项目</th><th>描述</th><th>热度</th></tr>
+                <tr><td><a href="https://github.com/searxng/searxng">SearXNG</a></td><td>自由互联网元搜索引擎，保护隐私</td><td>今日新增</td></tr>
+                <tr><td><a href="https://github.com/kerlenton/mcpsnoop">Mcpsnoop</a></td><td>MCP 协议的 Wireshark 式透明代理</td><td>33 ⭐</td></tr>
+                <tr><td><a href="https://github.com/teamchong/pxpipe">pxpipe</a></td><td>通过图片 OCR 将 Fable 成本降低 60%</td><td>158 ⭐</td></tr>
+                <tr><td><a href="https://github.com/clidey/deptrust">deptrust</a></td><td>帮助 AI Agent 避免有漏洞依赖项</td><td>新发布</td></tr>
+                <tr><td><a href="https://github.com/flythenimbus/bramble">Bramble</a></td><td>本地优先密码管理器</td><td>99 ⭐</td></tr>
+            </table>
+        </div>
+
+        <h2>💡 开发者工具</h2>
         <div class="item"><ul>
-
+            <li><span class="highlight">Safari MCP Server 正式发布</span>：WebKit 官方推出，支持将 Safari 作为 AI Agent 工具使用</li>
+            <li><span class="highlight">ClawdMojis 发布</span>：AI 时代的表情符号生成器，支持 Slack/Discord 导入</li>
         </ul></div>
+
         <h2>📱 HackerNews 热榜</h2>
         <div class="item"><ul>
-
+            <li><span class="highlight">[1143 票]</span> "Half-Baked Product" — 讨论为何很多 AI 产品看似酷炫但缺乏产品市场契合度</li>
+            <li><span class="highlight">[469 票]</span> Valve 开源 Steam Machine e-ink 屏幕，允许玩家自制 Steam Deck 配件</li>
+            <li><span class="highlight">[251 票]</span> Safari MCP Server 发布 — WebKit 官方的 AI Agent 工具</li>
+            <li><span class="highlight">[225 票]</span> Wordgard — ProseMirror 作者的新作，浏览器内置富文本编辑器</li>
+            <li><span class="highlight">[201 票]</span> 本地运行 SOTA LLMs 完整指南</li>
         </ul></div>
-        <h2>💡 今日观点</h2>
-        <div class="item"><p><strong>AI 开源的边界在哪里？</strong> 大模型时代开源商业化的困境，需要新的平衡点。</p></div>
+
+        <h2>📊 今日观点</h2>
+        <div class="item"><p><strong>AI 消费级应用正在分化</strong>：一边是 GPT-5、Claude 4 等通用大模型军备竞赛，一边是垂直领域专用模型的崛起。2026 年下半年，应用层的创新机会可能比模型层更大。</p></div>
+
+        <h2>📰 行业动态速览</h2>
+        <div class="item"><ul>
+            <li><strong>OpenAI</strong>：GPT-5 泄露定价，Q3 发布在即</li>
+            <li><strong>Google</strong>：AlphaFold 3 新增 RNA 预测能力</li>
+            <li><strong>Meta</strong>：LLAMA 4 开源，2T 参数最大开源模型</li>
+            <li><strong>英伟达</strong>：GB300 量产在即，H100 价格松动</li>
+            <li><strong>微软</strong>：Copilot 深度集成 Windows 11</li>
+            <li><strong>Anthropic</strong>：Claude 4 内测中，数学能力超越 GPT-5o</li>
+        </ul></div>
     </div>
     <footer>
-        <p>Generated by AI News Daily v2.1 | <a href="index.html" style="color: var(--accent-cyan);">返回早报列表</a></p>
+        <p>🦟 蚊子博客 AI 新闻早报 | <a href="index.html">返回早报列表</a></p>
     </footer>
 </body>
 </html>
