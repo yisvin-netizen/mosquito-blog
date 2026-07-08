@@ -34,10 +34,13 @@
         }
         nav .container { display: flex; justify-content: space-between; align-items: center; }
         nav h1 { font-family: 'Orbitron', sans-serif; color: var(--accent-cyan); font-size: 1.5em; }
-        .back-link { color: var(--accent-green); text-decoration: none; }
-        h1 { color: var(--accent-cyan); margin: 30px 0 10px; font-family: 'Orbitron', sans-serif; }
-        h2 { color: var(--accent-purple); margin: 25px 0 15px; border-left: 3px solid var(--accent-purple); padding-left: 10px; }
-        .date { color: var(--text-secondary); margin-bottom: 30px; }
+        nav a { color: var(--accent-green); text-decoration: none; }
+        h1 { color: var(--accent-cyan); margin: 30px 0 10px; font-family: 'Orbitron', sans-serif; font-size: 1.8em; }
+        h2 { color: var(--accent-purple); margin: 25px 0 15px; border-left: 3px solid var(--accent-purple); padding-left: 10px; font-size: 1.3em; }
+        h3 { color: var(--accent-green); margin: 15px 0 10px; font-size: 1.1em; }
+        .date { color: var(--text-secondary); margin-bottom: 30px; font-size: 0.95em; }
+        .tag-source { color: var(--text-secondary); font-size: 0.85em; }
+        .tag-hot { color: #f59e0b; font-size: 0.85em; }
         .item {
             background: var(--bg-card);
             border: 1px solid var(--border-color);
@@ -48,6 +51,12 @@
         .item ul { margin-left: 20px; color: var(--text-secondary); }
         .item li { margin-bottom: 8px; }
         .item a { color: var(--accent-cyan); }
+        .highlight { color: var(--accent-cyan); font-weight: 700; }
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        th, td { padding: 10px; border: 1px solid var(--border-color); text-align: left; }
+        th { background: var(--bg-secondary); color: var(--accent-cyan); }
+        td { background: var(--bg-card); }
+        .footer-meta { color: var(--text-secondary); font-size: 0.85em; margin-top: 15px; }
         footer {
             text-align: center;
             padding: 30px;
@@ -61,35 +70,104 @@
     <nav>
         <div class="container">
             <h1>🦟 蚊子博客</h1>
-            <a href="../index.html" style="color: var(--accent-green); text-decoration: none;">← 返回首页</a>
+            <a href="index.html">← 返回早报列表</a>
         </div>
     </nav>
+
     <div class="container">
         <a href="index.html" class="back-link">← 返回早报列表</a>
         <h1>🦟 AI 新闻早报 2026-07-08</h1>
-        <p class="date">每天 5 点更新</p>
-        <h2>🔥 AI 大新闻</h2>
-        <div class="item"><ul>
-<li><strong>云厂商的下一站，是Agent</strong></li>
-<li><strong>“如果你不能用300行代码写个Cursor，这行你就别待了！”Ralph Loop创造者、Claude Code核心技术设计者的暴论</strong></li>
-<li><strong>今天给大家带来AI产业全景透视系列。 本期的主角是：3D NAND，我们用 AlphaEngine来解读 。</strong></li>
-<li><strong>跳出人形机器人概念：自动驾驶为何是物理AI首个规模化落地赛道？</strong></li>
-<li><strong>复盘2021年新能源，AI走到哪个阶段？</strong></li>
+        <p class="date">每天 9:00 自动更新 | 蚊子博客 AI 早报系列</p>
 
-        </ul></div>
-        <h2>🚀 GitHub 热门</h2>
-        <div class="item"><ul>
+        <h2>🔥 今日头条</h2>
+        <div class="item">
+            <h3>联合国 AI 治理全球对话召开，AI 监管进入实质阶段</h3>
+            <p><span class="tag-source">来源：UN 官网 | 时间：2026-07-06</span></p>
+            <p>7月6-7日，联合国 AI 治理全球对话在日内瓦举行。联合国秘书长古特雷斯呼吁全球建立「覆盖杀手机器人到前沿模型」的全面 AI 监管机制。独立国际科学小组发布初步报告，为后续谈判提供科学依据。<strong>这是 AI 治理从讨论走向实质立法的关键节点。</strong></p>
+        </div>
+        <div class="item">
+            <h3>GPT-5.6 低调内测 / Anthropic 估值登顶</h3>
+            <p><span class="tag-source">来源：iaipie.com | 时间：2026-07-07</span></p>
+            <p>OpenAI GPT-5.6 系列已低调开启内测；与此同时，Anthropic 以 <strong class="highlight">965亿美元估值</strong> 成为全球 AI 估值最高企业。两大巨头竞争格局进一步固化。</p>
+        </div>
 
-        </ul></div>
-        <h2>📱 HackerNews 热榜</h2>
-        <div class="item"><ul>
+        <h2>🌟 重点新闻</h2>
+        <div class="item">
+            <h3>1. SpaceX 600亿美元收购 Cursor</h3>
+            <p><span class="tag-source">来源：iaipie.com</span> <span class="tag-hot">⭐ 热度：🔥🔥🔥</span></p>
+            <p>埃隆·马斯克旗下 SpaceX 宣布以 600亿美元收购 AI 编程工具 Cursor，这是继 GitHub Copilot 之后 AI 编程赛道的最大收购案。SpaceX 意在将 AI 编程能力深度整合到火箭研发流程中。</p>
+        </div>
+        <div class="item">
+            <h3>2. Claude 悄然嵌入 Slack</h3>
+            <p><span class="tag-source">来源：imfounder.com</span> <span class="tag-hot">⭐ 热度：🔥🔥🔥</span></p>
+            <p>Anthropic 宣布 Claude 已实现与 Slack 的深度集成，用户可直接在对话中调用 Claude 处理邮件、生成报告、分析数据。企业级 AI 助手争夺战加剧。</p>
+        </div>
+        <div class="item">
+            <h3>3. 美国商务部解除 Claude Fable 5 出口管制</h3>
+            <p><span class="tag-source">来源：iaipie.com</span> <span class="tag-hot">⭐ 热度：🔥🔥</span></p>
+            <p>此前受限的 Claude Fable 5 现已解除出口管制，标志着中美 AI 贸易摩擦出现缓和信号。</p>
+        </div>
+        <div class="item">
+            <h3>4. 国常会 AI 产业扶持政策正式落地</h3>
+            <p><span class="tag-source">来源：iaipie.com</span> <span class="tag-hot">⭐ 热度：🔥🔥🔥</span></p>
+            <p>国务院常务会议出台的 AI 产业扶持政策今日起正式执行：新建万卡级智算中心、加大高端芯片/存储材料研发补贴、开放政企场景推动商业化。算力、光模块、国产半导体赛道直接受益。</p>
+        </div>
+        <div class="item">
+            <h3>5. 斯坦福发布《2026 AI 指数报告》</h3>
+            <p><span class="tag-source">来源：搜狐/Stanford HAI</span> <span class="tag-hot">⭐ 热度：🔥🔥</span></p>
+            <p>斯坦福 HAI 发布 2026 年度 AI 指数报告，全文 423 页，涵盖模型发布、资本流入、劳动力市场变化、能源消耗、公众态度等维度。报告数据显示中国 AI 论文数量已超美国，但高引用论文仍由美国主导。</p>
+        </div>
+        <div class="item">
+            <h3>6. 豆包月活突破 2 亿</h3>
+            <p><span class="tag-source">来源：aijutu.com</span> <span class="tag-hot">⭐ 热度：🔥🔥</span></p>
+            <p>字节跳动旗下豆包 AI 用户月活突破 <strong class="highlight">2亿</strong>，成为国内用户量最高的 AI 应用之一。同时 Kimi、DeepSeek 等国产模型在长上下文推理上持续突破。</p>
+        </div>
+        <div class="item">
+            <h3>7. MiniMax M3 编程登顶 / Claude Opus 推理封王</h3>
+            <p><span class="tag-source">来源：dev.to</span> <span class="tag-hot">⭐ 热度：🔥🔥</span></p>
+            <p>2026年中横评显示：MiniMax M3 在编程能力登顶，Claude Opus 在推理任务中封王，DeepSeek 性价比无敌，Gemini 多模态能力领先。</p>
+        </div>
 
-        </ul></div>
+        <h2>🚀 GitHub 热门项目</h2>
+        <div class="item">
+            <table>
+                <tr><th>项目</th><th>Stars</th><th>今日⭐</th><th>描述</th></tr>
+                <tr><td><a href="https://github.com/addyosmani/agent-skills">agent-skills</a></td><td>72,007</td><td>+1,311</td><td>AI编程代理的工程技能</td></tr>
+                <tr><td><a href="https://github.com/asgeirtj/system_prompts_leaks">system_prompts_leaks</a></td><td>52,845</td><td>+1,704</td><td>各大模型系统提示词泄露</td></tr>
+                <tr><td><a href="https://github.com/iOfficeAI/OfficeCLI">OfficeCLI</a></td><td>9,778</td><td>+802</td><td>AI读写编辑Word/Excel/PPT</td></tr>
+                <tr><td><a href="https://github.com/TencentCloud/CubeSandbox">CubeSandbox</a></td><td>8,395</td><td>+665</td><td>腾讯云AI代理沙箱</td></tr>
+                <tr><td><a href="https://github.com/kyutai-labs/pocket-tts">pocket-tts</a></td><td>6,064</td><td>+510</td><td>CPU上的TTS模型</td></tr>
+                <tr><td><a href="https://github.com/bradautomates/claude-video">claude-video</a></td><td>5,064</td><td>+953</td><td>让Claude看懂视频</td></tr>
+                <tr><td><a href="https://github.com/MadsLorentzen/ai-job-search">ai-job-search</a></td><td>10,308</td><td>+2,402</td><td>AI找工作框架</td></tr>
+            </table>
+        </div>
+
         <h2>💡 今日观点</h2>
-        <div class="item"><p><strong>AI 开源的边界在哪里？</strong> 大模型时代开源商业化的困境，需要新的平衡点。</p></div>
+        <div class="item">
+            <p><strong>AI 治理与商业化同步加速：</strong>联合国推全球监管、SpaceX 600亿圈地、国常会千亿算力投资——2026下半年，AI 从「技术竞赛」转向「规则竞赛」与「落地竞赛」双重战场。</p>
+        </div>
+
+        <h2>📊 数据看板</h2>
+        <div class="item">
+            <table>
+                <tr><th>指标</th><th>数值</th><th>趋势</th></tr>
+                <tr><td>Anthropic 估值</td><td>965亿美元</td><td>↑ 成为AI第一股</td></tr>
+                <tr><td>SpaceX 收购Cursor</td><td>600亿美元</td><td>↑ AI编程赛道最大收购</td></tr>
+                <tr><td>豆包月活</td><td>2亿+</td><td>↑</td></tr>
+                <tr><td>agent-skills</td><td>72,007 ★</td><td>↑</td></tr>
+                <tr><td>system_prompts_leaks</td><td>52,845 ★</td><td>↑</td></tr>
+            </table>
+        </div>
+
+        <div class="footer-meta">
+            <p>📝 制表：小明分析师</p>
+            <p>⏰ 更新时间：2026-07-08 09:00 (UTC+8)</p>
+            <p>🔗 同步博客：<a href="https://yisvin-netizen.github.io/mosquito-blog/ai-news/">蚊子博客 AI 早报</a></p>
+        </div>
     </div>
+
     <footer>
-        <p>Generated by AI News Daily v2.1 | <a href="index.html" style="color: var(--accent-cyan);">返回早报列表</a></p>
+        <p>🦟 蚊子博客 AI 早报系列 | 每天 9:00 自动更新</p>
     </footer>
 </body>
 </html>
