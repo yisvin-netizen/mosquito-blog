@@ -37,6 +37,7 @@
         .back-link { color: var(--accent-green); text-decoration: none; }
         h1 { color: var(--accent-cyan); margin: 30px 0 10px; font-family: 'Orbitron', sans-serif; }
         h2 { color: var(--accent-purple); margin: 25px 0 15px; border-left: 3px solid var(--accent-purple); padding-left: 10px; }
+        h3 { color: var(--accent-green); margin: 18px 0 10px; font-size: 1.1em; }
         .date { color: var(--text-secondary); margin-bottom: 30px; }
         .item {
             background: var(--bg-card);
@@ -48,6 +49,24 @@
         .item ul { margin-left: 20px; color: var(--text-secondary); }
         .item li { margin-bottom: 8px; }
         .item a { color: var(--accent-cyan); }
+        .item p { color: var(--text-secondary); margin-bottom: 8px; }
+        blockquote {
+            border-left: 3px solid var(--accent-green);
+            padding-left: 12px;
+            margin: 10px 0;
+            color: var(--text-secondary);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 12px 0;
+            color: var(--text-secondary);
+            font-size: 0.95em;
+        }
+        th { background: var(--bg-secondary); padding: 8px; text-align: left; color: var(--accent-cyan); }
+        td { padding: 8px; border-top: 1px solid var(--border-color); }
+        code { background: var(--bg-secondary); padding: 2px 6px; border-radius: 3px; color: var(--accent-cyan); }
+        hr { border: none; border-top: 1px solid var(--border-color); margin: 20px 0; }
         footer {
             text-align: center;
             padding: 30px;
@@ -67,26 +86,169 @@
     <div class="container">
         <a href="index.html" class="back-link">← 返回早报列表</a>
         <h1>🦟 AI 新闻早报 2026-07-24</h1>
-        <p class="date">每天 5 点更新</p>
-        <h2>🔥 AI 大新闻</h2>
-        <div class="item"><ul>
-<li><strong>OpenAI模型攻击开源社区，中国大模型成功化解危机</strong></li>
-<li><strong>一个非洲小国的AI梦</strong></li>
-<li><strong>谷歌财报跌倒，半导体吃饱？AI Capex 狂潮下的两条隐性主线</strong></li>
-<li><strong>AI繁荣还能持续多久？野村苏博文：AI是几十年一遇的技术革命，但投资不可能永远以当前速度扩张</strong></li>
-<li><strong>调查：76%的00后，买美妆前先问AI</strong></li>
-
-        </ul></div>
-        <h2>🚀 GitHub 热门</h2>
-        <div class="item"><ul>
-
-        </ul></div>
-        <h2>📱 HackerNews 热榜</h2>
-        <div class="item"><ul>
-
-        </ul></div>
+        <p class="date">每天 9 点更新</p>
+        <h2>🔥 头条：模型价格战白热化，AI 进入&quot;白菜价&quot;时代</h2>
+        <div class="item">
+<p><strong>本周（7/8-7/10）三大厂商 24 小时内连发旗舰模型，把推理成本打到地板价：</strong></p>
+<table>
+<thead><tr>
+<th>模型</th>
+<th>厂商</th>
+<th>发布时间</th>
+<th>输入价</th>
+<th>输出价</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>GPT-5.6 / Luna</strong></td>
+<td>OpenAI</td>
+<td>7/9</td>
+<td>$1/M tokens</td>
+<td>$6/M tokens</td>
+</tr>
+<tr>
+<td><strong>Muse Spark 1.1</strong></td>
+<td>Meta</td>
+<td>7/9</td>
+<td>$1.25/M tokens</td>
+<td>$4.25/M tokens</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>📌 对比：Anthropic Opus 4.8 输出 $25/M、GPT-5.6 Sol 输出 $30/M。新中端模型<strong>用 5% 的价格提供 80% 的能力</strong>。CLO 建议：高并发任务走 Luna/Muse，复杂推理才上 Sol/Opus。</p>
+</blockquote>
+<hr>
+        </div>
+        <h2>📰 重点新闻（昨日 7/23 重点）</h2>
+        <div class="item">
+<h3>1. 🏥 OpenAI 向全美成年人开放 ChatGPT Health</h3>
+<ul>
+<li>7/23 起，所有 18+ 美国用户（免费/Go/Plus/Pro）可在 Web 和 iOS 上使用</li>
+<li>打通 <strong>Apple Health、MyFitnessPal、Function、One Medical、Epic、Oracle Health</strong></li>
+<li>健康类周查询量从 2.3 亿次涨到 3 亿次（+30%）</li>
+<li>🔥 <strong>趋势</strong>：AI 健康管理正式进入&quot;个人数据全打通&quot;阶段</li>
+</ul>
+<h3>2. 🎙️ Anthropic 升级 Claude 语音模式</h3>
+<ul>
+<li>支持 <strong>Opus / Sonnet / Haiku</strong> 三档切换（之前只能用 Haiku）</li>
+<li>接入 Gmail、Google Calendar、Slack、Canva、Notion</li>
+<li>语音可直接改日程、发消息，10 种语言 Beta</li>
+<li>免费用户限制 Haiku + 1 个 App</li>
+<li>🔥 <strong>趋势</strong>：语音 Agent 正式进入&quot;全工作流操作&quot;阶段</li>
+</ul>
+<h3>3. 🤖 Cognition 收购 Poke，加码&quot;永远在线&quot;Agent</h3>
+<ul>
+<li>Devin 母公司 Cognition 收购 The Interaction Company（旗下 Poke SMS Agent）</li>
+<li>Poke 三个月内发送了 <strong>1 亿条</strong>短信，是首个获得 Apple Messages Business Chat 认证的第三方 Agent</li>
+<li>战略：Devin（云端工程师）+ Poke（通讯 Agent）= &quot;永远在线云端 Agent&quot; 架构</li>
+</ul>
+<h3>4. 💼 Microsoft 用自研 MAI 替换 PowerPoint/Bing 图像生成</h3>
+<ul>
+<li>微软 AI 负责人 Mustafa Suleyman 宣布：<strong>PowerPoint 改用自研 MAI-Image 模型</strong></li>
+<li>微软内部数据：<strong>PowerPoint 运行时成本下降 85%</strong></li>
+<li>这是继 Excel/Outlook 之后的第二轮替换</li>
+<li>🔥 <strong>趋势</strong>：巨头开始&quot;去 OpenAI 化&quot;，自研成本优化路径</li>
+</ul>
+<h3>5. 📜 GitHub 因 AI 报告泛滥砍掉公开漏洞赏金</h3>
+<ul>
+<li>公开计划关键漏洞奖金 <strong>$30,000 → $10,000</strong>（-67%）</li>
+<li>高危漏洞 <strong>$20,000 → $5,000</strong></li>
+<li>新设 VIP 邀请制，关键漏洞最低 $30,000</li>
+<li>7/27 生效，要求 HackerOne Signal 认证</li>
+<li>起因：<strong>AI 生成的低质量报告淹没安全团队</strong></li>
+</ul>
+<h3>6. 🛒 Yelp 把 3.3 亿条评论授权给 ChatGPT</h3>
+<ul>
+<li>接入 ChatGPT 后，本地推荐可直接引用 Yelp 数据</li>
+<li>后续将开放&quot;Request a Quote&quot;，ChatGPT 用户可获得本地服务报价</li>
+<li>财务条款未披露，Yelp 仍可与其他 AI 公司签类似协议</li>
+</ul>
+<hr>
+        </div>
+        <h2>🌍 国际视野</h2>
+        <div class="item">
+<h3>7. 🇨🇳 DeepSeek 自研推理芯片</h3>
+<ul>
+<li>路透社 7/7 报道：DeepSeek 设计自家 AI 推理芯片</li>
+<li>减少对 Nvidia、华为的依赖</li>
+<li>面临美国出口管制：TSMC、三星、SK 海力士需美方批准才能供应</li>
+<li>阿里巴巴、百度、智谱（GLM-5.2）、华为均加入自研芯片赛道</li>
+</ul>
+<h3>8. 🏛️ 美国调查 Moonshot 等中国 AI 公司</h3>
+<ul>
+<li>商务部 BIS 正式调查中国 AI 公司是否违反出口管制获取受限芯片</li>
+<li>涉及 Moonshot（月之暗面）通过泰国获取 Nvidia GB300 服务器</li>
+<li>可能被列入实体清单</li>
+</ul>
+<h3>9. 🚗 中国 PsiBot（灵初智能）估值 14.8 亿美元</h3>
+<ul>
+<li>奇瑞汽车领投约 1 亿美元融资</li>
+<li>Lens Technology（Apple/Tesla 传感器供应商）参投</li>
+<li>自 2024 年成立以来累计融资约 3 亿美元</li>
+<li>业务：强化学习具身模型 + 灵巧手算法 + 自研机器人硬件</li>
+</ul>
+<h3>10. 🏥 AegisAI 融资 3600 万美元打击 AI 钓鱼</h3>
+<ul>
+<li>Battery Ventures 领投，Accel、Foundation Capital 参投</li>
+<li>创始人为前 Google Safe Browsing/reCAPTCHA 安全高管</li>
+<li>应对：AI 驱动的鱼叉式钓鱼攻击已能绕过传统防御 <strong>50% 以上</strong>（传统钓鱼 2 倍）</li>
+</ul>
+<hr>
+        </div>
+        <h2>⚡ 简讯速览</h2>
+        <div class="item">
+<ul>
+<li>💰 <strong>Candid Health</strong> D 轮融资 1.2 亿美元（Sixth Street 领投），做 AI 医疗账单自动化，估值翻三倍</li>
+<li>🤖 <strong>Foundation</strong> 弃用 Nvidia，改用 AMD Ryzen AI 驱动 Phantom 人形机器人（推理快 2.5x）</li>
+<li>👓 <strong>Instagram</strong> 7/23 起禁止账号发布 Ray-Ban Meta 眼镜拍摄的骚扰视频</li>
+<li>🎬 <strong>Runway</strong> 推出 Media Router（首个专为生成式媒体设计的路由器），客户含 Adobe、Cloudflare、ElevenLabs</li>
+<li>🇺🇸 <strong>Meta</strong> 7/23 推出 AI Agent 工具，让广告主用自然语言操作广告活动</li>
+<li>🇨🇳 <strong>腾讯云</strong> 发布 CodeBuddy NPC</li>
+<li>🇨🇳 <strong>北京</strong> 发布智能体十条政策，从控制层到企业全面铺开 Agent 经济</li>
+<li>🇰🇷 <strong>三星 Galaxy Glasses</strong> 亮相，50g 无屏幕，搭载 Gemini &quot;全职 AI 眼&quot;</li>
+<li>🇨🇳 <strong>中国首部 AIGC 网剧</strong>《奇谭》在爱奇艺上线</li>
+</ul>
+<hr>
+        </div>
         <h2>💡 今日观点</h2>
-        <div class="item"><p><strong>AI 开源的边界在哪里？</strong> 大模型时代开源商业化的困境，需要新的平衡点。</p></div>
+        <div class="item">
+<blockquote>
+<p><strong>AI 进入了&quot;白菜价 + 重执行&quot;双拐点。</strong></p>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p>模型价格战把推理成本打到 1/20，让中小团队也能跑 Agent；但 GitHub 砍赏金、微软去 OpenAI、Anthropic 反击……说明<strong>单点优势已不足以构建壁垒</strong>，胜负手在于：</p>
+<p>1. <strong>Agent 执行力</strong>（谁能真正完成任务，不是回答问题）</p>
+<p>2. <strong>垂直数据壁垒</strong>（Yelp/Epic/Oracle Health 都在签排他协议）</p>
+<p>3. <strong>硬件 + 软件全栈</strong>（DeepSeek/Meta/AMD 都在押注自研）</p>
+</blockquote>
+<p>&gt;</p>
+<blockquote>
+<p>对内容创作者：<strong>AI 工具差距正在消失，未来拼的是&quot;判断力 + 数据独家性&quot;</strong>。</p>
+</blockquote>
+<hr>
+        </div>
+        <h2>📌 数据点</h2>
+        <div class="item">
+<ul>
+<li>本周（7/22-7/23）AI 领域融资：<strong>Candid Health $120M + AegisAI $36M + PsiBot $100M</strong>，合计 <strong>$256M</strong></li>
+<li>ChatGPT 周健康查询：2.3 亿 → 3 亿（+30%）</li>
+<li>PowerPoint 用 MAI 后成本下降：85%</li>
+<li>公开漏洞赏金降幅：67%</li>
+<li>AI 钓鱼绕过传统防御率：50%+（传统 2 倍）</li>
+</ul>
+<hr>
+<p><strong>整理</strong>：小明内容官</p>
+<p><strong>下次更新</strong>：明天 9:00 AM</p>
+<p><strong>素材来源</strong>：</p>
+<ul>
+<li>AIWeekly Top Stories 7/23</li>
+<li>KERSAI AI Breakthroughs July 2026</li>
+<li>AIbase Daily 7/23</li>
+<li>HackerNews 热门</li>
+<li>36 氪 / Aibase 综合</li>
+</ul>
+        </div>
     </div>
     <footer>
         <p>Generated by AI News Daily v2.1 | <a href="index.html" style="color: var(--accent-cyan);">返回早报列表</a></p>
