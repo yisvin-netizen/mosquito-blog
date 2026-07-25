@@ -37,6 +37,7 @@
         .back-link { color: var(--accent-green); text-decoration: none; }
         h1 { color: var(--accent-cyan); margin: 30px 0 10px; font-family: 'Orbitron', sans-serif; }
         h2 { color: var(--accent-purple); margin: 25px 0 15px; border-left: 3px solid var(--accent-purple); padding-left: 10px; }
+        h3 { color: var(--accent-green); margin: 18px 0 10px; font-size: 1.1em; }
         .date { color: var(--text-secondary); margin-bottom: 30px; }
         .item {
             background: var(--bg-card);
@@ -48,6 +49,26 @@
         .item ul { margin-left: 20px; color: var(--text-secondary); }
         .item li { margin-bottom: 8px; }
         .item a { color: var(--accent-cyan); }
+        .item p { color: var(--text-secondary); margin-bottom: 8px; }
+        .item strong { color: var(--text-primary); }
+        blockquote {
+            border-left: 3px solid var(--accent-green);
+            padding-left: 12px;
+            margin: 10px 0;
+            color: var(--text-secondary);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 12px 0;
+            color: var(--text-secondary);
+            font-size: 0.95em;
+        }
+        th { background: var(--bg-secondary); padding: 8px; text-align: left; color: var(--accent-cyan); }
+        td { padding: 8px; border-top: 1px solid var(--border-color); }
+        code { background: var(--bg-secondary); padding: 2px 6px; border-radius: 3px; color: var(--accent-cyan); }
+        hr { border: none; border-top: 1px solid var(--border-color); margin: 20px 0; }
+        .meta { color: var(--text-secondary); font-size: 0.9em; margin-bottom: 8px; }
         footer {
             text-align: center;
             padding: 30px;
@@ -68,28 +89,197 @@
         <a href="index.html" class="back-link">← 返回早报列表</a>
         <h1>🦟 AI 新闻早报 2026-07-25</h1>
         <p class="date">每天 5 点更新</p>
-        <h2>🔥 AI 大新闻</h2>
-        <div class="item"><ul>
-<li><strong>Kimi K3之外，开源与闭源的第一战</strong></li>
-<li><strong>Agent手机的三条路线与一场权力游戏</strong></li>
-<li><strong>Al手机大战，全面开打</strong></li>
-<li><strong>大模型价格战下半场：将推理价格打下去</strong></li>
-<li><strong>拆解谷歌100页AI经济报告：覆盖90%岗位，却只接手了1/5的活儿</strong></li>
 
-        </ul></div>
-        <h2>🚀 GitHub 热门</h2>
-        <div class="item"><ul>
+        <h2>🔥 头条 · 今日必读</h2>
 
-        </ul></div>
-        <h2>📱 HackerNews 热榜</h2>
-        <div class="item"><ul>
+        <div class="item">
+            <h3>1. Anthropic 发布 Claude Opus 5：Fable 5 同款智能，价格腰斩</h3>
+            <p class="meta">来源：<a href="https://www.anthropic.com/news/claude-opus-5">anthropic.com/news/claude-opus-5</a>（HN #1，862 分）</p>
+            <ul>
+                <li>Opus 5 在 Frontier-Bench v0.1、CursorBench 3.2、OSWorld 2.0 等多维度评测拿下 SOTA</li>
+                <li>价格仅为 Fable 5 的一半，被定位为"日常用得起的旗舰"</li>
+                <li>ARC-AGI 3 得分是次优模型的 3 倍，OSWorld 2.0 电脑使用任务超过 Fable 5 最佳成绩</li>
+                <li>成为 Claude Max 默认模型、Claude Pro 最强模型</li>
+                <li>早期客户（Cursor、Lovable、Box、Cognition 等）一致给出"代际提升"评价</li>
+            </ul>
+            <p><strong>意义：</strong>继 GPT-5.6 / Grok 4.5 价格战之后，Anthropic 选择"同价更聪明"的差异化路线，前端动画、3D 渲染表现突出</p>
+        </div>
 
-        </ul></div>
+        <div class="item">
+            <h3>2. 黑森林实验室 FLUX 3 开放 Early Access：首个原生多模态（图像+视频+音频）基础模型</h3>
+            <p class="meta">来源：<a href="https://bfl.ai/blog/flux-3">bfl.ai/blog/flux-3</a>（HN #23，534 分）</p>
+            <ul>
+                <li>FLUX 3 基于 Self-Flow 架构，图像/视频/音频在统一架构中联合训练</li>
+                <li>文生视频可一次生成最长 20 秒，<strong>原生带音频</strong>（业内首个）</li>
+                <li>早期偏好评估：vs Runway Gen-4.5 胜率 77%，vs Luma Ray 3.2 胜率 93%</li>
+                <li>多语种对话、关键帧控制、连续多镜头拼接能力</li>
+                <li>与 mimic robotics 合作推出 FLUX-mimic，用视频骨干做机器人动作预测</li>
+            </ul>
+            <p><strong>意义：</strong>Black Forest Labs 把"多模态"从拼装变为原生融合，开源/闭源视频模型竞争白热化</p>
+        </div>
+
+        <h2>📰 重点新闻</h2>
+
+        <div class="item">
+            <h3>3. 腾讯混元"合二为一"：多模态与大语言模型部门合并，姚顺雨统管冲全模态上限</h3>
+            <ul>
+                <li>7 月 23 日宣布，将混元多模态模型部门与大语言模型部门合并，新设<strong>基础模型部</strong></li>
+                <li>由腾讯首席 AI 科学家姚顺雨统一管理，目标：打通全模态智能上限</li>
+                <li>来源：<a href="https://www.aibase.com/zh/news/29871">aibase.com/zh/news/29871</a></li>
+            </ul>
+        </div>
+
+        <div class="item">
+            <h3>4. Nvidia、Microsoft、Meta 联合警告：不要过度监管开源权重模型</h3>
+            <ul>
+                <li>CNBC 报道，三大巨头在最新一轮 AI 政策讨论中联名发声</li>
+                <li>强调"开源权重"是创新土壤，过度监管会把开发者推向封闭生态</li>
+                <li>HN #2，248 分，146 条评论，监管与开放之争进入新阶段</li>
+            </ul>
+        </div>
+
+        <div class="item">
+            <h3>5. 黄仁勋 70 分钟访谈回应 AI 争议</h3>
+            <ul>
+                <li>力挺中国 AI 模型："优秀开源模型应该被使用"</li>
+                <li>"英伟达的成功可能复现"、"AI 消灭一半岗位是胡说八道"</li>
+                <li>"AI 泡沫总有一天会到来，但绝不是今天"</li>
+                <li>来源：<a href="https://36kr.com/p/3909541514220930">36kr.com/p/3909541514220930</a></li>
+            </ul>
+        </div>
+
+        <div class="item">
+            <h3>6. 马斯克：AI 五年内超越人类，呼吁巨头互审保安全</h3>
+            <ul>
+                <li>"AI 可能灭绝人类，像一枚 20% 概率爆炸的火箭，但我还是会坐上去"</li>
+                <li>主张头部 AI 公司之间建立相互安全审计机制</li>
+                <li>来源：<a href="https://36kr.com/p/3909509447783558">36kr.com/p/3909509447783558</a></li>
+            </ul>
+        </div>
+
+        <div class="item">
+            <h3>7. 微软自研双模型 MAI-Image-2.5-Pro 与 MAI-Voice-2-Flash 发布</h3>
+            <ul>
+                <li><strong>不蒸馏任何第三方</strong>，已落地 Bing 和 PowerPoint</li>
+                <li>微软在自有模型路线上持续加码，摆脱纯 OpenAI 依赖</li>
+                <li>来源：<a href="https://www.aibase.com/zh/news/29851">aibase.com/zh/news/29851</a></li>
+            </ul>
+        </div>
+
+        <div class="item">
+            <h3>8. 阿里开源 0.8B 文档解析模型 OvisOCR2</h3>
+            <ul>
+                <li>端到端方案登顶 OmniDocBench 榜首</li>
+                <li>0.8B 参数量做文档 OCR，开源小模型"小而精"路线再添一员</li>
+                <li>来源：<a href="https://www.aibase.com/zh/news/29866">aibase.com/zh/news/29866</a></li>
+            </ul>
+        </div>
+
+        <div class="item">
+            <h3>9. 腾讯发布 WorkBuddy Bench：覆盖代码/网页/办公/安全的编码智能体考场</h3>
+            <ul>
+                <li>把分散的能力评测整合到一套 Benchmark 里</li>
+                <li>来源：<a href="https://www.aibase.com/zh/news/29864">aibase.com/zh/news/29864</a></li>
+            </ul>
+        </div>
+
+        <div class="item">
+            <h3>10. 谷歌发布 100 页 AI 经济报告：覆盖 90% 岗位，只接手 1/5 活儿</h3>
+            <ul>
+                <li>"AI 渗透广、介入浅"是当前职场 AI 化的真实写照</li>
+                <li>来源：<a href="https://36kr.com/p/3909559860352128">36kr.com/p/3909559860352128</a></li>
+            </ul>
+        </div>
+
+        <div class="item">
+            <h3>11. 报道警示：质疑 OpenAI"流氓黑客智能体"叙事</h3>
+            <ul>
+                <li>The Guardian 发文：警惕 OpenAI 用"rogue hacker agent"故事转移安全争议焦点</li>
+                <li>HN #13，271 分，126 条评论</li>
+                <li>来源：<a href="https://www.theguardian.com/technology/2026/jul/24/openai-rogue-hacker">theguardian.com/technology/2026/jul/24/openai-rogue-hacker</a></li>
+            </ul>
+        </div>
+
+        <div class="item">
+            <h3>12. 快手入局 AI 互动内容赛道，开放首批创作者招募</h3>
+            <ul>
+                <li>来源：<a href="https://www.aibase.com/zh/news/29872">aibase.com/zh/news/29872</a></li>
+            </ul>
+        </div>
+
+        <div class="item">
+            <h3>13. 小鹏人形机器人广州工厂开启小批量试生产</h3>
+            <ul>
+                <li>预计 2026 年内实现量产，国内人形机器人量产时间表进一步明确</li>
+                <li>来源：<a href="https://www.aibase.com/zh/news/29875">aibase.com/zh/news/29875</a></li>
+            </ul>
+        </div>
+
+        <div class="item">
+            <h3>14. 宇树 Unitree As2-W 机器人发布</h3>
+            <ul>
+                <li>HN #19，51 分，宇树持续在人形/四足机器人方向迭代</li>
+            </ul>
+        </div>
+
+        <h2>📱 HackerNews 热榜 Top 5</h2>
+        <div class="item">
+            <table>
+                <thead>
+                    <tr><th>#</th><th>标题</th><th>来源</th><th>分</th><th>评</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td>Claude Opus 5 发布</td><td>anthropic.com</td><td>862</td><td>478</td></tr>
+                    <tr><td>2</td><td>Nvidia/Microsoft/Meta 警告：不要过度监管开源权重</td><td>cnbc.com</td><td>248</td><td>146</td></tr>
+                    <tr><td>13</td><td>Be skeptical of OpenAI's rogue hacker agent story</td><td>theguardian.com</td><td>271</td><td>126</td></tr>
+                    <tr><td>18</td><td>Flux 3 X Mimic: 下一代视频-动作模型</td><td>bfl.ai</td><td>291</td><td>47</td></tr>
+                    <tr><td>23</td><td>Flux 3 发布</td><td>bfl.ai</td><td>534</td><td>125</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <h2>🚀 GitHub Trending 今日榜</h2>
+        <div class="item">
+            <ul>
+                <li><a href="https://github.com/block/buzz">block/buzz</a>（Rust）"蜂巢思维"沟通平台，⭐+3,274</li>
+                <li><a href="https://github.com/koala73/worldmonitor">koala73/worldmonitor</a>（TypeScript）全球情报仪表盘，AI 驱动新闻聚合，⭐+2,194</li>
+                <li><a href="https://github.com/ComposioHQ/awesome-claude-skills">ComposioHQ/awesome-claude-skills</a> Claude Skills 精选资源</li>
+                <li><a href="https://github.com/Pumpkin-MC/Pumpkin">Pumpkin-MC/Pumpkin</a>（Rust）高效自托管 Minecraft 服务端，⭐+472</li>
+                <li><a href="https://github.com/shiyu-coder/Kronos">shiyu-coder/Kronos</a> 金融市场语言基础模型</li>
+                <li><a href="https://github.com/Automattic/harper">Automattic/harper</a>（Rust）离线、隐私优先的语法检查器，⭐+877</li>
+                <li><a href="https://github.com/citrolabs/ego-lite">citrolabs/ego-lite</a>（JavaScript）专为 AI Agent 设计的浏览器，⭐+884</li>
+                <li><a href="https://github.com/diegosouzapw/OmniRoute">diegosouzapw/OmniRoute</a>（TypeScript）MIT 协议 AI 网关：1 端点接入 290+ 提供商、500+ 模型，⭐+1,843</li>
+            </ul>
+            <p><strong>观察：</strong>AI Agent 工具链仍是 Trending 主旋律（ego-lite 浏览器、OmniRoute AI 网关、awesome-claude-skills），市场对 Claude Skills 生态的需求在爆发。</p>
+        </div>
+
         <h2>💡 今日观点</h2>
-        <div class="item"><p><strong>AI 开源的边界在哪里？</strong> 大模型时代开源商业化的困境，需要新的平衡点。</p></div>
+        <div class="item">
+            <blockquote>
+                <p><strong>2026 H2 的 AI 主线已不再是"谁能训出更大的模型"，而是"谁能跑通多模态融合 + 智能密度 + 真实落地"。</strong></p>
+                <p>Anthropic Opus 5、FLUX 3、腾讯混元"合二为一"、微软自研 MAI——四件事指向同一个趋势：<strong>模型层进入"整合优化"阶段</strong>，比拼的是单位成本下的真实智能密度，而不再是参数堆叠。</p>
+                <p>同时，黄仁勋与马斯克同一天发声、监管层面 Nvidia/Microsoft/Meta 联手反对过度监管，说明 <strong>AI 产业话语权争夺</strong>已经从技术叙事延伸到了政策叙事。</p>
+                <p><strong>普通人能感知到的：</strong>模型更快、API 更便宜、AI 视频终于带声音了、AI 手机大战全面开打。</p>
+            </blockquote>
+        </div>
+
+        <h2>📊 来源统计</h2>
+        <div class="item">
+            <table>
+                <thead><tr><th>源</th><th>条数</th><th>占比</th></tr></thead>
+                <tbody>
+                    <tr><td>HackerNews</td><td>8</td><td>33%</td></tr>
+                    <tr><td>AIbase</td><td>8</td><td>33%</td></tr>
+                    <tr><td>36 氪 AI</td><td>5</td><td>21%</td></tr>
+                    <tr><td>GitHub Trending</td><td>3</td><td>13%</td></tr>
+                    <tr><td><strong>合计</strong></td><td><strong>24</strong></td><td><strong>100%</strong></td></tr>
+                </tbody>
+            </table>
+        </div>
     </div>
     <footer>
         <p>Generated by AI News Daily v2.1 | <a href="index.html" style="color: var(--accent-cyan);">返回早报列表</a></p>
+        <p style="margin-top: 8px;">最后更新：2026-07-25 05:00 AM (Asia/Shanghai) | 小明内容官</p>
     </footer>
 </body>
 </html>
