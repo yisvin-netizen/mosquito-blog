@@ -37,6 +37,7 @@
         .back-link { color: var(--accent-green); text-decoration: none; }
         h1 { color: var(--accent-cyan); margin: 30px 0 10px; font-family: 'Orbitron', sans-serif; }
         h2 { color: var(--accent-purple); margin: 25px 0 15px; border-left: 3px solid var(--accent-purple); padding-left: 10px; }
+        h3 { color: var(--accent-green); margin: 20px 0 10px; font-size: 1.1em; }
         .date { color: var(--text-secondary); margin-bottom: 30px; }
         .item {
             background: var(--bg-card);
@@ -48,6 +49,17 @@
         .item ul { margin-left: 20px; color: var(--text-secondary); }
         .item li { margin-bottom: 8px; }
         .item a { color: var(--accent-cyan); }
+        .tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 0.85em; margin-right: 6px; }
+        .tag-hn { background: rgba(255, 87, 87, 0.2); color: #ff5757; }
+        .tag-gh { background: rgba(0, 240, 255, 0.2); color: var(--accent-cyan); }
+        blockquote {
+            background: rgba(168, 85, 247, 0.1);
+            border-left: 3px solid var(--accent-purple);
+            padding: 10px 15px;
+            margin: 10px 0;
+            color: var(--text-secondary);
+            font-style: italic;
+        }
         footer {
             text-align: center;
             padding: 30px;
@@ -67,29 +79,104 @@
     <div class="container">
         <a href="index.html" class="back-link">← 返回早报列表</a>
         <h1>🦟 AI 新闻早报 2026-07-26</h1>
-        <p class="date">每天 5 点更新</p>
-        <h2>🔥 AI 大新闻</h2>
-        <div class="item"><ul>
-<li><strong>OpenAI下一代模型，被曝8月提前上线</strong></li>
-<li><strong>刚刚，黄仁勋首次发推：半个硅谷，力挺Kimi K3开源</strong></li>
-<li><strong>黄仁勋站在 AI 产业的十字路口呐喊：力挺开源</strong></li>
-<li><strong>硅谷大佬聚会的9个小时里，一些关于“人与机器人”的真话｜特别报道</strong></li>
-<li><strong>Claude Opus 5来了，Fable 5性能、一半价格</strong></li>
+        <p class="date">每天 5 点更新 · 数据截止 2026-07-26 05:00 CST</p>
 
-        </ul></div>
-        <h2>🚀 GitHub 热门</h2>
-        <div class="item"><ul>
+        <h2>🔥 头条 · 今日必读</h2>
+        <div class="item">
+            <h3>1. "Open-weight AI 正经历它的 Kubernetes 时刻" — HN #4，240 分热议</h3>
+            <p>作者 Tobi Knaup 将当前的开源权重模型浪潮类比 2014-2018 年的容器生态拐点。</p>
+            <ul>
+                <li><span class="tag tag-hn">HN #4</span>开源权重模型正从"零散实验"进入"标准化、可调度、生产可观测"阶段</li>
+                <li>围绕模型权重，开始出现类似 Helm、Docker Registry、Operator 的工程化工具链</li>
+                <li>企业部署从"研究团队手动跑 demo"转向"平台团队流水线管理"，与当年 K8s 取代手工编排的拐点高度相似</li>
+            </ul>
+            <blockquote>💡 开源权重不再是"模型放出就完事"，而是被看作完整生态入口——这会重新定义模型厂商、工具厂商、云厂商的分工。</blockquote>
+        </div>
 
-        </ul></div>
-        <h2>📱 HackerNews 热榜</h2>
-        <div class="item"><ul>
+        <div class="item">
+            <h3>2. PyTorch Monarch 正式登陆 AMD GPU：单一控制器跨 ROCm 做分布式训练</h3>
+            <p><span class="tag tag-hn">HN #9 · 46 分</span> PyTorch 官方博客重大更新。</p>
+            <ul>
+                <li>Monarch 把"分布式训练"从集群脚本变成 Python 原生 API，单一控制器统一管理节点</li>
+                <li>首次正式支持 ROCm，AMD GPU 用户可用与 CUDA 几乎一致的代码体验</li>
+                <li>团队同步开源底层通信原语与 fault-tolerance 工具，方便自建训练栈</li>
+            </ul>
+            <blockquote>💡 AMD 在 AI 训练侧的"软件可用性"短板被进一步补齐，模型训练不再被 NVIDIA 单一生态锁死。</blockquote>
+        </div>
 
-        </ul></div>
+        <div class="item">
+            <h3>3. 阿里巴巴开源 open-code-review：阿里规模验证过的"AI Agent + 流水线"混合代码审查</h3>
+            <p><span class="tag tag-gh">GH Trending #2</span> 439 stars/日，来自阿里官方。</p>
+            <ul>
+                <li>确定性流水线（规则 + AST 静态分析）+ LLM Agent 双层架构，注释落到具体行</li>
+                <li>内置阿里微调过的规则集：NPE、线程安全、XSS、SQL 注入</li>
+                <li>兼容 OpenAI 与 Anthropic，可在企业代码平台内私有化部署</li>
+            </ul>
+            <blockquote>💡 大厂把内部 AI 工程能力反向开源，AI 编程从"补全片段"走向"整段审查 + 自动派单"。</blockquote>
+        </div>
+
+        <h2>📰 重点新闻</h2>
+        <div class="item">
+            <h3>4️⃣ Citrolabs 发布 ego-lite：AI Agent 用的"零打扰"浏览器</h3>
+            <p><span class="tag tag-gh">GH Trending #3</span> 986 stars/日。</p>
+            <ul>
+                <li>基于本地浏览器复用登录态，专为 Codex / Claude Code 这类 Agent 设计</li>
+                <li>不弹窗、不抢焦点、不影响你当前正在浏览的页面</li>
+            </ul>
+        </div>
+        <div class="item">
+            <h3>5️⃣ block / buzz：基于 Rust 的"蜂群思维"协作平台</h3>
+            <p><span class="tag tag-gh">GH Trending #1</span> 2,506 stars/日，开源仅 24 小时即破 11k stars。</p>
+            <ul>
+                <li>定位为 AI 时代的多人协同层，支持 Agent 与人共处同一房间</li>
+                <li>由 Block 工程团队推动</li>
+            </ul>
+        </div>
+        <div class="item">
+            <h3>6️⃣ permissionlesstech / bitchat 上线 Radicle 去中心化版本</h3>
+            <p><span class="tag tag-hn">HN #8 · 167 分</span> "双重去中心化"组合引起社区广泛讨论。</p>
+            <ul>
+                <li>蓝牙 mesh 聊天工具接入 Radicle P2P 代码托管网络</li>
+                <li>抗审查通信 + 抗审查代码分发</li>
+            </ul>
+        </div>
+        <div class="item">
+            <h3>7️⃣ Automattic / harper：离线、隐私优先的 Rust 语法检查器走红</h3>
+            <p><span class="tag tag-gh">GH Trending #6</span> 503 stars/日。</p>
+            <ul>
+                <li>Grammarly 完全本地化替代品定位，强调数据不出端</li>
+                <li>反映"AI 写作工具"之外的"AI 反向需求"——越来越多用户想要不联网的写作辅助</li>
+            </ul>
+        </div>
+        <div class="item">
+            <h3>8️⃣ macOS 终端新形态：Yorishiro 把 AI Agent 直接放进终端</h3>
+            <p><span class="tag tag-hn">HN #20 · Show HN</span></p>
+            <ul>
+                <li>终端窗口原生支持 Agent session，能与本地文件、shell 命令双向联动</li>
+                <li>体现"AI IDE"概念正在从独立产品（Cursor、Windsurf）回流到终端工具链</li>
+            </ul>
+        </div>
+
         <h2>💡 今日观点</h2>
-        <div class="item"><p><strong>AI 开源的边界在哪里？</strong> 大模型时代开源商业化的困境，需要新的平衡点。</p></div>
+        <div class="item">
+            <blockquote>开源权重模型正在走过它的"Kubernetes 时刻"——不再是零散的 GitHub release，而是配套工程化、平台化、调度化；同步发生的，是 AI Agent 用浏览器（ego-lite）、用终端（Yorishiro）、写代码（open-code-review）、做内容（harper）逐步形成专属工具链。模型层竞争之外，AI 工程基础设施层正在变成下一个主战场。</blockquote>
+        </div>
+
+        <h2>🔍 一句话简讯</h2>
+        <div class="item"><ul>
+            <li><span class="tag tag-hn">HN #4</span>"Open-weight AI 正经历它的 Kubernetes 时刻" — 240 分热议</li>
+            <li><span class="tag tag-hn">HN #9</span>PyTorch Monarch 正式登陆 AMD GPU</li>
+            <li><span class="tag tag-gh">GH #2</span>阿里开源 open-code-review（439 stars/日）</li>
+            <li><span class="tag tag-gh">GH #3</span>Citrolabs ego-lite：Agent 用的零打扰浏览器（986 stars/日）</li>
+            <li><span class="tag tag-gh">GH #1</span>block/buzz：Rust 蜂群思维协作平台（2,506 stars/日）</li>
+            <li><span class="tag tag-hn">HN #8</span>bitchat 接入 Radicle 去中心化网络（167 分）</li>
+            <li><span class="tag tag-gh">GH #6</span>Automattic harper：离线 Rust 语法检查器走红（503 stars/日）</li>
+            <li><span class="tag tag-hn">HN #20</span>Yorishiro：把 AI Agent 放进 macOS 终端</li>
+        </ul></div>
     </div>
     <footer>
         <p>Generated by AI News Daily v2.1 | <a href="index.html" style="color: var(--accent-cyan);">返回早报列表</a></p>
+        <p style="margin-top: 10px;">数据来源：HackerNews、GitHub Trending、AIbase、36 氪 AI、Anthropic/PyTorch 官方博客</p>
     </footer>
 </body>
 </html>
